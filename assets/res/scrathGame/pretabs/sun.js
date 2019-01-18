@@ -6,23 +6,14 @@ cc.Class({
             default: null,
             type: cc.Node
         },
-
         backgroundAudio: {
             default: null,
             type: cc.AudioClip
         },
-
     },
-
-    // LIFE-CYCLE CALLBACKS:
-
-    onLoad () {
+    onLoad() {
         this.isRun = true;
-        // var repeat = cc.repeatForever(cc.rotateBy(1, 45));
-        // this.light.runAction(repeat);
-        
-        // this.currentBackgroundAudio = cc.audioEngine.play(this.backgroundAudio, true, .2);
-
+        this.currentBackgroundAudio = cc.audioEngine.play(this.backgroundAudio, true, .2);
         // 监听发射事件
         this.node.on('gameFail', function (event) {
             event.stopPropagation();
@@ -31,8 +22,8 @@ cc.Class({
         }.bind(this));
     },
 
-    update (dt) {
-        if(this.isRun){
+    update(dt) {
+        if (this.isRun) {
             this.light.angle += 1;
         }
     },

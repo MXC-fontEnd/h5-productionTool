@@ -38,28 +38,60 @@ cc.Class({
         drag: 1000,
         direction: 0,
         jumpSpeed: 300
-        
+
     },
 
     // use this for initialization
     onLoad: function () {
-        //add keyboard input listener to call turnLeft and turnRight
-        //cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyPressed, this);
-        // cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyReleased, this);
         this.isRun = true;
-
         this.collisionX = 0;
         this.collisionY = 0;
         this.prePosition = cc.v2();
         this.preStep = cc.v2();
-        //this.touchingNumber = 0;
-
         this.root.on('mousedown', this.jump, this);
+        this.playerAnimation = this.node.getComponent(cc.Animation);
 
-        var playerAnimation = this.playerAnimation = this.node.getComponent(cc.Animation);
-        // playerAnimation.play('behavior');
-        // console.log('onLoad');
-        // console.log(playerAnimation);
+        this.monitorPlayer = function (e) {
+            if (window === window.parent) return;
+            if (typeof e.data !== 'string') return;
+            var data = JSON.parse(e.data);
+            console.log('monitorPlayer');
+            if (data) {
+                switch (data.method) {
+                    case "onFileMessage":
+
+                        if (data.handleData && data.handleData.type == 'playerJump') {
+                            cc.audioEngine.play(this.jumpAudio, false, 1);
+
+                            if (!this.jumping) {
+                                this.jumping = true;
+                                this.speed.y = this.jumpSpeed;
+                            }
+                        }
+
+                        if (data.handleData && data.handleData.type == 'buttonWorkStart') {
+                            var scrathGame = this.node.parent.parent.getChildByName("scrathGame");
+                            scrathGame.destroy();
+                            var scrathStart = this.node.parent.parent.getChildByName("scrathStart");
+                            scrathStart.active = true;
+                        }
+
+                        if (data.handleData && data.handleData.type == 'buttonWorkStop') {
+                            this.isRun = false;
+                            this.jumping = false;
+                            this.playerAnimation.stop('walk');
+                            this.root.off('mousedown', this.jump, this);
+                            this.node.dispatchEvent(new cc.Event.EventCustom('gameFail', true));
+                            this.stateButtun.spriteFrame = this.startFrame;
+                        }
+                }
+            }
+        }.bind(this);
+        window.addEventListener("message", this.monitorPlayer, false);
+    },
+
+    start() {
+        this.playerAnimation.play('walk');
     },
 
     jump() {
@@ -70,6 +102,19 @@ cc.Class({
             this.speed.y = this.jumpSpeed;
         }
 
+        this.addMessage({ 'type': 'playerJump' });
+    },
+
+    addMessage(message) {
+        if (window !== window.parent) {
+            let data = JSON.stringify({
+                method: 'onFileMessage',
+                handleData: {
+                    type: message.type
+                },
+            });
+            window.parent.postMessage(data, '*');
+        }
     },
 
     onEnable: function () {
@@ -78,9 +123,16 @@ cc.Class({
     },
 
     onDisable: function () {
+        console.log('onDestroy - monitorPlayer');
         cc.director.getCollisionManager().enabled = false;
         //cc.director.getCollisionManager().enabledDebugDraw = false;
     },
+
+    onDestroy() {
+        console.log('onDestroy - monitorPlayer');
+        window.removeEventListener('message', this.monitorPlayer, false);
+    },
+
 
     // onKeyPressed: function (event) {
     //     let keyCode = event.keyCode;
@@ -115,24 +167,21 @@ cc.Class({
     //     }
     // },
     buttonWork(event, pars) {
+        this.root.off('mousedown', this.jump, this);
+
         if (this.isRun) {
             this.isRun = false;
             this.jumping = false;
-            this.playerAnimation.stop('behavior');
-            this.root.off('mousedown', this.jump, this);
+            this.playerAnimation.stop('walk');
             this.node.dispatchEvent(new cc.Event.EventCustom('gameFail', true));
             this.stateButtun.spriteFrame = this.startFrame;
+            this.addMessage({ 'type': 'buttonWorkStop' });
         } else {
-            
-
             var scrathGame = this.node.parent.parent.getChildByName("scrathGame");
-
-            console.log(scrathGame);
-
             scrathGame.destroy();
-
             var scrathStart = this.node.parent.parent.getChildByName("scrathStart");
             scrathStart.active = true;
+            this.addMessage({ 'type': 'buttonWorkStart' });
         }
         return;
     },
@@ -176,8 +225,6 @@ cc.Class({
         otherPreAabb.x = otherAabb.x;
 
         var curCanvas = cc.find("Canvas");
-        console.log(curCanvas);
-
         if (cc.Intersection.rectRect(selfPreAabb, otherPreAabb)) {
             if (this.speed.x < 0 && (selfPreAabb.xMax > otherPreAabb.xMax)) {
                 this.node.x = otherPreAabb.xMax - curCanvas.x;
@@ -192,7 +239,6 @@ cc.Class({
             other.touchingX = true;
             return;
         }
-
         // 3rd step
         // forward y-axis, check whether collision on y-axis
         selfPreAabb.y = selfAabb.y;
@@ -212,7 +258,6 @@ cc.Class({
             this.speed.y = 0;
             other.touchingY = true;
         }
-
     },
 
     onCollisionStay: function (other, self) {
@@ -223,16 +268,6 @@ cc.Class({
                     this.node.x += motion._movedDiff;
                 }
             }
-
-            // this.node.y = other.world.aabb.yMax;
-
-            // var offset = cc.v2(other.world.aabb.x - other.world.preAabb.x, 0);
-
-            // var temp = cc.affineTransformClone(self.world.transform);
-            // temp.tx = temp.ty = 0;
-
-            // offset = cc.pointApplyAffineTransform(offset, temp);
-            // this.node.x += offset.x;
         }
     },
 
@@ -283,13 +318,13 @@ cc.Class({
         if (this.speed.x * this.collisionX > 0) {
             this.speed.x = 0;
         }
-        
+
         this.prePosition.x = this.node.x;
         this.prePosition.y = this.node.y;
 
         this.preStep.x = this.speed.x * dt;
         this.preStep.y = this.speed.y * dt;
-        
+
         this.node.x += this.speed.x * dt;
         this.node.y += this.speed.y * dt;
     },

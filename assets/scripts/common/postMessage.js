@@ -61,15 +61,15 @@ module.exports = {
                         break;
                     
                     // 学生端 向 iframe 小游戏 发消息
-                    case 'onGameEvent':
-                        window.parent.postMessage(
-                            JSON.stringify({
-                                method: 'onFileMessage',
-                                handleData: data,
-                            }),
-                            '*'
-                        );
-                        break;
+                    // case 'onGameEvent':
+                    //     window.parent.postMessage(
+                    //         JSON.stringify({
+                    //             method: 'onFileMessage',
+                    //             handleData: data,
+                    //         }),
+                    //         '*'
+                    //     );
+                    //     break;
                     
                     // 学生端 向 iframe 积木 发消息
                     case 'onBlockEvent':

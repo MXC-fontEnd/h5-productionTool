@@ -14,6 +14,7 @@ cc.Class({
 
     onLoad() {
         this.normalRatio = null;
+        
         this.spriteScaleBind = function (e) {
             if (window === window.parent) return;
             if (typeof e.data !== 'string') return;

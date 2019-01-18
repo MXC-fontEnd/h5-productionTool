@@ -48,7 +48,9 @@ cc.Class({
         this.collisionY = 0;
         this.prePosition = cc.v2();
         this.preStep = cc.v2();
-        this.root.on('mousedown', this.jump, this);
+
+        this.root.on('touchstart', this.jump, this);
+        
         this.playerAnimation = this.node.getComponent(cc.Animation);
 
         this.monitorPlayer = function (e) {
@@ -80,7 +82,7 @@ cc.Class({
                             this.isRun = false;
                             this.jumping = false;
                             this.playerAnimation.stop('walk');
-                            this.root.off('mousedown', this.jump, this);
+                            this.root.off('touchstart', this.jump, this);
                             this.node.dispatchEvent(new cc.Event.EventCustom('gameFail', true));
                             this.stateButtun.spriteFrame = this.startFrame;
                         }
@@ -95,6 +97,7 @@ cc.Class({
     },
 
     jump() {
+
         cc.audioEngine.play(this.jumpAudio, false, 1);
 
         if (!this.jumping) {
@@ -167,7 +170,7 @@ cc.Class({
     //     }
     // },
     buttonWork(event, pars) {
-        this.root.off('mousedown', this.jump, this);
+        this.root.off('touchstart', this.jump, this);
 
         if (this.isRun) {
             this.isRun = false;
@@ -189,7 +192,7 @@ cc.Class({
     fail() {
         this.jumping = false;
         this.playerAnimation.stop('behavior');
-        this.root.off('mousedown', this.jump, this);
+        this.root.off('touchstart', this.jump, this);
         this.node.dispatchEvent(new cc.Event.EventCustom('gameFail', true));
         this.gravity = -100;
         this.node.getComponent(cc.CircleCollider).enabled = false;

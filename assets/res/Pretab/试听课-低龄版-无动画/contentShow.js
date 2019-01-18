@@ -6,31 +6,25 @@ cc.Class({
             default: [],
             type: [cc.Node]
         },
-
         contentList: {
             default: [],
             type: [cc.Node]
         },
-
-
     },
 
     // LIFE-CYCLE CALLBACKS:
-
     onLoad() {
         this.contentShowBind = function (e) {
             if (window === window.parent) return;
             if (typeof e.data !== 'string') return;
             var data = JSON.parse(e.data);
-
-            console.log('contentShowBind');
-            console.log(data);
             if (data) {
                 switch (data.method) {
                     case "onFileMessage":
                         if (data.handleData && data.handleData.type == 'contentShow') {
                             var seq = parseInt(data.handleData.seq);
-                            if (!this.contentList[seq].active) this.contentList[seq].active = true;
+                            var action = cc.fadeIn(1.0);
+                            this.contentList[seq].runAction(action);
                         }
                 }
             }
@@ -40,7 +34,10 @@ cc.Class({
 
         this.triggerFlagList.forEach(function (x, y) {
             x.on('touchstart', function (event) {
-                this.contentList[y].active = true;
+
+                var action = cc.fadeIn(1.0);
+                this.contentList[y].runAction(action);
+
                 if (window !== window.parent) {
                     let data = JSON.stringify({
                         method: 'onFileMessage',

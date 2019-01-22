@@ -10,10 +10,17 @@ cc.Class({
             default: [],
             type: [cc.Node]
         },
+
+        animationList:{
+            default: [],
+            type: cc.Animation
+        }
     },
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
+        this.anlist = ['a','e','b','d','c','f'];
+
         this.contentShowBind = function (e) {
             if (window === window.parent) return;
             if (typeof e.data !== 'string') return;
@@ -25,6 +32,12 @@ cc.Class({
                             var seq = parseInt(data.handleData.seq);
                             var action = cc.fadeIn(1.0);
                             this.contentList[seq].runAction(action);
+                        }
+
+                        if (data.handleData && data.handleData.type == 'contentPlay') {
+                            var seq = parseInt(data.handleData.seq);
+                            var anim = this.animationList[seq];
+                            anim.play(this.anlist[seq]);
                         }
                 }
             }
@@ -50,6 +63,23 @@ cc.Class({
                 }
             }.bind(this));
         }.bind(this));
+    },
+
+    play(event,pars){
+        var anim = this.animationList[pars];
+        anim.play(this.anlist[pars]);
+
+        if (window !== window.parent) {
+            let data = JSON.stringify({
+                method: 'onFileMessage',
+                handleData: {
+                    type: 'contentPlay',
+                    seq: pars
+                },
+            });
+            window.parent.postMessage(data, '*');
+        }
+
     },
 
     onDisable() {

@@ -257,10 +257,10 @@ cc.Class({
                 this.node.y = otherPreAabb.yMin - selfPreAabb.height - curCanvas.y + 20;
                 this.collisionY = 1;
             }
-
             this.speed.y = 0;
             other.touchingY = true;
         }
+        
     },
 
     onCollisionStay: function (other, self) {

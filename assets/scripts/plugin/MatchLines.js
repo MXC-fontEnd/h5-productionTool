@@ -54,10 +54,13 @@ cc.Class({
     _onTouchStart(event) {
         console.log('main');
         let point = event.getLocation();
+
         let item = _.find(this.items, item => this._checkInOne(item, point));
+
         if (item) {
             this._super(event);
         }
+        
     },
 
     _onTouchEnd(event) {
@@ -105,7 +108,7 @@ cc.Class({
         let dt = p1.sub(p2);
         let radian = Math.atan2(dt.x, dt.y);
         let rotation = (180 * radian / Math.PI + 90) % 360;
-        line.angle = rotation;
+        line.rotation = rotation;
         line.width = dt.mag();
     },
 

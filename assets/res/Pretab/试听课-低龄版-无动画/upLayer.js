@@ -27,8 +27,6 @@ cc.Class({
             if (typeof e.data !== 'string') return;
             var data = JSON.parse(e.data);
 
-            console.log('upLayerBind');
-            console.log(data);
             if (data) {
                 switch (data.method) {
                     case "onFileMessage":
@@ -40,7 +38,7 @@ cc.Class({
                         }
 
                         if (data.handleData && data.handleData.type == 'upLayerClose') {
-                            this.content.active = false;
+                            this.content.opacity = 0;
                         }
                 }
             }
@@ -77,13 +75,12 @@ cc.Class({
             this.reportList[this.defaultListSeq].active = false;
             this.defaultListSeq++;
             this.reportList[this.defaultListSeq].active = true;
-
             this.postMessage(this.defaultListSeq);
         }
     },
 
     close() {
-        this.content.active = false;
+        this.content.opacity = 0;
         this.postMessage('close');
     },
 
@@ -98,7 +95,6 @@ cc.Class({
                 type: 'upLayer',
                 seq: seq
             }
-
         }
 
         if (window !== window.parent) {

@@ -41,9 +41,9 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.826025390625,
-      "y": 0.826025390625,
-      "z": 0.826025390625
+      "x": 0.84375,
+      "y": 0.84375,
+      "z": 0.84375
     },
     "_quat": {
       "__type__": "cc.Quat",
@@ -1981,7 +1981,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "cf84e6fd-298e-432a-8a28-e51543078d97"
+      "__uuid__": "39eac912-e870-4aa3-854c-8d9bb2783b76"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -1995,9 +1995,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_state": 0,
-    "_atlas": {
-      "__uuid__": "307a5708-f89d-4118-aada-f198661f6b51"
-    },
+    "_atlas": null,
     "_id": "90J6kRSoRBjKZKPRQ0hKYZ"
   },
   {
@@ -2009,11 +2007,11 @@
     },
     "_enabled": true,
     "_defaultClip": {
-      "__uuid__": "fa636964-4f55-408f-a97c-27dbeb2e4ceb"
+      "__uuid__": "e9f9d6d3-5ed1-4345-badf-06963142fd53"
     },
     "_clips": [
       {
-        "__uuid__": "fa636964-4f55-408f-a97c-27dbeb2e4ceb"
+        "__uuid__": "e9f9d6d3-5ed1-4345-badf-06963142fd53"
       }
     ],
     "playOnLoad": false,
@@ -3012,7 +3010,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "39eac912-e870-4aa3-854c-8d9bb2783b76"
+      "__uuid__": "cf84e6fd-298e-432a-8a28-e51543078d97"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -3026,9 +3024,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_state": 0,
-    "_atlas": {
-      "__uuid__": "307a5708-f89d-4118-aada-f198661f6b51"
-    },
+    "_atlas": null,
     "_id": "88hqVxfD9CfaOkirL8JkCX"
   },
   {
@@ -3040,11 +3036,11 @@
     },
     "_enabled": true,
     "_defaultClip": {
-      "__uuid__": "e9f9d6d3-5ed1-4345-badf-06963142fd53"
+      "__uuid__": "fa636964-4f55-408f-a97c-27dbeb2e4ceb"
     },
     "_clips": [
       {
-        "__uuid__": "e9f9d6d3-5ed1-4345-badf-06963142fd53"
+        "__uuid__": "fa636964-4f55-408f-a97c-27dbeb2e4ceb"
       }
     ],
     "playOnLoad": false,

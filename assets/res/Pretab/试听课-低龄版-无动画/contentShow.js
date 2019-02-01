@@ -19,7 +19,7 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
-        this.anlist = ['a','e','b','d','c','f'];
+        this.anlist = ['a','d','b','e','c','f'];
 
         this.contentShowBind = function (e) {
             if (window === window.parent) return;
@@ -47,7 +47,6 @@ cc.Class({
 
         this.triggerFlagList.forEach(function (x, y) {
             x.on('touchstart', function (event) {
-
                 var action = cc.fadeIn(1.0);
                 this.contentList[y].runAction(action);
 

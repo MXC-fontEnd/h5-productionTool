@@ -41,9 +41,9 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.7613136574074074,
-      "y": 0.7613136574074074,
-      "z": 0.7613136574074074
+      "x": 0.7989420572916667,
+      "y": 0.7989420572916667,
+      "z": 0.7989420572916667
     },
     "_quat": {
       "__type__": "cc.Quat",
@@ -1052,7 +1052,7 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_url": "https://www.kunqu.tech/images/15.GIF",
+    "_url": "https://res.miaocode.com/courseware/gif/createCenter.GIF",
     "webviewEvents": [],
     "_id": "cdDJ/ii19G+Z/My+YFzxfq"
   },

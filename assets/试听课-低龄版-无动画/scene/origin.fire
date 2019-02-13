@@ -44,9 +44,9 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.9479166666666666,
-      "y": 0.9479166666666666,
-      "z": 0.9479166666666666
+      "x": 1,
+      "y": 1,
+      "z": 1
     },
     "_quat": {
       "__type__": "cc.Quat",
@@ -929,7 +929,7 @@
     "_enabled": true,
     "pageCount": 17,
     "currentPageSeq": 1,
-    "localDebugging": false,
+    "localDebugging": true,
     "_id": "46bFcfU1hAWqQFF9mzfTMY"
   }
 ]

@@ -17,7 +17,7 @@
         "__id__": 2
       }
     ],
-    "_active": false,
+    "_active": true,
     "_level": 0,
     "_components": [],
     "_prefab": null,
@@ -41,9 +41,9 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.5678002450980392,
-      "y": 0.5678002450980392,
-      "z": 0.5678002450980392
+      "x": 1,
+      "y": 1,
+      "z": 1
     },
     "_quat": {
       "__type__": "cc.Quat",
@@ -55,8 +55,8 @@
     "_zIndex": 0,
     "_is3DNode": true,
     "groupIndex": 0,
-    "autoReleaseAssets": false,
-    "_id": "a4e8836c-48b1-4e13-8c86-9df46bdad056"
+    "autoReleaseAssets": true,
+    "_id": "09cb399f-d2fa-4ccd-b4ea-70e4c4bafed2"
   },
   {
     "__type__": "cc.Node",
@@ -68,16 +68,13 @@
     "_children": [
       {
         "__id__": 3
-      },
-      {
-        "__id__": 5
       }
     ],
     "_active": true,
-    "_level": 1,
+    "_level": 0,
     "_components": [
       {
-        "__id__": 8
+        "__id__": 5
       }
     ],
     "_prefab": null,
@@ -91,8 +88,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1920,
-      "height": 1020
+      "width": 960,
+      "height": 540
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -101,8 +98,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 960,
-      "y": 510,
+      "x": 480,
+      "y": 270,
       "z": 0
     },
     "_scale": {
@@ -123,7 +120,7 @@
     "_zIndex": 0,
     "_is3DNode": false,
     "groupIndex": 0,
-    "_id": "1csg7pDBBLQ5QRu9HT34cN"
+    "_id": "694b8JwnFJXbJKVzzWTGOx"
   },
   {
     "__type__": "cc.Node",
@@ -183,7 +180,7 @@
     "_zIndex": 0,
     "_is3DNode": false,
     "groupIndex": 0,
-    "_id": "beJDFvCqhG9KOgct850Mb1"
+    "_id": "c64lUZ+E5PUIEj2SpmCyLl"
   },
   {
     "__type__": "cc.Camera",
@@ -217,112 +214,7 @@
       "width": 1,
       "height": 1
     },
-    "_id": "e2U77rr/tFX7d8i352kl1a"
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "单张图片",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 2
-    },
-    "_children": [],
-    "_active": true,
-    "_level": 2,
-    "_components": [
-      {
-        "__id__": 6
-      }
-    ],
-    "_prefab": {
-      "__id__": 7
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 564,
-      "height": 890
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_quat": {
-      "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_zIndex": 0,
-    "_is3DNode": false,
-    "groupIndex": 0,
-    "_rotationX": 0,
-    "_rotationY": 0,
-    "_id": "21pD9D6JZFn4Mzm+ytExz5"
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 5
-    },
-    "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "2fcd63ba-1d1f-453c-a869-399b0f95b678"
-    },
-    "_type": 0,
-    "_sizeMode": 1,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_state": 0,
-    "_atlas": {
-      "__uuid__": "358f38f5-8e4c-4d67-9e19-da5c46a66b72"
-    },
-    "_id": "c64MncgEdLV6zqJYI3BsWX"
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 5
-    },
-    "asset": {
-      "__uuid__": "e9bc0d60-9aaa-47d0-8340-0269086ced7e"
-    },
-    "fileId": "63qqq+g/NFt4l433flH19d",
-    "sync": false
+    "_id": "8c98vmeKBL7qBVlNVDNIb2"
   },
   {
     "__type__": "cc.Canvas",
@@ -334,11 +226,11 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 1920,
-      "height": 1020
+      "width": 960,
+      "height": 540
     },
-    "_fitWidth": false,
+    "_fitWidth": true,
     "_fitHeight": true,
-    "_id": "dcLC/XsgRJSJ1gv0NI/45M"
+    "_id": "73xfrACzFF3LXIRtNxukrc"
   }
 ]

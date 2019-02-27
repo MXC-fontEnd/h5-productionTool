@@ -7,19 +7,25 @@
     "scheme": "https",
     "skipRecord": false
   },
-  "appKey": "",
-  "appSecret": "",
   "encryptJs": true,
-  "excludeScenes": [],
+  "excludeScenes": [
+    "a4e8836c-48b1-4e13-8c86-9df46bdad056",
+    "f2c4d147-a46f-4ea9-89f5-4226d68af212",
+    "2790af1b-d720-4238-80bc-e3bf78cd6703",
+    "e65e0dbb-9926-4bd8-99d4-12a53a202025",
+    "b40bbfeb-180c-41f9-9f71-50df17b2d20a",
+    "c57ae36e-b224-43bb-b569-81ddebe4ff07",
+    "4c3cf614-6c07-4349-bd72-cd3fe2d1806c",
+    "a8a0cfb8-98c8-4e04-aa91-dc58ce2eda82",
+    "3fd3f591-0dae-4e16-96fc-0039f65c437e",
+    "297af45f-2a68-4480-8f0d-dc9e3cedb678"
+  ],
   "fb-instant-games": {},
-  "includeAnySDK": false,
   "includeSDKBox": false,
   "inlineSpriteFrames": true,
   "inlineSpriteFrames_native": true,
-  "jailbreakPlatform": false,
   "md5Cache": false,
   "mergeStartScene": false,
-  "oauthLoginServer": "",
   "optimizeHotUpdate": false,
   "orientation": {
     "landscapeLeft": true,
@@ -28,13 +34,12 @@
     "upsideDown": false
   },
   "packageName": "org.cocos2d.helloworld",
-  "privateKey": "",
   "qqplay": {
     "REMOTE_SERVER_ROOT": "",
     "orientation": "portrait",
     "zip": false
   },
-  "startScene": "f656e45f-cd3f-471c-ba93-17c362be6155",
+  "startScene": "fea987ee-7fdd-44eb-9563-32c0eb09362a",
   "title": "courseware",
   "webOrientation": "auto",
   "wechatgame": {

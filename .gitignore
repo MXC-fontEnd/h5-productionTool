@@ -1,0 +1,8 @@
+*.meta
+build/
+library/
+local/
+node_modules/
+packages/
+settings/
+temp/

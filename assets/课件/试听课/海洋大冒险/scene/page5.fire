@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.9846354166666667,
-      "y": 0.9846354166666667,
+      "x": 0.9651041666666667,
+      "y": 0.9651041666666667,
       "z": 1
     },
     "_quat": {
@@ -1291,7 +1291,7 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_url": "https://res.miaocode.com/scrathGame/buddhaFishing/index.html",
+    "_url": "",
     "webviewEvents": [],
     "_id": "b1zFfh7F9LSZfftOQFrczo"
   },
@@ -1376,7 +1376,7 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_url": "https://res.miaocode.com/scrathGame/buddhaFishing/index.html",
+    "_url": "",
     "webviewEvents": [],
     "_id": "aa/hcjX9FJqZ49kcVYVsPv"
   },

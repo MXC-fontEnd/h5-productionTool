@@ -50,10 +50,10 @@ cc.Class({
     onDestroy() {
         console.log('onDestroy');
 
-        if(this.videoMessageBind){
+        if (this.videoMessageBind) {
             window.removeEventListener('message', this.videoMessageBind, false);
         }
-       
+
     },
 
     // update (dt) {},
@@ -80,11 +80,15 @@ cc.Class({
 
         }
 
+        // videoplayer被点击
+        if (eventType === cc.VideoPlayer.EventType.CLICKED) {
+            console.log('CLICKED');
+            this.node.dispatchEvent(new cc.Event.EventCustom('videoplayerClicked', true));
+        }
+
         if (eventType === cc.VideoPlayer.EventType.META_LOADED) {
             console.log('视频加载完成！');
             this.videoplayer = videoplayer;
-
-            console.log(this.videoplayer)
         }
 
     },

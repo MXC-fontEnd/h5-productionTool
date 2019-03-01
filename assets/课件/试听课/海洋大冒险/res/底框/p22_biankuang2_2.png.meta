@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "3ea60b11-419c-44dd-b93a-77ef50bc033f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "p22_biankuang2_2": {
+      "ver": "1.0.3",
+      "uuid": "26f31df4-8ca4-437e-9035-7ecd4771ca15",
+      "rawTextureUuid": "3ea60b11-419c-44dd-b93a-77ef50bc033f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 183,
+      "height": 254,
+      "rawWidth": 183,
+      "rawHeight": 254,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "ver": "2.2.0",
-  "uuid": "e5fd9a6a-cd0f-4283-8ab5-0b29457abaa5",
+  "uuid": "61c3d54d-b1be-4e01-b27d-220761906fd4",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -8,8 +8,8 @@
   "subMetas": {
     "reloadGame": {
       "ver": "1.0.3",
-      "uuid": "5bbc5d8b-2d78-4cc2-87be-f49bb0fd007f",
-      "rawTextureUuid": "e5fd9a6a-cd0f-4283-8ab5-0b29457abaa5",
+      "uuid": "123e084b-2b68-49d0-b613-a10b50957ced",
+      "rawTextureUuid": "61c3d54d-b1be-4e01-b27d-220761906fd4",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

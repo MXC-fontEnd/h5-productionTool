@@ -1,4 +1,3 @@
-*.meta
 build/
 library/
 local/

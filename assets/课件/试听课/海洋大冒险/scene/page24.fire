@@ -1089,8 +1089,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.5,
-      "y": 0.5,
+      "x": 0.3,
+      "y": 0.3,
       "z": 1
     },
     "_rotationX": 0,
@@ -1106,7 +1106,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "e7SkphPpJAXaZbX6umYBwq"
+    "_id": "b26akHlq9L54bR218kn7pZ"
   },
   {
     "__type__": "sp.Skeleton",
@@ -1129,7 +1129,7 @@
     },
     "_N$debugSlots": false,
     "_N$debugBones": false,
-    "_id": "200F8vH1dAFYmb+7opyEdR"
+    "_id": "49CzN+Hz9FFbXyvdIEZU+6"
   },
   {
     "__type__": "cc.Node",
@@ -1190,7 +1190,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "55iusnPIpLQKjvTGBmzsDF"
+    "_id": "a7dQINteZKQYRyl4ALxy6M"
   },
   {
     "__type__": "sp.Skeleton",
@@ -1213,7 +1213,7 @@
     },
     "_N$debugSlots": false,
     "_N$debugBones": false,
-    "_id": "62Ty6tNupI07qs8bG21JJv"
+    "_id": "49dal6q1FIwZbekbHToZVQ"
   },
   {
     "__type__": "cc.Node",
@@ -1257,8 +1257,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.5,
-      "y": 0.5,
+      "x": 0.65,
+      "y": 0.65,
       "z": 1
     },
     "_rotationX": 0,
@@ -1274,7 +1274,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "42cQ5wVVVBML1HvhxaiO3X"
+    "_id": "5d2paERXlD4qPupwdT2JqL"
   },
   {
     "__type__": "sp.Skeleton",
@@ -1297,7 +1297,7 @@
     },
     "_N$debugSlots": false,
     "_N$debugBones": false,
-    "_id": "e4f9Cphz1ApbPVNJuQoEye"
+    "_id": "d4hitC33ROu6vUht3mVdHt"
   },
   {
     "__type__": "cc.Node",
@@ -1341,8 +1341,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.5,
-      "y": 0.5,
+      "x": 0.2,
+      "y": 0.2,
       "z": 1
     },
     "_rotationX": 0,
@@ -1358,7 +1358,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "3deyepmIVAfLxcBUJyr8ah"
+    "_id": "48xlFG4WlHCqG6p14XYyFH"
   },
   {
     "__type__": "sp.Skeleton",
@@ -1381,7 +1381,7 @@
     },
     "_N$debugSlots": false,
     "_N$debugBones": false,
-    "_id": "9agB+aiTNDy45zB1ajws4y"
+    "_id": "a2Uegow7VPVa/k8bzCxpzt"
   },
   {
     "__type__": "cc.Node",

@@ -2231,14 +2231,14 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -226,
-      "y": -355,
+      "x": -452,
+      "y": -226,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.5,
-      "y": 0.5,
+      "x": 0.3,
+      "y": 0.3,
       "z": 1
     },
     "_rotationX": 0,
@@ -2254,7 +2254,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "7aS9AJjp5GQaNApmTOfq8g"
+    "_id": "a78SVF7Q5FQbtDnECBFjN2"
   },
   {
     "__type__": "sp.Skeleton",
@@ -2271,13 +2271,13 @@
     "defaultAnimation": "animation",
     "loop": true,
     "premultipliedAlpha": true,
-    "timeScale": 0.5,
+    "timeScale": 1.5,
     "_N$skeletonData": {
       "__uuid__": "2f55cdb7-2eab-49e3-8ce0-679b502451e2"
     },
     "_N$debugSlots": false,
     "_N$debugBones": false,
-    "_id": "faGv4SOe5Cb41H6BTf6lte"
+    "_id": "e3mnrxRrRFJZ8tJ7bJJqHS"
   },
   {
     "__type__": "cc.Node",
@@ -2338,7 +2338,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "550fDr8CVHN4tVMolGI3op"
+    "_id": "c9Mim8f9hPf7sfcJYalbyr"
   },
   {
     "__type__": "sp.Skeleton",
@@ -2361,7 +2361,7 @@
     },
     "_N$debugSlots": false,
     "_N$debugBones": false,
-    "_id": "0fD9MZrGBB460+Y9B2d4TX"
+    "_id": "9clO7/DzlHlajFFOnd8uBa"
   },
   {
     "__type__": "cc.Node",
@@ -2399,14 +2399,14 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -452,
-      "y": -226,
+      "x": -226,
+      "y": -355,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.5,
-      "y": 0.5,
+      "x": 0.65,
+      "y": 0.65,
       "z": 1
     },
     "_rotationX": 0,
@@ -2422,7 +2422,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "47BUUD239B5r8zLvw7ANRg"
+    "_id": "12dCUyV5FNY6ZE8Tu4vIh+"
   },
   {
     "__type__": "sp.Skeleton",
@@ -2439,13 +2439,13 @@
     "defaultAnimation": "animation",
     "loop": true,
     "premultipliedAlpha": true,
-    "timeScale": 1.5,
+    "timeScale": 0.5,
     "_N$skeletonData": {
       "__uuid__": "2f55cdb7-2eab-49e3-8ce0-679b502451e2"
     },
     "_N$debugSlots": false,
     "_N$debugBones": false,
-    "_id": "1b7G9fjx5FFa3GfQuwwFj8"
+    "_id": "428gx/DIxM36K1jWdREFnG"
   },
   {
     "__type__": "cc.Node",
@@ -2489,8 +2489,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.5,
-      "y": 0.5,
+      "x": 0.2,
+      "y": 0.2,
       "z": 1
     },
     "_rotationX": 0,
@@ -2506,7 +2506,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "49InqdondDKr3/pxfftFL8"
+    "_id": "e075DvFupLDpp61IvBERP9"
   },
   {
     "__type__": "sp.Skeleton",
@@ -2529,7 +2529,7 @@
     },
     "_N$debugSlots": false,
     "_N$debugBones": false,
-    "_id": "8afd/whbhCcoXFTfojFExI"
+    "_id": "4aKLVvXZVK6bntcb8lNuxs"
   },
   {
     "__type__": "cc.Node",

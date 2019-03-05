@@ -17,7 +17,7 @@
         "__id__": 2
       }
     ],
-    "_active": true,
+    "_active": false,
     "_level": 0,
     "_components": [],
     "_prefab": null,
@@ -70,7 +70,7 @@
       }
     ],
     "_active": true,
-    "_level": 0,
+    "_level": 1,
     "_components": [
       {
         "__id__": 91
@@ -2665,8 +2665,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -412,
-      "y": 9,
+      "x": -396,
+      "y": 5,
       "z": 0
     },
     "_scale": {
@@ -2707,7 +2707,7 @@
     "premultipliedAlpha": true,
     "timeScale": 1,
     "_N$skeletonData": {
-      "__uuid__": "8bcfb738-82fe-4a43-bb0f-f30d01dae386"
+      "__uuid__": "670b5a81-986a-4c38-8763-a29e846d89cc"
     },
     "_N$debugSlots": false,
     "_N$debugBones": false,

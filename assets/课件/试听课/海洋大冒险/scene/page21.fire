@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.8571484247843425,
-      "y": 0.8571484247843425,
+      "x": 0.8996354420979817,
+      "y": 0.8996354420979817,
       "z": 1
     },
     "_quat": {
@@ -54,7 +54,7 @@
     },
     "_zIndex": 0,
     "groupIndex": 0,
-    "autoReleaseAssets": true,
+    "autoReleaseAssets": false,
     "_id": "db9ec152-8a60-4085-b224-403c385aa931"
   },
   {
@@ -1647,8 +1647,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "思考&设计：\n你想象中的效\n果是什么样子",
-    "_N$string": "思考&设计：\n你想象中的效\n果是什么样子",
+    "_string": "想象&设计：\n你想象中的效\n果是什么样子",
+    "_N$string": "想象&设计：\n你想象中的效\n果是什么样子",
     "_fontSize": 14,
     "_lineHeight": 20,
     "_enableWrapText": true,

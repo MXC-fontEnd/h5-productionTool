@@ -42,6 +42,7 @@ cc.Class({
     // 说你好持续2秒
     // 说omo持续2秒
     talks() {
+        this.init();
         this.talksWork();
     },
 
@@ -50,6 +51,7 @@ cc.Class({
     // 说你好持续2秒
     // 说omo持续2秒
     talksRepeatForever(event) {
+        this.init();
         this.talksWork('repeatForever');
     },
 
@@ -78,6 +80,7 @@ cc.Class({
     // 被点击
     // 右转15度
     rotate(event) {
+        this.init();
         let action = cc.rotateBy(1, 15);
         this.controlledBoy.runAction(action);
     },
@@ -86,6 +89,7 @@ cc.Class({
     // 重复执行
     // 右转15度
     rotateRepeatForever(event) {
+        this.init();
         let action = cc.repeatForever(cc.rotateBy(1, 15));
         this.controlledBoy.runAction(action);
     },
@@ -94,6 +98,7 @@ cc.Class({
     // 重复执行
     // 秒针旋转一格（30度）
     rotateNeedleRepeatForeve(event) {
+        this.init();
         let action = cc.repeatForever(cc.rotateBy(1, 30));
         this.controlledBoy.runAction(action);
     },
@@ -102,6 +107,7 @@ cc.Class({
     // 等待一秒
     // 秒针旋转一格（30度）
     rotateNeedle1(event) {
+        this.init();
         let action1 = cc.delayTime(1);
         let action2 = cc.rotateBy(1, 30);
         let action = cc.sequence(action1, action2);
@@ -113,6 +119,7 @@ cc.Class({
     // 等待一秒
     // 秒针旋转一格（30度）
     rotateNeedleRepeat12(event) {
+        this.init();
         let action1 = cc.delayTime(1);
         let action2 = cc.rotateBy(1, 30);
         let action3 = cc.sequence(action1, action2);
@@ -126,6 +133,7 @@ cc.Class({
     // 等待一秒
     // 秒针旋转一格（30度）
     rotateNeedleRepeatForeve1(event) {
+        this.init();
         let action1 = cc.delayTime(1);
         let action2 = cc.rotateBy(1, 30);
         let action3 = cc.sequence(action1, action2);

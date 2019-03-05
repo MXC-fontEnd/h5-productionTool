@@ -9,6 +9,12 @@ cc.Class({
             displayName: 'OMO射箭'
         },
 
+        arrow:{
+            default: null,
+            type: cc.Node,
+            displayName: '箭'
+        },
+
         xCoo:{
             default: null,
             type: cc.Node,
@@ -43,6 +49,7 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
+        this.arrowOriginPos = this.arrow.getPosition();
         this.OMO.on(cc.Node.EventType.TOUCH_START, this._OMOArchery, this);
 
         this.xCoo.on(cc.Node.EventType.TOUCH_START, this._xCooList, this);
@@ -70,6 +77,13 @@ cc.Class({
         this._labelStringChange(this.xCoo,'__');
         this._labelStringChange(this.yCoo,'__');
 
+        // 飞箭隐藏
+        this.arrow.runAction(cc.fadeOut());
+
+        this.archeryState = false;
+        // omo 角度调正
+        this.OMO.rotation = 0;
+
         // 坐标列表显示状态
         this.xChoose.runAction(cc.hide());
         this.yChoose.runAction(cc.hide()); 
@@ -87,8 +101,51 @@ cc.Class({
     _OMOArchery(){
         if(!(this.fishX && this.fishY)) return;
 
-        
+        if(this.archeryState) return;
+        this.archeryState = true;
+        // 小鱼坐标
+        let curFishPos;
+        let fishPos = cc.v2(this.fishX, this.fishY);
 
+        for (let n = 0; n < this.fishCooArray.length; n++) {
+            if(this.fishCooArray[n].x == this.fishX && this.fishCooArray[n].y == this.fishY){
+                curFishPos = this.fishPool.children[n].getPosition();
+            }
+        }
+
+        // 飞箭最高点坐标
+        let topPos = cc.v2(this.arrow.x, 240);
+
+        let pos1 = topPos.sub(cc.v2(this.arrow.x,this.arrow.y));
+        let pos2 = topPos.sub(curFishPos);
+
+        // 飞箭旋转角度
+        let deg = pos1.angle(pos2) * 180 / 3.1415;
+
+        // 轨迹动画
+        let action = cc.fadeIn(.3);
+        let action1 = cc.moveTo(.6, topPos);
+        action1.easing(cc.easeOut(.6));
+
+        let action2 = cc.rotateTo(.3, deg - 90);
+
+        let action3 = cc.moveTo(1.2, curFishPos);
+        action3.easing(cc.easeIn(1.2));
+
+        let action4 = cc.fadeOut(.3);
+
+        let action5 = cc.callFunc(this._fishDestroy, this);
+
+        let All = cc.sequence(action,action1, action2, action3, action4,action5);
+
+        this.arrow.runAction(All);
+    },
+
+    _fishDestroy(){
+        this.arrow.rotation = 90;
+        this.arrow.setPosition(this.arrowOriginPos);
+        this.archeryState = false;
+        
         for (let n = 0; n < this.fishCooArray.length; n++) {
             if(this.fishCooArray[n].x == this.fishX && this.fishCooArray[n].y == this.fishY){
                 let curFish = this.fishPool.children[n];
@@ -98,13 +155,18 @@ cc.Class({
         }
     },
 
+    _omoRotate(){
+        if(!(this.fishX && this.fishY)) return;
+        this.OMO.runAction(cc.rotateTo(.4,45));
+    },
+
     _xChoosed(event){
         let curLabel =  event.currentTarget.children[0].getComponent(cc.Label);
         this.fishX = parseInt(curLabel.string);
 
         this._xCooList();
         this._labelStringChange(this.xCoo,this.fishX);
-
+        this._omoRotate();
     },
 
     _yChoosed(event){
@@ -113,6 +175,7 @@ cc.Class({
 
         this._yCooList();
         this._labelStringChange(this.yCoo,this.fishY);
+        this._omoRotate();
     },
 
 

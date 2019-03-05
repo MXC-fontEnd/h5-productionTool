@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.95546875,
-      "y": 0.95546875,
+      "x": 0.8996354420979817,
+      "y": 0.8996354420979817,
       "z": 1
     },
     "_quat": {
@@ -913,7 +913,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "bg_haixing",
+    "_name": "haixing",
     "_objFlags": 0,
     "_parent": {
       "__id__": 7
@@ -939,8 +939,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 94,
-      "height": 45
+      "width": 96,
+      "height": 46
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -950,7 +950,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 210,
-      "y": -220.7,
+      "y": -255,
       "z": 0
     },
     "_scale": {
@@ -972,10 +972,10 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "94F1H99F9K/7leixceJPWM"
+    "_id": "cdQT7ns61CgoTR0s8/v5Lp"
   },
   {
-    "__type__": "cc.Sprite",
+    "__type__": "sp.Skeleton",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -984,23 +984,18 @@
     "_enabled": true,
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "35d35f33-9694-42a4-98ba-d90bac7b1ff8"
+    "paused": false,
+    "defaultSkin": "",
+    "defaultAnimation": "animation",
+    "loop": true,
+    "premultipliedAlpha": true,
+    "timeScale": 1.5,
+    "_N$skeletonData": {
+      "__uuid__": "65cbc506-454f-4a0e-b88b-c38237832b53"
     },
-    "_type": 0,
-    "_sizeMode": 1,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_state": 0,
-    "_atlas": null,
-    "_id": "1f7OxH1YdBPax8+cZ4lYFq"
+    "_N$debugSlots": false,
+    "_N$debugBones": false,
+    "_id": "cb+yOP9H1FR5qJ3ACyGwdp"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -1010,7 +1005,7 @@
     "asset": {
       "__uuid__": "bc55625a-a1a1-4ad1-bd07-3c25bc5879bd"
     },
-    "fileId": "3fVGC/9oRAvYUW53wD5YAb",
+    "fileId": "cdQT7ns61CgoTR0s8/v5Lp",
     "sync": false
   },
   {

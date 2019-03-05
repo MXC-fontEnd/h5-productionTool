@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.8996354420979817,
-      "y": 0.8996354420979817,
+      "x": 0.8571484247843425,
+      "y": 0.8571484247843425,
       "z": 1
     },
     "_quat": {
@@ -345,8 +345,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 276,
-      "height": 47
+      "width": 305,
+      "height": 109
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -391,7 +391,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "13afcdae-0d98-4c5b-9806-ce88cfe9f996"
+      "__uuid__": "33a5e5e8-b9f5-4ffb-aecb-1398d042e9e3"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -791,7 +791,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 154,
-      "height": 140
+      "height": 70
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -836,8 +836,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "学习了编程中的\n重要知识点（编\n程规则和坐标概\n念）",
-    "_N$string": "学习了编程中的\n重要知识点（编\n程规则和坐标概\n念）",
+    "_string": "学习了编程中的\n重要知识点",
+    "_N$string": "学习了编程中的\n重要知识点",
     "_fontSize": 22,
     "_lineHeight": 35,
     "_enableWrapText": true,

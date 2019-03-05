@@ -55,7 +55,7 @@
     "_zIndex": 0,
     "groupIndex": 0,
     "autoReleaseAssets": false,
-    "_id": "3941c8a3-9612-48e1-a127-933cae686bd4"
+    "_id": "03fe9948-5bb4-4fd4-af54-76e593d9d1de"
   },
   {
     "__type__": "cc.Node",
@@ -459,7 +459,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "0a1c23e0-818d-43c6-900e-01e3998cb8a9"
+      "__uuid__": "4490ab41-ad45-48cf-82b8-76a777b0861f"
     },
     "_type": 0,
     "_sizeMode": 0,

@@ -1,15 +1,15 @@
 {
   "ver": "2.2.0",
-  "uuid": "81e8b57b-5dfe-4feb-96b4-41f2097f0dd3",
+  "uuid": "9983cae5-3f6d-4939-a4c8-2a61fd4eb006",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
   "premultiplyAlpha": false,
   "subMetas": {
-    "p22_biankuang3_2": {
+    "p22_biankuang4": {
       "ver": "1.0.3",
-      "uuid": "24ceeb1f-3701-4311-b84a-4787ce58087b",
-      "rawTextureUuid": "81e8b57b-5dfe-4feb-96b4-41f2097f0dd3",
+      "uuid": "431b0538-9c9c-4e3d-a000-ae971ea79470",
+      "rawTextureUuid": "9983cae5-3f6d-4939-a4c8-2a61fd4eb006",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

@@ -86,6 +86,9 @@ cc.Class({
     // OMO射箭
     _OMOArchery(){
         if(!(this.fishX && this.fishY)) return;
+
+        
+
         for (let n = 0; n < this.fishCooArray.length; n++) {
             if(this.fishCooArray[n].x == this.fishX && this.fishCooArray[n].y == this.fishY){
                 let curFish = this.fishPool.children[n];

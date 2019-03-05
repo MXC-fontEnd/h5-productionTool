@@ -78,7 +78,7 @@ cc.Class({
             let count = parseInt(this.count.string) + 1;
             this.count.string = count;
             if (this.randomV2.length == count) {
-                let b1 = cc.moveTo(1, cc.v2(0, 0));
+                let b1 = cc.moveTo(0, cc.v2(0, 0));
                 this.winGame.runAction(b1);
             }
         }, this);

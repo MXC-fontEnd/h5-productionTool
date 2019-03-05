@@ -489,7 +489,7 @@
     "_enabled": true,
     "swimLeft": false,
     "swimRight": true,
-    "swimTime": 10,
+    "swimTime": 30,
     "destination": null,
     "_id": "d1YgtY3J9PwaEc2R4eROsu"
   },

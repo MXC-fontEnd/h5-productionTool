@@ -1,4 +1,4 @@
-cc.Class({
+﻿cc.Class({
     extends: cc.Component,
 
     properties: {
@@ -81,7 +81,7 @@ cc.Class({
     // 右转15度
     rotate(event) {
         this.init();
-        let action = cc.rotateBy(1, 15);
+        let action = cc.rotateBy(0.3, 15);
         this.controlledBoy.runAction(action);
     },
 
@@ -90,26 +90,26 @@ cc.Class({
     // 右转15度
     rotateRepeatForever(event) {
         this.init();
-        let action = cc.repeatForever(cc.rotateBy(1, 15));
+        let action = cc.repeatForever(cc.rotateBy(0.3, 15));
         this.controlledBoy.runAction(action);
     },
 
     // 被点击
     // 重复执行
-    // 秒针旋转一格（30度）
+    // 秒针旋转一格（6度）
     rotateNeedleRepeatForeve(event) {
         this.init();
-        let action = cc.repeatForever(cc.rotateBy(1, 30));
+        let action = cc.repeatForever(cc.rotateBy(0.05, 6));
         this.controlledBoy.runAction(action);
     },
 
     // 被点击
     // 等待一秒
-    // 秒针旋转一格（30度）
+    // 秒针旋转一格（6度）
     rotateNeedle1(event) {
         this.init();
         let action1 = cc.delayTime(1);
-        let action2 = cc.rotateBy(1, 30);
+        let action2 = cc.rotateBy(0.1, 6);
         let action = cc.sequence(action1, action2);
         this.controlledBoy.runAction(action);
     },
@@ -121,9 +121,9 @@ cc.Class({
     rotateNeedleRepeat12(event) {
         this.init();
         let action1 = cc.delayTime(1);
-        let action2 = cc.rotateBy(1, 30);
+        let action2 = cc.rotateBy(0.1, 6);
         let action3 = cc.sequence(action1, action2);
-        let action = cc.repeat(action3, 12);
+        let action = cc.repeat(action3, 60);
 
         this.controlledBoy.runAction(action);
     },
@@ -135,7 +135,7 @@ cc.Class({
     rotateNeedleRepeatForeve1(event) {
         this.init();
         let action1 = cc.delayTime(1);
-        let action2 = cc.rotateBy(1, 30);
+        let action2 = cc.rotateBy(0.1, 30);
         let action3 = cc.sequence(action1, action2);
         let action = cc.repeatForever(action3);
         

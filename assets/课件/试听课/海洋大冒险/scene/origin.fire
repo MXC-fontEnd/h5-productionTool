@@ -44,8 +44,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.95546875,
-      "y": 0.95546875,
+      "x": 0.8944271087646485,
+      "y": 0.8944271087646485,
       "z": 1
     },
     "_quat": {
@@ -57,7 +57,7 @@
     },
     "_zIndex": 0,
     "groupIndex": 0,
-    "autoReleaseAssets": false,
+    "autoReleaseAssets": true,
     "_id": "b4a9d1fc-44bc-41ea-b185-79088d9560d5"
   },
   {
@@ -818,7 +818,7 @@
       "__id__": 2
     },
     "_enabled": true,
-    "pageCount": 23,
+    "pageCount": 30,
     "currentPageSeq": 1,
     "localDebugging": true,
     "_id": "84mMfEgQxMxq0BBYgpVzM8"

@@ -4,7 +4,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        pageCount: 3,
+        pageCount: 1,
         currentPageSeq: 1,
         localDebugging: {
             default: false,
@@ -55,7 +55,7 @@ cc.Class({
     },
 
     update(dt) {
-        if (this.nextPageSeq && this.nextPageSeq !== this.currentPageSeq && this.loadState) {
+        if (this.nextPageSeq && this.nextPageSeq !== this.currentPageSeq && this.loadState && !this.localDebugging) {
             this.loadState = false;
             this.loadscene(this.nextPageSeq, function () {
                 this.loadState = true;
@@ -83,7 +83,19 @@ cc.Class({
     // 根据传参加载对应的场景
     //
     loadscene(seq, callback) {
-        var page = 'page' + parseInt(seq);
+        seq = parseInt(seq);
+
+        let curPageNum;
+        if (this.juniorCoursewareState) {
+            curPageNum = this.juniorCoursewarePage[seq - 1];
+        } else if (this.seniorCoursewareState) {
+            curPageNum = this.seniorCoursewarePage[seq - 1];
+        } else {
+            console.log('导航页-场景加载bug');
+        }
+        if (!curPageNum) return;
+
+        let page = 'page' + curPageNum;
         if (page) {
             cc.director.loadScene(page, function () {
                 this.currentPageSeq = seq;
@@ -100,12 +112,5 @@ cc.Class({
     setNextPageSeq(seq) {
         this.nextPageSeq = parseInt(seq);
     },
-
-    /**
-     * @description: 自定义打包输出课件，通过参数配置拼装各场景
-     * @param {type} 
-     * @return: 
-     */
-
 
 });

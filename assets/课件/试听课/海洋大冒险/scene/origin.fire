@@ -818,16 +818,11 @@
       "__id__": 2
     },
     "_enabled": true,
-    "pageCount": 30,
+    "pageCount": 6,
     "currentPageSeq": 1,
     "localDebugging": true,
     "juniorCoursewareState": true,
-    "juniorCoursewarePage": [
-      "aaa",
-      "",
-      "",
-      ""
-    ],
+    "juniorCoursewarePage": [],
     "seniorCoursewareState": false,
     "seniorCoursewarePage": [],
     "_id": "84mMfEgQxMxq0BBYgpVzM8"

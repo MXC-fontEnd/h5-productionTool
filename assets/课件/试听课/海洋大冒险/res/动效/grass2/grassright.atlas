@@ -1,0 +1,34 @@
+
+grassright.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+grass9
+  rotate: false
+  xy: 2, 22
+  size: 215, 392
+  orig: 215, 392
+  offset: 0, 0
+  index: -1
+leaf1
+  rotate: false
+  xy: 219, 150
+  size: 174, 264
+  orig: 174, 264
+  offset: 0, 0
+  index: -1
+leaf2
+  rotate: true
+  xy: 395, 142
+  size: 272, 113
+  orig: 272, 113
+  offset: 0, 0
+  index: -1
+leaf3
+  rotate: true
+  xy: 219, 2
+  size: 138, 245
+  orig: 138, 245
+  offset: 0, 0
+  index: -1

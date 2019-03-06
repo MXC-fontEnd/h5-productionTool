@@ -4,14 +4,38 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-
         pageCount: 3,
         currentPageSeq: 1,
-        localDebugging: false
+        localDebugging: {
+            default: false,
+            displayName: '本地课件预览'
+        },
+
+        juniorCoursewareState: {
+            default: true,
+            displayName: '低龄课件'
+        },
+
+        juniorCoursewarePage: {
+            default: [],
+            type: [cc.Integer],
+            displayName: '低龄课件页面'
+        },
+
+        seniorCoursewareState: {
+            default: false,
+            displayName: '高龄课件'
+        },
+
+        seniorCoursewarePage: {
+            default: [],
+            type: [cc.Integer],
+            displayName: '高龄课件页面'
+        },
+
     },
 
     // LIFE-CYCLE CALLBACKS:
-
     onLoad() {
         this.nextPageSeq = this.currentPageSeq;
         this.loadState = true;
@@ -24,13 +48,10 @@ cc.Class({
             this.node.getChildByName("localControl").active = true;
             this.loadscene(this.currentPageSeq);
         } else {
-            this.loadscene(this.currentPageSeq,function(){
+            this.loadscene(this.currentPageSeq, function () {
                 postMessage.init(this);
             }.bind(this));
         }
-
-
-
     },
 
     update(dt) {
@@ -58,6 +79,9 @@ cc.Class({
         }
     },
 
+    // 
+    // 根据传参加载对应的场景
+    //
     loadscene(seq, callback) {
         var page = 'page' + parseInt(seq);
         if (page) {
@@ -70,8 +94,18 @@ cc.Class({
         }
     },
 
+    // 
+    // 根据传参设置下一页
+    //
     setNextPageSeq(seq) {
         this.nextPageSeq = parseInt(seq);
-    }
+    },
+
+    /**
+     * @description: 自定义打包输出课件，通过参数配置拼装各场景
+     * @param {type} 
+     * @return: 
+     */
+
 
 });

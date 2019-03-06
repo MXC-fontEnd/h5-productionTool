@@ -44,8 +44,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.8944271087646485,
-      "y": 0.8944271087646485,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -821,6 +821,15 @@
     "pageCount": 30,
     "currentPageSeq": 1,
     "localDebugging": true,
+    "juniorCoursewareState": true,
+    "juniorCoursewarePage": [
+      "aaa",
+      "",
+      "",
+      ""
+    ],
+    "seniorCoursewareState": false,
+    "seniorCoursewarePage": [],
     "_id": "84mMfEgQxMxq0BBYgpVzM8"
   },
   {

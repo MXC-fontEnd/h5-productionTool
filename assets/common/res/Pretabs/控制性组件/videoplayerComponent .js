@@ -8,10 +8,8 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
         this.videoplayer = null;
-
         if (this.bindMessage) {
             this.videoMessageBind = function (e) {
-                console.log('singlevideo-message');
                 if (window === window.parent) return;
                 if (typeof e.data !== 'string') return;
                 var data = JSON.parse(e.data);
@@ -32,6 +30,10 @@ cc.Class({
                                         break;
                                 }
                             }
+
+                            // if (data.handleData && data.handleData.type == 'switchPlay') {
+                            //     this.node.dispatchEvent(new cc.Event.EventCustom('videoplayerClicked', true));
+                            // }
 
                             break;
                     }
@@ -59,35 +61,36 @@ cc.Class({
     // update (dt) {},
 
     onVideoPlayerEvent(videoplayer, eventType, customEventData) {
-        console.log('onVideoPlayerEvent');
         // videoplayer正在播放
         if (eventType === cc.VideoPlayer.EventType.PLAYING) {
-
+            console.log('videoplayer正在播放');
         }
 
         // videoplayer暂停
         if (eventType === cc.VideoPlayer.EventType.PAUSED) {
-
+            console.log('videoplayer暂停');
         }
 
         // videoplayer关闭
         if (eventType === cc.VideoPlayer.EventType.STOPPED) {
-
+            console.log('videoplayer关闭');
         }
 
         // videoplayer播放完毕
         if (eventType === cc.VideoPlayer.EventType.COMPLETED) {
-
+            console.log('videoplayer播放完毕');
         }
 
         // videoplayer被点击
         if (eventType === cc.VideoPlayer.EventType.CLICKED) {
-            console.log('CLICKED');
+            console.log('videoplayer被点击');
             this.node.dispatchEvent(new cc.Event.EventCustom('videoplayerClicked', true));
+            // this.videoPostMessage('switchPlay');
         }
 
+        // videoplayer加载完成
         if (eventType === cc.VideoPlayer.EventType.META_LOADED) {
-            console.log('视频加载完成！');
+            console.log('videoplayer加载完成');
             this.videoplayer = videoplayer;
         }
 

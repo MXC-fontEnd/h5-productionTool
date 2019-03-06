@@ -131,11 +131,11 @@
     // 被点击
     // 重复执行
     // 等待一秒
-    // 秒针旋转一格（30度）
+    // 秒针旋转一格（6度）
     rotateNeedleRepeatForeve1(event) {
         this.init();
         let action1 = cc.delayTime(1);
-        let action2 = cc.rotateBy(0.1, 30);
+        let action2 = cc.rotateBy(0.1, 6);
         let action3 = cc.sequence(action1, action2);
         let action = cc.repeatForever(action3);
         

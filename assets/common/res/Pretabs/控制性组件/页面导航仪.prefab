@@ -8,12 +8,11 @@
       "__id__": 1
     },
     "optimizationPolicy": 0,
-    "asyncLoadAssets": false,
-    "readonly": false
+    "asyncLoadAssets": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "pageControl",
+    "_name": "页面导航仪",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -61,6 +60,8 @@
       "y": 1,
       "z": 1
     },
+    "_rotationX": 0,
+    "_rotationY": 0,
     "_quat": {
       "__type__": "cc.Quat",
       "x": 0,
@@ -71,7 +72,6 @@
     "_skewX": 0,
     "_skewY": 0,
     "_zIndex": 0,
-    "_is3DNode": false,
     "groupIndex": 0,
     "_id": ""
   },
@@ -126,6 +126,8 @@
       "y": 1,
       "z": 1
     },
+    "_rotationX": 0,
+    "_rotationY": 0,
     "_quat": {
       "__type__": "cc.Quat",
       "x": 0,
@@ -136,7 +138,6 @@
     "_skewX": 0,
     "_skewY": 0,
     "_zIndex": 0,
-    "_is3DNode": false,
     "groupIndex": 0,
     "_id": ""
   },
@@ -195,6 +196,8 @@
       "y": 1,
       "z": 1
     },
+    "_rotationX": 0,
+    "_rotationY": 0,
     "_quat": {
       "__type__": "cc.Quat",
       "x": 0,
@@ -205,10 +208,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_zIndex": 0,
-    "_is3DNode": false,
     "groupIndex": 0,
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_id": ""
   },
   {
@@ -259,6 +259,8 @@
       "y": 1,
       "z": 1
     },
+    "_rotationX": 0,
+    "_rotationY": 0,
     "_quat": {
       "__type__": "cc.Quat",
       "x": 0,
@@ -269,10 +271,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_zIndex": 0,
-    "_is3DNode": false,
     "groupIndex": 0,
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_id": ""
   },
   {
@@ -294,6 +293,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
+    "_batchAsBitmap": false,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
@@ -306,7 +306,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "084a6bbc-083d-4ef5-ace3-c3f3bd4c1200"
     },
     "fileId": "6b7Tt1N9JN+YWFP7IuFVtU",
     "sync": false
@@ -439,7 +439,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "084a6bbc-083d-4ef5-ace3-c3f3bd4c1200"
     },
     "fileId": "3ary+pSlFOkJcJHhq+YhxR",
     "sync": false
@@ -499,6 +499,8 @@
       "y": 1,
       "z": 1
     },
+    "_rotationX": 0,
+    "_rotationY": 0,
     "_quat": {
       "__type__": "cc.Quat",
       "x": 0,
@@ -509,10 +511,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_zIndex": 0,
-    "_is3DNode": false,
     "groupIndex": 0,
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_id": ""
   },
   {
@@ -563,6 +562,8 @@
       "y": 1,
       "z": 1
     },
+    "_rotationX": 0,
+    "_rotationY": 0,
     "_quat": {
       "__type__": "cc.Quat",
       "x": 0,
@@ -573,10 +574,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_zIndex": 0,
-    "_is3DNode": false,
     "groupIndex": 0,
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_id": ""
   },
   {
@@ -598,6 +596,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
+    "_batchAsBitmap": false,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
@@ -610,7 +609,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "084a6bbc-083d-4ef5-ace3-c3f3bd4c1200"
     },
     "fileId": "bdKp9TZCZCSK/rB+4n1/VB",
     "sync": false
@@ -743,7 +742,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "084a6bbc-083d-4ef5-ace3-c3f3bd4c1200"
     },
     "fileId": "d4rNK3vnZBr4x3U3PTq7SI",
     "sync": false
@@ -754,7 +753,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "084a6bbc-083d-4ef5-ace3-c3f3bd4c1200"
     },
     "fileId": "5eevDPl9hE+ZCBXbfvzZxd",
     "sync": false
@@ -767,9 +766,43 @@
       "__id__": 1
     },
     "_enabled": true,
-    "pageCount": 17,
+    "pageCount": 25,
     "currentPageSeq": 1,
-    "localDebugging": true,
+    "localDebugging": false,
+    "juniorCoursewareState": true,
+    "juniorCoursewarePage": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "seniorCoursewareState": false,
+    "seniorCoursewarePage": [
+      1,
+      2,
+      5
+    ],
     "_id": ""
   },
   {
@@ -778,7 +811,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "084a6bbc-083d-4ef5-ace3-c3f3bd4c1200"
     },
     "fileId": "fanAfVxIlLAK3dGFVXDD4H",
     "sync": false

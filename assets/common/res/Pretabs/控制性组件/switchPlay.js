@@ -54,6 +54,10 @@ cc.Class({
         window.addEventListener("message", this.switchVideoBind, false);
     },
 
+    onDestroy(){
+        window.removeEventListener('message', this.switchVideoBind);
+    },
+
     _videoClicked(event) {
         event.stopPropagation();
         // 当前被点击的视频播放器

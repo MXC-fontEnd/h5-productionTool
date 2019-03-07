@@ -24,19 +24,26 @@
             default: [],
             type: [cc.Node],
             displayName: "积木列表"
-        }
+        },
+
+        reStart: {
+            default: null,
+            type: cc.Node,
+            displayName: "重新开始"
+        },
 
     },
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
+        this.messageFlag = true;
         this.init();
 
         this.magicBlockBind = function (e) {
-            console.log('switchVideoBind');
+            console.log('magicBlockBind');
             if (window === window.parent) return;
             if (typeof e.data !== 'string') return;
-            var data = JSON.parse(e.data);
+            let data = JSON.parse(e.data);
 
             if (data) {
                 switch (data.method) {
@@ -44,16 +51,34 @@
                         if (data.handleData && data.handleData.type == 'magicBlock') {
                             this.messageFlag = false;
                             let method = data.handleData.method;
-                            this[method]();
+                            let CustomEventData = parseInt(data.handleData.CustomEventData);
+                            this[method]('context', CustomEventData);
+                        }
+
+                        if (data.handleData && data.handleData.type == 'magicBlockRestart') {
+                            this.messageFlag = false;
+                            let method = data.handleData.method;
+                            let CustomEventData = data.handleData.CustomEventData;
+                            this[method]('context', CustomEventData);
                         }
                         break;
                 }
             }
         }.bind(this);
+
         window.addEventListener("message", this.magicBlockBind, false);
     },
 
-    init() {
+    onDestroy() {
+        window.removeEventListener('message', this.magicBlockBind);
+    },
+
+    init(event, CustomEventData) {
+        if (CustomEventData) {
+            if (this.messageFlag) this.sentMessage('magicBlockRestart', 'init', CustomEventData);
+            this.scaleButton(this.reStart);
+        }
+        this.curNode = null;
         this.messageFlag = true;
         this.controlledBoy.stopAllActions();
         this.talkText.node.stopAllActions();
@@ -61,13 +86,25 @@
         this.talkText.string = '';
     },
 
+    // 
+    //  button 缩放效果
+    //
+    scaleButton(curNode) {
+        let action1 = cc.scaleTo(0.05, 1.2);
+        let action2 = cc.scaleTo(0.05, 1);
+        let action = cc.sequence(action1, action2);
+        curNode.runAction(action);
+    },
+
     // 被点击
     // 说你好持续2秒
     // 说omo持续2秒
-    talks() {
-        if (this.messageFlag) this.sentMessage('magicBlock', 'talks');
-
+    talks(event, CustomEventData) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'talks', CustomEventData);
+        this.curNode = this.blockList[CustomEventData - 1];
+        this.scaleButton(this.curNode);
         this.init();
+
         this.talksWork();
     },
 
@@ -75,10 +112,13 @@
     // 重复执行
     // 说你好持续2秒
     // 说omo持续2秒
-    talksRepeatForever(event) {
-        if (this.messageFlag) this.sentMessage('magicBlock', 'talksRepeatForever');
+    talksRepeatForever(event, CustomEventData) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'talksRepeatForever', CustomEventData);
+        this.curNode = this.blockList[CustomEventData - 1];
+        this.scaleButton(this.curNode);
 
         this.init();
+
         this.talksWork('repeatForever');
     },
 
@@ -106,10 +146,12 @@
 
     // 被点击
     // 右转15度
-    rotate(event) {
-        if (this.messageFlag) this.sentMessage('magicBlock', 'rotate');
-
+    rotate(event, CustomEventData) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotate', CustomEventData);
+        this.curNode = this.blockList[CustomEventData - 1];
+        this.scaleButton(this.curNode);
         this.init();
+
         let action = cc.rotateBy(0.3, 15);
         this.controlledBoy.runAction(action);
     },
@@ -117,10 +159,12 @@
     // 被点击
     // 重复执行
     // 右转15度
-    rotateRepeatForever(event) {
-        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateRepeatForever');
-
+    rotateRepeatForever(event, CustomEventData) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateRepeatForever', CustomEventData);
+        this.curNode = this.blockList[CustomEventData - 1];
+        this.scaleButton(this.curNode);
         this.init();
+
         let action = cc.repeatForever(cc.rotateBy(0.3, 15));
         this.controlledBoy.runAction(action);
     },
@@ -128,10 +172,12 @@
     // 被点击
     // 重复执行
     // 秒针旋转一格（6度）
-    rotateNeedleRepeatForeve(event) {
-        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedleRepeatForeve');
-
+    rotateNeedleRepeatForeve(event, CustomEventData) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedleRepeatForeve', CustomEventData);
+        this.curNode = this.blockList[CustomEventData - 1];
+        this.scaleButton(this.curNode);
         this.init();
+
         let action = cc.repeatForever(cc.rotateBy(0.05, 6));
         this.controlledBoy.runAction(action);
     },
@@ -139,10 +185,12 @@
     // 被点击
     // 等待一秒
     // 秒针旋转一格（6度）
-    rotateNeedle1(event) {
-        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedle1');
-
+    rotateNeedle1(event, CustomEventData) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedle1', CustomEventData);
+        this.curNode = this.blockList[CustomEventData - 1];
+        this.scaleButton(this.curNode);
         this.init();
+
         let action1 = cc.delayTime(1);
         let action2 = cc.rotateBy(0.1, 6);
         let action = cc.sequence(action1, action2);
@@ -153,9 +201,12 @@
     // 重复执行12次
     // 等待一秒
     // 秒针旋转一格（30度）
-    rotateNeedleRepeat12(event) {
-        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedleRepeat12');
+    rotateNeedleRepeat12(event, CustomEventData) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedleRepeat12', CustomEventData);
+        this.curNode = this.blockList[CustomEventData - 1];
+        this.scaleButton(this.curNode);
         this.init();
+
         let action1 = cc.delayTime(1);
         let action2 = cc.rotateBy(0.1, 6);
         let action3 = cc.sequence(action1, action2);
@@ -168,10 +219,12 @@
     // 重复执行
     // 等待一秒
     // 秒针旋转一格（6度）
-    rotateNeedleRepeatForeve1(event) {
-        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedleRepeatForeve1');
-
+    rotateNeedleRepeatForeve1(event, CustomEventData) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedleRepeatForeve1', CustomEventData);
+        this.curNode = this.blockList[CustomEventData - 1];
+        this.scaleButton(this.curNode);
         this.init();
+
         let action1 = cc.delayTime(1);
         let action2 = cc.rotateBy(0.1, 6);
         let action3 = cc.sequence(action1, action2);
@@ -180,13 +233,15 @@
         this.controlledBoy.runAction(action);
     },
 
-    sentMessage(type, method) {
+    sentMessage(type, method, CustomEventData) {
+        console.log('sentMessage');
         if (window !== window.parent) {
             let data = JSON.stringify({
                 method: 'onFileMessage',
                 handleData: {
                     type: type,
-                    method: method
+                    method: method,
+                    CustomEventData: CustomEventData
                 },
             });
             window.parent.postMessage(data, '*');

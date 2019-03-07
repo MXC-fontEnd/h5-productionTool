@@ -29,9 +29,32 @@
     },
 
     // LIFE-CYCLE CALLBACKS:
-    onLoad() { },
+    onLoad() {
+        this.init();
+
+        this.magicBlockBind = function (e) {
+            console.log('switchVideoBind');
+            if (window === window.parent) return;
+            if (typeof e.data !== 'string') return;
+            var data = JSON.parse(e.data);
+
+            if (data) {
+                switch (data.method) {
+                    case "onFileMessage":
+                        if (data.handleData && data.handleData.type == 'magicBlock') {
+                            this.messageFlag = false;
+                            let method = data.handleData.method;
+                            this[method]();
+                        }
+                        break;
+                }
+            }
+        }.bind(this);
+        window.addEventListener("message", this.magicBlockBind, false);
+    },
 
     init() {
+        this.messageFlag = true;
         this.controlledBoy.stopAllActions();
         this.talkText.node.stopAllActions();
         this.controlledBoy.rotation = 0;
@@ -42,6 +65,8 @@
     // 说你好持续2秒
     // 说omo持续2秒
     talks() {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'talks');
+
         this.init();
         this.talksWork();
     },
@@ -51,11 +76,13 @@
     // 说你好持续2秒
     // 说omo持续2秒
     talksRepeatForever(event) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'talksRepeatForever');
+
         this.init();
         this.talksWork('repeatForever');
     },
 
-    talksWork(tag){
+    talksWork(tag) {
         let action;
         let action1 = cc.callFunc(function (event) {
             this.talkText.string = this.talkList[0];
@@ -69,7 +96,7 @@
             this.talkText.string = '';
         }, this);
 
-        if(tag == 'repeatForever'){
+        if (tag == 'repeatForever') {
             action = cc.repeatForever(cc.sequence(action1, action2, action3, action4, action5));
         } else {
             action = cc.sequence(action1, action2, action3, action4, action5);
@@ -80,6 +107,8 @@
     // 被点击
     // 右转15度
     rotate(event) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotate');
+
         this.init();
         let action = cc.rotateBy(0.3, 15);
         this.controlledBoy.runAction(action);
@@ -89,6 +118,8 @@
     // 重复执行
     // 右转15度
     rotateRepeatForever(event) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateRepeatForever');
+
         this.init();
         let action = cc.repeatForever(cc.rotateBy(0.3, 15));
         this.controlledBoy.runAction(action);
@@ -98,6 +129,8 @@
     // 重复执行
     // 秒针旋转一格（6度）
     rotateNeedleRepeatForeve(event) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedleRepeatForeve');
+
         this.init();
         let action = cc.repeatForever(cc.rotateBy(0.05, 6));
         this.controlledBoy.runAction(action);
@@ -107,6 +140,8 @@
     // 等待一秒
     // 秒针旋转一格（6度）
     rotateNeedle1(event) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedle1');
+
         this.init();
         let action1 = cc.delayTime(1);
         let action2 = cc.rotateBy(0.1, 6);
@@ -119,6 +154,7 @@
     // 等待一秒
     // 秒针旋转一格（30度）
     rotateNeedleRepeat12(event) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedleRepeat12');
         this.init();
         let action1 = cc.delayTime(1);
         let action2 = cc.rotateBy(0.1, 6);
@@ -133,13 +169,29 @@
     // 等待一秒
     // 秒针旋转一格（6度）
     rotateNeedleRepeatForeve1(event) {
+        if (this.messageFlag) this.sentMessage('magicBlock', 'rotateNeedleRepeatForeve1');
+
         this.init();
         let action1 = cc.delayTime(1);
         let action2 = cc.rotateBy(0.1, 6);
         let action3 = cc.sequence(action1, action2);
         let action = cc.repeatForever(action3);
-        
+
         this.controlledBoy.runAction(action);
     },
+
+    sentMessage(type, method) {
+        if (window !== window.parent) {
+            let data = JSON.stringify({
+                method: 'onFileMessage',
+                handleData: {
+                    type: type,
+                    method: method
+                },
+            });
+            window.parent.postMessage(data, '*');
+        }
+    },
+
     // update (dt) {},
 });

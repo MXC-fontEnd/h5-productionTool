@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.8067317962646484,
-      "y": 0.8067317962646484,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -2166,8 +2166,8 @@
     ],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 3,
-    "transition": 3,
+    "_N$transition": 0,
+    "transition": 0,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 214,
@@ -2229,7 +2229,7 @@
     "component": "",
     "_componentId": "e941dZhYYxFsINSQEY3bMr0",
     "handler": "init",
-    "customEventData": ""
+    "customEventData": "restart"
   },
   {
     "__type__": "cc.Node",
@@ -2323,6 +2323,9 @@
         "__id__": 70
       }
     ],
+    "reStart": {
+      "__id__": 48
+    },
     "_id": "f0CXCfKXZCGbXme8cKWxpH"
   },
   {
@@ -2521,8 +2524,8 @@
     ],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 3,
-    "transition": 3,
+    "_N$transition": 0,
+    "transition": 0,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 214,
@@ -2584,7 +2587,7 @@
     "component": "",
     "_componentId": "e941dZhYYxFsINSQEY3bMr0",
     "handler": "rotateNeedleRepeat12",
-    "customEventData": ""
+    "customEventData": "1"
   },
   {
     "__type__": "cc.Node",
@@ -2695,8 +2698,8 @@
     ],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 3,
-    "transition": 3,
+    "_N$transition": 0,
+    "transition": 0,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 214,
@@ -2758,7 +2761,7 @@
     "component": "",
     "_componentId": "e941dZhYYxFsINSQEY3bMr0",
     "handler": "rotateNeedle1",
-    "customEventData": ""
+    "customEventData": "2"
   },
   {
     "__type__": "cc.Node",
@@ -2869,8 +2872,8 @@
     ],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 3,
-    "transition": 3,
+    "_N$transition": 0,
+    "transition": 0,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 214,
@@ -2932,7 +2935,7 @@
     "component": "",
     "_componentId": "e941dZhYYxFsINSQEY3bMr0",
     "handler": "rotateNeedleRepeatForeve1",
-    "customEventData": ""
+    "customEventData": "3"
   },
   {
     "__type__": "cc.Node",
@@ -3043,8 +3046,8 @@
     ],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 3,
-    "transition": 3,
+    "_N$transition": 0,
+    "transition": 0,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 214,
@@ -3106,7 +3109,7 @@
     "component": "",
     "_componentId": "e941dZhYYxFsINSQEY3bMr0",
     "handler": "rotateNeedleRepeatForeve",
-    "customEventData": ""
+    "customEventData": "4"
   },
   {
     "__type__": "cc.PrefabInfo",

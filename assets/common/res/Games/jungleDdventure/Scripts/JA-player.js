@@ -85,7 +85,7 @@ cc.Class({
     // 跳跃
     jump(jumpMessage) {
         if (!this.jumping) {
-            cc.audioEngine.play(this.jumpAudio, false, 1);
+            cc.audioEngine.play(this.jumpAudio, false, .1);
             this.jumping = true;
             this.speed.y = this.jumpSpeed;
 
@@ -106,7 +106,7 @@ cc.Class({
         
         setTimeout(function () {
             this.node.getComponent(cc.BoxCollider).enabled = false;
-            cc.audioEngine.play(this.failAudio, false, .2);
+            cc.audioEngine.play(this.failAudio, false, .1);
         }.bind(this), 300);
     },
 

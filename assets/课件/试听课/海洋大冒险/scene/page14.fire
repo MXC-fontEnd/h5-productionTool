@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.7696759259259259,
-      "y": 0.7696759259259259,
+      "x": 0.8409722222222222,
+      "y": 0.8409722222222222,
       "z": 1
     },
     "_quat": {
@@ -4736,7 +4736,7 @@
     "component": "",
     "_componentId": "6419fhouoJGQ4zO6Q+3YDsH",
     "handler": "init",
-    "customEventData": ""
+    "customEventData": "restart"
   },
   {
     "__type__": "cc.PrefabInfo",

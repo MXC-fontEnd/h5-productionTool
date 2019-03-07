@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.7696759259259259,
-      "y": 0.7696759259259259,
+      "x": 0.8409722222222222,
+      "y": 0.8409722222222222,
       "z": 1
     },
     "_quat": {
@@ -73,7 +73,7 @@
     "_level": 0,
     "_components": [
       {
-        "__id__": 102
+        "__id__": 98
       }
     ],
     "_prefab": null,
@@ -183,7 +183,7 @@
     "_level": 1,
     "_components": [
       {
-        "__id__": 101
+        "__id__": 97
       }
     ],
     "_prefab": null,
@@ -1592,21 +1592,14 @@
         "__id__": 36
       },
       {
-        "__id__": 39
-      },
-      {
-        "__id__": 92
+        "__id__": 89
       }
     ],
     "_active": true,
     "_level": 2,
-    "_components": [
-      {
-        "__id__": 99
-      }
-    ],
+    "_components": [],
     "_prefab": {
-      "__id__": 100
+      "__id__": 96
     },
     "_opacity": 255,
     "_color": {
@@ -1628,14 +1621,14 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 298,
-      "y": 7,
+      "x": 295,
+      "y": 8,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1.01,
-      "y": 1.01,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_rotationX": 0,
@@ -1651,23 +1644,107 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "1f18xYEhRPaatXkDfv4F5Z"
+    "_id": "e5a0a58w5EwokbgPnYP/7u"
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Sprite(Splash)",
+    "_name": "game",
     "_objFlags": 0,
     "_parent": {
       "__id__": 35
     },
+    "_children": [
+      {
+        "__id__": 37
+      },
+      {
+        "__id__": 39
+      },
+      {
+        "__id__": 60
+      },
+      {
+        "__id__": 67
+      },
+      {
+        "__id__": 70
+      },
+      {
+        "__id__": 80
+      },
+      {
+        "__id__": 83
+      }
+    ],
+    "_active": true,
+    "_level": 2,
+    "_components": [
+      {
+        "__id__": 86
+      },
+      {
+        "__id__": 87
+      }
+    ],
+    "_prefab": {
+      "__id__": 88
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 240,
+      "height": 400
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_position": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_scale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_quat": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_zIndex": 0,
+    "groupIndex": 0,
+    "_id": "00+vpEmulMOYCAaZAbzctb"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "fishPool",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 36
+    },
     "_children": [],
     "_active": true,
     "_level": 3,
-    "_components": [
-      {
-        "__id__": 37
-      }
-    ],
+    "_components": [],
     "_prefab": {
       "__id__": 38
     },
@@ -1681,133 +1758,6 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 250,
-      "height": 410
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_rotationX": 0,
-    "_rotationY": 0,
-    "_quat": {
-      "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_zIndex": 0,
-    "groupIndex": 0,
-    "_id": "31cRTrEY5JWJh+JwKyW75v"
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 36
-    },
-    "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "a23235d1-15db-4b95-8439-a2e005bfff91"
-    },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_state": 0,
-    "_atlas": null,
-    "_id": "73K7tTNkVNq4SMeqOfOUaW"
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 35
-    },
-    "asset": {
-      "__uuid__": "94e4ee5b-e057-46e6-b6aa-a77f915e5ba6"
-    },
-    "fileId": "5bAn4LFetH06f6LYIgdp3r",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "game",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 35
-    },
-    "_children": [
-      {
-        "__id__": 40
-      },
-      {
-        "__id__": 42
-      },
-      {
-        "__id__": 63
-      },
-      {
-        "__id__": 70
-      },
-      {
-        "__id__": 73
-      },
-      {
-        "__id__": 83
-      },
-      {
-        "__id__": 86
-      }
-    ],
-    "_active": true,
-    "_level": 2,
-    "_components": [
-      {
-        "__id__": 89
-      },
-      {
-        "__id__": 90
-      }
-    ],
-    "_prefab": {
-      "__id__": 91
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
       "width": 240,
       "height": 400
     },
@@ -1841,66 +1791,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "06ANMjBV9MdLfZ6ukuilAI"
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "fishPool",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 39
-    },
-    "_children": [],
-    "_active": true,
-    "_level": 3,
-    "_components": [],
-    "_prefab": {
-      "__id__": 41
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 240,
-      "height": 400
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_rotationX": 0,
-    "_rotationY": 0,
-    "_quat": {
-      "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_zIndex": 0,
-    "groupIndex": 0,
-    "_id": "36GJ5Zzg1O9KqUb/st+13m"
+    "_id": "3bUur1cCBMMqgUaw2N1445"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -1918,27 +1809,27 @@
     "_name": "flyShip",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 39
+      "__id__": 36
     },
     "_children": [
+      {
+        "__id__": 40
+      },
       {
         "__id__": 43
       },
       {
-        "__id__": 46
+        "__id__": 48
       },
       {
-        "__id__": 51
-      },
-      {
-        "__id__": 59
+        "__id__": 56
       }
     ],
-    "_active": false,
+    "_active": true,
     "_level": 3,
     "_components": [],
     "_prefab": {
-      "__id__": 62
+      "__id__": 59
     },
     "_opacity": 255,
     "_color": {
@@ -1983,25 +1874,25 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "c8oNVUPfpAmYInKrnyAWO3"
+    "_id": "dfjAJAaM9A14JlyU+636gX"
   },
   {
     "__type__": "cc.Node",
     "_name": "line",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 42
+      "__id__": 39
     },
     "_children": [],
     "_active": true,
     "_level": 4,
     "_components": [
       {
-        "__id__": 44
+        "__id__": 41
       }
     ],
     "_prefab": {
-      "__id__": 45
+      "__id__": 42
     },
     "_opacity": 255,
     "_color": {
@@ -2046,14 +1937,14 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "33vmFdXh5OFb0pOYifk3UL"
+    "_id": "e0QpYN7flNwJhD+pz8pO4g"
   },
   {
     "__type__": "cc.Graphics",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 43
+      "__id__": 40
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -2076,7 +1967,7 @@
       "a": 255
     },
     "_miterLimit": 180,
-    "_id": "d2Ui/xYepLMbwRyJ8Jlbp6"
+    "_id": "91e4VrdJVOqqBX6OGvKWxD"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -2094,24 +1985,24 @@
     "_name": "omo",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 42
+      "__id__": 39
     },
     "_children": [],
     "_active": true,
     "_level": 4,
     "_components": [
       {
-        "__id__": 47
+        "__id__": 44
       },
       {
-        "__id__": 48
+        "__id__": 45
       },
       {
-        "__id__": 49
+        "__id__": 46
       }
     ],
     "_prefab": {
-      "__id__": 50
+      "__id__": 47
     },
     "_opacity": 255,
     "_color": {
@@ -2156,14 +2047,14 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "21NsWL3ClMcLZGhfX+Dd+R"
+    "_id": "526EUr/kRBQapMhl6mdRmc"
   },
   {
     "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 46
+      "__id__": 43
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -2186,14 +2077,14 @@
     "_atlas": {
       "__uuid__": "e2e6fea2-428b-4b02-982f-788ac9d28ddb"
     },
-    "_id": "eaUQ8N3vhHC5Q0OQy9Dznt"
+    "_id": "f10V6TZTZHBKCJ8N0dO8tP"
   },
   {
     "__type__": "cc.CircleCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 46
+      "__id__": 43
     },
     "_enabled": true,
     "tag": 0,
@@ -2203,17 +2094,17 @@
       "y": 0
     },
     "_radius": 15,
-    "_id": "8aUQZK8aFOd6znzplMhROa"
+    "_id": "d6TqemFbhL7LoI3gLR2tX9"
   },
   {
     "__type__": "95eaeJwMVdGuruo2qQEGi37",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 46
+      "__id__": 43
     },
     "_enabled": true,
-    "_id": "72m5HZRIRMpZ2hV2HZohvR"
+    "_id": "46QinjLU1G2qqA+0wpwXLm"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -2231,28 +2122,28 @@
     "_name": "ship",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 42
+      "__id__": 39
     },
     "_children": [
       {
-        "__id__": 52
+        "__id__": 49
       }
     ],
     "_active": true,
     "_level": 4,
     "_components": [
       {
-        "__id__": 55
+        "__id__": 52
       },
       {
-        "__id__": 56
+        "__id__": 53
       },
       {
-        "__id__": 57
+        "__id__": 54
       }
     ],
     "_prefab": {
-      "__id__": 58
+      "__id__": 55
     },
     "_opacity": 255,
     "_color": {
@@ -2297,25 +2188,25 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "dfa86r1ctOdrUAbUB9P9ks"
+    "_id": "87dGM4lelGvLReKuk1MM0/"
   },
   {
     "__type__": "cc.Node",
     "_name": "score",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 51
+      "__id__": 48
     },
     "_children": [],
     "_active": true,
     "_level": 5,
     "_components": [
       {
-        "__id__": 53
+        "__id__": 50
       }
     ],
     "_prefab": {
-      "__id__": 54
+      "__id__": 51
     },
     "_opacity": 255,
     "_color": {
@@ -2360,14 +2251,14 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "ebj1v69UlPjLoRfbnnXO4U"
+    "_id": "336o+v4atA857Cl42Sxwlh"
   },
   {
     "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 52
+      "__id__": 49
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -2386,7 +2277,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "5213Rcs1JDJq7QNctH2TKo"
+    "_id": "57iflUFaJAor0heWXO6K8l"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -2404,7 +2295,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 51
+      "__id__": 48
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -2427,14 +2318,14 @@
     "_atlas": {
       "__uuid__": "e2e6fea2-428b-4b02-982f-788ac9d28ddb"
     },
-    "_id": "4alYH/4P1G8JChdi0htJ8A"
+    "_id": "68oo5oCOVCUIjfTlhb1jhu"
   },
   {
     "__type__": "cc.CircleCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 51
+      "__id__": 48
     },
     "_enabled": true,
     "tag": 0,
@@ -2444,17 +2335,17 @@
       "y": 0
     },
     "_radius": 30,
-    "_id": "92p6IbPCNKHYOcc7zB7dYl"
+    "_id": "07kt4CT2VKSIqE++XJvRZz"
   },
   {
     "__type__": "a20caY1tFJP26/1jdfcfkqY",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 51
+      "__id__": 48
     },
     "_enabled": true,
-    "_id": "bcKWO//uBB06tpllJ7nBxY"
+    "_id": "63J8HdOIhKZ6Q396Ib8oel"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -2472,18 +2363,18 @@
     "_name": "harpoon",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 42
+      "__id__": 39
     },
     "_children": [],
     "_active": true,
     "_level": 4,
     "_components": [
       {
-        "__id__": 60
+        "__id__": 57
       }
     ],
     "_prefab": {
-      "__id__": 61
+      "__id__": 58
     },
     "_opacity": 255,
     "_color": {
@@ -2528,14 +2419,14 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "b1SXfuk4ZJDYG5c47ljKT8"
+    "_id": "2f9guoRwFLS6Y1+vPM4ugD"
   },
   {
     "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 59
+      "__id__": 56
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -2558,7 +2449,7 @@
     "_atlas": {
       "__uuid__": "e2e6fea2-428b-4b02-982f-788ac9d28ddb"
     },
-    "_id": "9ermOJiEJDMKDQzf24+xjl"
+    "_id": "70bFMS1W9Ct4qNWZdNEI2m"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -2587,25 +2478,25 @@
     "_name": "timeProgress",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 39
+      "__id__": 36
     },
     "_children": [
       {
-        "__id__": 64
+        "__id__": 61
       }
     ],
     "_active": true,
     "_level": 3,
     "_components": [
       {
-        "__id__": 67
+        "__id__": 64
       },
       {
-        "__id__": 68
+        "__id__": 65
       }
     ],
     "_prefab": {
-      "__id__": 69
+      "__id__": 66
     },
     "_opacity": 255,
     "_color": {
@@ -2650,25 +2541,25 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "c6gExN5rxHgqxfsv8TJ9h/"
+    "_id": "80SNcq2XpKIrRd90eWg61P"
   },
   {
     "__type__": "cc.Node",
     "_name": "bar",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 63
+      "__id__": 60
     },
     "_children": [],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 65
+        "__id__": 62
       }
     ],
     "_prefab": {
-      "__id__": 66
+      "__id__": 63
     },
     "_opacity": 255,
     "_color": {
@@ -2713,14 +2604,14 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "43DH8w1PNF37nAebFovzhU"
+    "_id": "17oTWNTXhKMYskAwelMuQO"
   },
   {
     "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 64
+      "__id__": 61
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -2741,7 +2632,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "940MOqHdZO8rBKK9BSN+Tf"
+    "_id": "7eTn4/jqZCErr3lR1p7yvT"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -2759,7 +2650,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 63
+      "__id__": 60
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -2780,24 +2671,24 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "9f4hkxzWZFU46gZ07C4m+B"
+    "_id": "88gx5C3VxKn53URdxkP6wk"
   },
   {
     "__type__": "cc.ProgressBar",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 63
+      "__id__": 60
     },
     "_enabled": true,
     "_N$totalLength": 182,
     "_N$barSprite": {
-      "__id__": 65
+      "__id__": 62
     },
     "_N$mode": 0,
     "_N$progress": 1,
     "_N$reverse": false,
-    "_id": "0fTFL1HudITIivdjt2xllQ"
+    "_id": "e4fUrPA0RJPK2q2TDl6m6E"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -2815,18 +2706,18 @@
     "_name": "rank",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 39
+      "__id__": 36
     },
     "_children": [],
     "_active": true,
     "_level": 3,
     "_components": [
       {
-        "__id__": 71
+        "__id__": 68
       }
     ],
     "_prefab": {
-      "__id__": 72
+      "__id__": 69
     },
     "_opacity": 255,
     "_color": {
@@ -2871,14 +2762,14 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "4dIrBlUEdNoaq0wZA1ogEm"
+    "_id": "c7yMDJJNJK/IQKAVoWNLVB"
   },
   {
     "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 70
+      "__id__": 67
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -2899,7 +2790,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "2c0ZVPr+1DPIQaddTrs9R2"
+    "_id": "cbAJ1RIXxNA4gUvTKCryQy"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -2917,28 +2808,28 @@
     "_name": "rankProgress",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 39
+      "__id__": 36
     },
     "_children": [
       {
-        "__id__": 74
+        "__id__": 71
       },
       {
-        "__id__": 77
+        "__id__": 74
       }
     ],
     "_active": true,
     "_level": 3,
     "_components": [
       {
-        "__id__": 80
+        "__id__": 77
       },
       {
-        "__id__": 81
+        "__id__": 78
       }
     ],
     "_prefab": {
-      "__id__": 82
+      "__id__": 79
     },
     "_opacity": 255,
     "_color": {
@@ -2983,25 +2874,25 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "c0U7Zi3XxM8JGerhIlTJuV"
+    "_id": "b1acEJuYhMTpEymHBfevIb"
   },
   {
     "__type__": "cc.Node",
     "_name": "bar",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 73
+      "__id__": 70
     },
     "_children": [],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 75
+        "__id__": 72
       }
     ],
     "_prefab": {
-      "__id__": 76
+      "__id__": 73
     },
     "_opacity": 255,
     "_color": {
@@ -3046,14 +2937,14 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "38lOCbDQxAXbmIfcbhgkoD"
+    "_id": "92EhZnllJMOba0OeQaqhz5"
   },
   {
     "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 74
+      "__id__": 71
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -3074,7 +2965,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "cd947Qg/hORKs3AB7rnO15"
+    "_id": "b8tJfpTcdFEZHAg1eoao5/"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3092,18 +2983,18 @@
     "_name": "New Sprite",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 73
+      "__id__": 70
     },
     "_children": [],
     "_active": true,
     "_level": 4,
     "_components": [
       {
-        "__id__": 78
+        "__id__": 75
       }
     ],
     "_prefab": {
-      "__id__": 79
+      "__id__": 76
     },
     "_opacity": 255,
     "_color": {
@@ -3148,14 +3039,14 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "e4Lhz64pdPr5YDSHkJKX2J"
+    "_id": "a120j0VidHhpriCZ8BzcbO"
   },
   {
     "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 77
+      "__id__": 74
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -3178,7 +3069,7 @@
     "_atlas": {
       "__uuid__": "e2e6fea2-428b-4b02-982f-788ac9d28ddb"
     },
-    "_id": "a3igHehm1Oc7Fx3iDy7HpA"
+    "_id": "a1PK+DsSFGAr/uk/x4k7mB"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3196,7 +3087,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 73
+      "__id__": 70
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -3219,24 +3110,24 @@
     "_atlas": {
       "__uuid__": "7e3fad8d-0e46-4e77-8c2b-5c2191f08e71"
     },
-    "_id": "6e1rEgqGlPG6bBYr1V7p4U"
+    "_id": "a7CgiCRvlCSLg+5ribV5RI"
   },
   {
     "__type__": "cc.ProgressBar",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 73
+      "__id__": 70
     },
     "_enabled": true,
     "_N$totalLength": 146,
     "_N$barSprite": {
-      "__id__": 75
+      "__id__": 72
     },
     "_N$mode": 0,
     "_N$progress": 0,
     "_N$reverse": false,
-    "_id": "d57MPOXSlP0qE1V9SYbe8f"
+    "_id": "60zwfbwf5Bp4plfQ070rdZ"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3254,18 +3145,18 @@
     "_name": "gameVictory",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 39
+      "__id__": 36
     },
     "_children": [],
     "_active": true,
     "_level": 3,
     "_components": [
       {
-        "__id__": 84
+        "__id__": 81
       }
     ],
     "_prefab": {
-      "__id__": 85
+      "__id__": 82
     },
     "_opacity": 255,
     "_color": {
@@ -3310,14 +3201,14 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "116FC3PW1Fm74d14rGSxhM"
+    "_id": "6cayK3WBdMvqGMstVQP3N9"
   },
   {
     "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 83
+      "__id__": 80
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -3338,7 +3229,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "cfmzXttAJJdKcaiPm3QZou"
+    "_id": "8aO7KT0cZLhpn9Akxh86Zd"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3356,18 +3247,18 @@
     "_name": "gameFail",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 39
+      "__id__": 36
     },
     "_children": [],
     "_active": true,
     "_level": 3,
     "_components": [
       {
-        "__id__": 87
+        "__id__": 84
       }
     ],
     "_prefab": {
-      "__id__": 88
+      "__id__": 85
     },
     "_opacity": 255,
     "_color": {
@@ -3412,14 +3303,14 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "e1koOENDZEg5PMzeycubvV"
+    "_id": "e50EZOIphGZqv/VzqyR1Fi"
   },
   {
     "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 86
+      "__id__": 83
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -3440,7 +3331,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "d8xTrNKrlFHr1dRa0cU6Qs"
+    "_id": "d4rqFIb2dEf7Lfcmad5uFd"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3458,7 +3349,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 39
+      "__id__": 36
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -3481,14 +3372,14 @@
     "_atlas": {
       "__uuid__": "e2e6fea2-428b-4b02-982f-788ac9d28ddb"
     },
-    "_id": "3csLbunuRIQY3g9EMMx9MD"
+    "_id": "f3hHxiEcFMeaDr/qItqOd9"
   },
   {
     "__type__": "8dae4DjQQNMrIsoXV+fTvBc",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 39
+      "__id__": 36
     },
     "_enabled": true,
     "fish": [
@@ -3512,10 +3403,10 @@
       "__uuid__": "4cc8ce81-6417-4307-91a1-30ccd2c78e60"
     },
     "timeProgress": {
-      "__id__": 68
+      "__id__": 65
     },
     "rankProgress": {
-      "__id__": 81
+      "__id__": 78
     },
     "shipSpr": [
       {
@@ -3539,7 +3430,7 @@
         "__uuid__": "ab41be03-ae08-4eb1-af5c-55dc15aa90f8"
       }
     ],
-    "_id": "90GoSIVL9E85oBFJWlEbtY"
+    "_id": "ffj9uGr+FJb6njGl/0x3T6"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3561,21 +3452,21 @@
     },
     "_children": [
       {
-        "__id__": 93
+        "__id__": 90
       }
     ],
     "_active": true,
     "_level": 2,
     "_components": [
       {
-        "__id__": 96
+        "__id__": 93
       },
       {
-        "__id__": 97
+        "__id__": 94
       }
     ],
     "_prefab": {
-      "__id__": 98
+      "__id__": 95
     },
     "_opacity": 255,
     "_color": {
@@ -3620,25 +3511,25 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "50530jjx5JuqWg6fMb69h5"
+    "_id": "81gUlzwg5LWpHrlaA3E0wq"
   },
   {
     "__type__": "cc.Node",
     "_name": "start",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 92
+      "__id__": 89
     },
     "_children": [],
     "_active": true,
     "_level": 3,
     "_components": [
       {
-        "__id__": 94
+        "__id__": 91
       }
     ],
     "_prefab": {
-      "__id__": 95
+      "__id__": 92
     },
     "_opacity": 255,
     "_color": {
@@ -3683,14 +3574,14 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "49ms46Ww9OsbiZT+NGRT7o"
+    "_id": "baJK1wJ31MbZoPNnjajlcW"
   },
   {
     "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 93
+      "__id__": 90
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -3713,7 +3604,7 @@
     "_atlas": {
       "__uuid__": "e2e6fea2-428b-4b02-982f-788ac9d28ddb"
     },
-    "_id": "f5y7n6Pa1Hdq+0z6pcIu4i"
+    "_id": "afcyyWdLdJ7pf02/idvGSd"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3731,7 +3622,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 92
+      "__id__": 89
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -3754,17 +3645,17 @@
     "_atlas": {
       "__uuid__": "e2e6fea2-428b-4b02-982f-788ac9d28ddb"
     },
-    "_id": "fe+SUtwGpPHaegKfDS6uIo"
+    "_id": "b50VK5QCJGp4W6PSXzZUxE"
   },
   {
     "__type__": "cc.BlockInputEvents",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 92
+      "__id__": 89
     },
     "_enabled": true,
-    "_id": "6aa7lFFlVERaeDA6GARNSs"
+    "_id": "a8AdRaYoZFC5rBqBEFnaKv"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3776,23 +3667,6 @@
     },
     "fileId": "c1DwOup2lMLoisxM76L4R1",
     "sync": false
-  },
-  {
-    "__type__": "cc.Mask",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 35
-    },
-    "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": null,
-    "_type": 0,
-    "_segments": 64,
-    "_N$alphaThreshold": 0,
-    "_N$inverted": false,
-    "_id": "9b8KzrWThLvLfJEmNrbHsa"
   },
   {
     "__type__": "cc.PrefabInfo",

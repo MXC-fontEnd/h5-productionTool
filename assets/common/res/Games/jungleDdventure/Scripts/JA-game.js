@@ -68,7 +68,7 @@ cc.Class({
         this.backgroundRunning = true;
 
         // 播放背景音乐
-        cc.audioEngine.play(this.backgroundAudio, false, .2);
+        cc.audioEngine.play(this.backgroundAudio, false, .1);
 
         if(initMessage !== 'initMessage'){
             postMessage({'type':'jungleAdventure-init'});

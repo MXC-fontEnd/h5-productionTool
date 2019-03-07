@@ -51,6 +51,9 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
+        this.viewWidth = this.node.width;
+        this.viewHeight = this.node.height;
+
         this.FLYSHIP = this.node.getChildByName("flyShip");
         this.SHIP = this.FLYSHIP.getChildByName("ship");
         this.LINE = this.FLYSHIP.getChildByName("line").getComponent(cc.Graphics);
@@ -64,13 +67,7 @@ cc.Class({
 
         let startButton = this.COVER.getChildByName("start");
         if (startButton) {
-            startButton.on(cc.Node.EventType.TOUCH_START, function (event) {
-                this.coverDown = false;
-                this.COVER.setPosition(-500, 0);
-                setTimeout(function () {
-                    this.init();
-                }.bind(this), 10);
-            }, this);
+            startButton.on(cc.Node.EventType.TOUCH_START, this.gameStart, this);
         }
 
         // 调整飞船位子
@@ -85,6 +82,76 @@ cc.Class({
         // 捕获宝石，增加游戏时间
         // 红：5秒；黄：3秒；
         this.node.on('addTime', this._addTime, this);
+
+
+        this.buddhaFishingBind = function (e) {
+            if (window === window.parent) return;
+            if (typeof e.data !== 'string') return;
+            let data = JSON.parse(e.data);
+
+            if (data) {
+                switch (data.method) {
+                    case "onFileMessage":
+                        if (data.handleData && data.handleData.type == 'buddhaFishing') {
+                            let method = data.handleData.method;
+                            let pars;
+                            switch (method) {
+                                case 'gameStart':
+                                    this.gameStart('break');
+                                    break;
+
+                                case 'init':
+                                    this.init('break');
+                                    break;
+
+                                case '_positionChange':
+                                    pars = data.handleData.pars;
+                                    this._positionChange(false, 'break', pars);
+                                    break;
+
+                                case '_fishing':
+                                    pars = data.handleData.pars;
+                                    this._fishing(false, 'break', pars);
+                                    break;
+
+                                default:
+                                    break;
+                            }
+                        }
+                }
+            }
+        }.bind(this);
+        window.addEventListener("message", this.buddhaFishingBind, false);
+    },
+
+    // 游戏开始
+    gameStart(messageState) {
+        if (messageState !== 'break') {
+            this.sentMessage('buddhaFishing', 'gameStart');
+        }
+        this.coverDown = false;
+        this.COVER.setPosition(-500, 0);
+        setTimeout(function () {
+            this.init();
+        }.bind(this), 10);
+    },
+
+    sentMessage(type, method, pars) {
+        if (window !== window.parent) {
+            let data = JSON.stringify({
+                method: 'onFileMessage',
+                handleData: {
+                    type: type,
+                    method: method,
+                    pars: pars
+                },
+            });
+            window.parent.postMessage(data, '*');
+        }
+    },
+
+    onDestroy() {
+        window.removeEventListener('message', this.buddhaFishingBind, false);
     },
 
     init() {
@@ -92,6 +159,9 @@ cc.Class({
         this.GAMEFAIL.runAction(cc.hide());
         this.OMO.runAction(cc.hide());
         this.HARPOON.runAction(cc.fadeOut(.1));
+
+        let fishPool = this.node.getChildByName('fishPool');
+        fishPool.removeAllChildren();
 
         this.fishTarget = null;
         this.countDown = true;
@@ -108,6 +178,8 @@ cc.Class({
         this.HARPOON.scale = .4;
         this.LINE.lineWidth = .8;
 
+        let rankLabel = this.node.getChildByName('rank').getComponent(cc.Label);
+        rankLabel.string = this.OMO.rank;
         // 飞船长大
         let seq = cc.sequence(
             cc.scaleTo(.2, .2),
@@ -144,7 +216,15 @@ cc.Class({
         }
 
         if (this.gemSub) {
-            this.gemSub.y -= 120 * dt;
+            this.gemSub.y -= 140 * dt;
+            if(this.gemSub.y < 20 - this.viewHeight/2){
+                // 销毁宝石
+                let fishPool = this.node.getChildByName('fishPool');
+                let gem = fishPool.getChildByName('gem');
+                gem.runAction(cc.hide());
+                gem.destroy();
+                this.gemSub = null;
+            }
         }
 
         // 倒计时
@@ -214,19 +294,40 @@ cc.Class({
     },
 
     // 根据鼠标移动，调整飞船x轴位置
-    _positionChange(event) {
+    _positionChange(event, messageState, pars) {
         if (!this.coverDown) return;
-        let nodeSpacePos = curNodeCoordinate(event, this.node);
+
+        let nodeSpacePos;
+        if (event) {
+            nodeSpacePos = curNodeCoordinate(event, this.node);
+        } else {
+            nodeSpacePos = pars;
+        }
+
+        if (messageState !== 'break') {
+            this.sentMessage('buddhaFishing', '_positionChange', nodeSpacePos);
+        }
 
         this.SHIP.setPosition(nodeSpacePos.x, -150);
+
         if (this.FLAG) this.OMO.setPosition(nodeSpacePos.x, -150);
         this.moveToPos = cc.v2(nodeSpacePos.x, -150);
     },
 
     // 根据点击事件，调整飞船位置及发射OMO捕鱼
-    _fishing(event) {
+    _fishing(event, messageState, pars) {
         if (!this.coverDown) return;
-        let nodeSpacePos = curNodeCoordinate(event, this.node);
+
+        let nodeSpacePos;
+        if (event) {
+            nodeSpacePos = curNodeCoordinate(event, this.node);
+        } else {
+            nodeSpacePos = pars;
+        }
+
+        if (messageState !== 'break') {
+            this.sentMessage('buddhaFishing', '_fishing', nodeSpacePos);
+        }
 
         this.SHIP.setPosition(nodeSpacePos.x, -150);
         if (this.FLAG) {
@@ -279,7 +380,7 @@ cc.Class({
     _createGem() {
         let gem = cc.instantiate(this.gem);
         gem.parent = this.node.getChildByName('fishPool');
-        gem.setPosition(getRandomNum(120), 150);
+        gem.setPosition(getRandomNum(110), 150);
         this.gemSub = gem;
         this.gemTime = getNumFromAssign([5, 6, 7, 8]);
     },
@@ -294,6 +395,7 @@ cc.Class({
         // 销毁宝石
         let fishPool = this.node.getChildByName('fishPool');
         let gem = fishPool.getChildByName('gem');
+        gem.runAction(cc.hide());
         gem.destroy();
         this.gemSub = null;
     },

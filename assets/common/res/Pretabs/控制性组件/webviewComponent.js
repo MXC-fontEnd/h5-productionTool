@@ -5,27 +5,27 @@ cc.Class({
 
     properties: {
         url: '',
-        eventName:''
+        eventName: ''
     },
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
         this.targetWidth = null;
 
-        if(this.url && this.url !== ''){
-            var webview = cc.find("backgroud/webview", this.node).getComponent(cc.WebView);
+        if (this.url && this.url !== '') {
+            var webview = cc.find("webview", this.node).getComponent(cc.WebView);
             webview.url = this.url;
         }
     },
 
-    onDisable(){
-        console.log('onDisable'); 
+    onDisable() {
+        console.log('onDisable');
     },
 
-    onDestroy(){
+    onDestroy() {
         console.log('onDestroy');
-        if(this.EN){
-            window.removeEventListener('message',this.EN,false);
+        if (this.EN) {
+            window.removeEventListener('message', this.EN, false);
         }
     },
 
@@ -33,7 +33,7 @@ cc.Class({
 
     // webview 監聽事件
     onWebFinishLoad: function (target, event, customEventData) {
-        if(!this.targetWidth && this.targetWidth !== 0){
+        if (!this.targetWidth && this.targetWidth !== 0) {
             this.targetWidth = target.node.width;
             target.node.width = 0;
         }
@@ -45,21 +45,19 @@ cc.Class({
                 break;
             case cc.WebView.EventType.LOADING:
                 console.log('LOADING');
-                
+
                 break;
             case cc.WebView.EventType.LOADED:
                 console.log('LOADED');
                 target.node.width = this.targetWidth;
-                if(this.eventName !== ''){
+                if (this.eventName !== '') {
                     var EN = this.eventName;
-                    this.EN = postMessage[EN].bind({'target':target});
-                    window.addEventListener("message",this.EN,false);
+                    this.EN = postMessage[EN].bind({ 'target': target });
+                    window.addEventListener("message", this.EN, false);
                 }
                 break;
             default:
                 break;
         }
-
     }
-
 });

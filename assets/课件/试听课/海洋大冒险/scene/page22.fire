@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.7696759259259259,
-      "y": 0.7696759259259259,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -2727,8 +2727,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 552.15,
-      "height": 398.64
+      "width": 564.07,
+      "height": 532.1
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3124,8 +3124,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "为什么“y坐标位置为-300”\n要放在下面呢？",
-    "_N$string": "为什么“y坐标位置为-300”\n要放在下面呢？",
+    "_string": "为什么“y坐标位置为-300”\n这块积木要放在下面呢？",
+    "_N$string": "为什么“y坐标位置为-300”\n这块积木要放在下面呢？",
     "_fontSize": 25,
     "_lineHeight": 40,
     "_enableWrapText": true,

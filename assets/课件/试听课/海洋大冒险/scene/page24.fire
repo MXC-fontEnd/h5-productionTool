@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.7696759259259259,
-      "y": 0.7696759259259259,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -886,7 +886,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 154,
-      "height": 140
+      "height": 70
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -931,8 +931,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "学习了编程中的\n重要知识点（编\n程规则和坐标概\n念）",
-    "_N$string": "学习了编程中的\n重要知识点（编\n程规则和坐标概\n念）",
+    "_string": "学习了编程中的\n重要知识点",
+    "_N$string": "学习了编程中的\n重要知识点",
     "_fontSize": 22,
     "_lineHeight": 35,
     "_enableWrapText": true,

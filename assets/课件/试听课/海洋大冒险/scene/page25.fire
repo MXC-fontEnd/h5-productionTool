@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.7696759259259259,
-      "y": 0.7696759259259259,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -1573,8 +1573,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 552.15,
-      "height": 398.64
+      "width": 564.07,
+      "height": 532.1
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1924,7 +1924,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 546,
+      "width": 602,
       "height": 35
     },
     "_anchorPoint": {
@@ -1970,8 +1970,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "有任何问题可以继续和顾问老师沟通交流哦~",
-    "_N$string": "有任何问题可以继续和顾问老师沟通交流哦~",
+    "_string": "有任何问题可以继续和课程顾问老师沟通交流哦~",
+    "_N$string": "有任何问题可以继续和课程顾问老师沟通交流哦~",
     "_fontSize": 28,
     "_lineHeight": 35,
     "_enableWrapText": true,

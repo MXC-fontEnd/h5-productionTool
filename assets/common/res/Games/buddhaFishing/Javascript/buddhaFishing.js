@@ -130,7 +130,7 @@ cc.Class({
             this.sentMessage('buddhaFishing', 'gameStart');
         }
         this.coverDown = false;
-        this.COVER.setPosition(-500, 0);
+        this.COVER.setPosition(-2000, 0);
         setTimeout(function () {
             this.init();
         }.bind(this), 10);

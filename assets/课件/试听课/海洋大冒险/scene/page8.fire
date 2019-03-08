@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.8689844131469731,
+      "y": 0.8689844131469731,
       "z": 1
     },
     "_quat": {
@@ -742,6 +742,7 @@
     "_enabled": true,
     "swimLeft": false,
     "swimRight": true,
+    "swimRepeat": false,
     "swimTime": 30,
     "destination": null,
     "_id": "7dRsSeCyxFMoMbZv2mbk2K"
@@ -856,6 +857,7 @@
     "_enabled": true,
     "swimLeft": true,
     "swimRight": false,
+    "swimRepeat": false,
     "swimTime": 35,
     "destination": null,
     "_id": "e3RXnk54lF1pwqwjtStEM0"
@@ -970,6 +972,7 @@
     "_enabled": true,
     "swimLeft": true,
     "swimRight": false,
+    "swimRepeat": false,
     "swimTime": 65,
     "destination": null,
     "_id": "4dlGDxiz9IRr+ITpjwmuEN"
@@ -1084,6 +1087,7 @@
     "_enabled": true,
     "swimLeft": true,
     "swimRight": false,
+    "swimRepeat": false,
     "swimTime": 40,
     "destination": null,
     "_id": "41+F1M66RB9qTKNSQoJaOv"
@@ -1198,6 +1202,7 @@
     "_enabled": true,
     "swimLeft": false,
     "swimRight": true,
+    "swimRepeat": false,
     "swimTime": 50,
     "destination": null,
     "_id": "ad1Q9w3aNO76Qhc+KBVh29"
@@ -1381,6 +1386,7 @@
     "_enabled": true,
     "swimLeft": false,
     "swimRight": true,
+    "swimRepeat": false,
     "swimTime": 75,
     "destination": null,
     "_id": "7aVs9q+hZDep4C0WlM+C7y"
@@ -1495,6 +1501,7 @@
     "_enabled": true,
     "swimLeft": false,
     "swimRight": true,
+    "swimRepeat": false,
     "swimTime": 75,
     "destination": null,
     "_id": "73GOq1nXhCRbYETqj9p7cg"
@@ -1609,6 +1616,7 @@
     "_enabled": true,
     "swimLeft": false,
     "swimRight": true,
+    "swimRepeat": false,
     "swimTime": 75,
     "destination": null,
     "_id": "faDIPxSElImqNoCdtsUhl+"

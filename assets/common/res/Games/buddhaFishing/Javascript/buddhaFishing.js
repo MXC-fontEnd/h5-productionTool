@@ -45,6 +45,11 @@ cc.Class({
         scoreList: {
             default: [],
             type: [cc.SpriteFrame]
+        },
+
+        fishBgm:{
+            default:null,
+            type:cc.AudioClip
         }
 
     },
@@ -193,6 +198,9 @@ cc.Class({
         }.bind(this), 1000);
 
         this.SHIP.runAction(seq);
+
+        // 播放背景音乐
+        cc.audioEngine.play(this.fishBgm, false, .1);
     },
 
     onEnable: function () {
@@ -419,6 +427,7 @@ cc.Class({
         let fishPool = this.node.getChildByName('fishPool');
         fishPool.removeAllChildren(true);
         this.GAMEFAIL.runAction(cc.show());
+        cc.audioEngine.stopAll();
         this._reloadGame();
     },
 

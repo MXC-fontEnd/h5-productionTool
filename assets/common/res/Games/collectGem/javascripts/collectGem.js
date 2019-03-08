@@ -68,7 +68,7 @@ cc.Class({
         this.winGame.setPosition(cc.v2(0, 540));
         this.count.string = 0;
         this.gemPool.removeAllChildren();
-        this.randomV2 = [];
+        this.randomV2 = [cc.v2(-350,-120),cc.v2(-270,-150),cc.v2(-180,-180),cc.v2(-80,-100),cc.v2(20,-180),cc.v2(100,-190),cc.v2(280,-190)];
 
         // 因拓课云通信机制调整
         //this.randomTotal = [5, 6, 7, 8][Math.floor(Math.random() * 4)];
@@ -82,10 +82,10 @@ cc.Class({
         let height = this.gemPool.height;
 
         if (this.randomV2.length < this.randomTotal) {
-            let x = Math.random() > 0.5 ? -Math.floor(Math.random() * (width - 100)/2) : Math.floor(Math.random() * (width - 100)/2);
-            let y = Math.random() > 0.5 ? -Math.floor(Math.random() * (height - 100)/2) : Math.floor(Math.random() * (height - 100)/2);
-            this.randomV2.push(cc.v2(x, y));
-            this._randomV2();
+            // let x = Math.random() > 0.5 ? -Math.floor(Math.random() * (width - 100)/2) : Math.floor(Math.random() * (width - 100)/2);
+            // let y = Math.random() > 0.5 ? -Math.floor(Math.random() * (height - 100)/2) : Math.floor(Math.random() * (height - 100)/2);
+            // this.randomV2.push(cc.v2(x, y));
+            // this._randomV2();
         } else {
             this._createLightGem();
         }

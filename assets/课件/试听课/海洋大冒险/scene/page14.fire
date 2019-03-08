@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.8409722222222222,
-      "y": 0.8409722222222222,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -1023,8 +1023,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "瞄准气球~",
-    "_N$string": "瞄准气球~",
+    "_string": "瞄准气泡~",
+    "_N$string": "瞄准气泡~",
     "_fontSize": 16,
     "_lineHeight": 20,
     "_enableWrapText": true,

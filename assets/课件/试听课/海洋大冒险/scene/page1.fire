@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.8409722222222222,
-      "y": 0.8409722222222222,
+      "x": 0.8689844131469726,
+      "y": 0.8689844131469726,
       "z": 1
     },
     "_quat": {
@@ -73,7 +73,7 @@
     "_level": 0,
     "_components": [
       {
-        "__id__": 177
+        "__id__": 180
       }
     ],
     "_prefab": null,
@@ -161,26 +161,26 @@
         "__id__": 164
       },
       {
-        "__id__": 166
-      },
-      {
-        "__id__": 168
+        "__id__": 167
       },
       {
         "__id__": 170
       },
       {
-        "__id__": 172
+        "__id__": 173
       },
       {
-        "__id__": 174
+        "__id__": 175
+      },
+      {
+        "__id__": 177
       }
     ],
     "_active": true,
     "_level": 1,
     "_components": [
       {
-        "__id__": 176
+        "__id__": 179
       }
     ],
     "_prefab": null,
@@ -5722,8 +5722,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 552.15,
-      "height": 398.64
+      "width": 564.07,
+      "height": 532.1
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -5882,6 +5882,9 @@
     "_components": [
       {
         "__id__": 165
+      },
+      {
+        "__id__": 166
       }
     ],
     "_prefab": null,
@@ -5959,6 +5962,18 @@
     "_id": "2dgOWbADdOLKRhdsNPsP0F"
   },
   {
+    "__type__": "69e2fmk1YlA2rqRtSnl1cGJ",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 164
+    },
+    "_enabled": true,
+    "_shaderObject": null,
+    "_N$shaderFile": "WaveShader",
+    "_id": "b95yfBjhNLrLp1eKfWfTip"
+  },
+  {
     "__type__": "cc.Node",
     "_name": "1p_qipaokuang2",
     "_objFlags": 0,
@@ -5970,7 +5985,10 @@
     "_level": 2,
     "_components": [
       {
-        "__id__": 167
+        "__id__": 168
+      },
+      {
+        "__id__": 169
       }
     ],
     "_prefab": null,
@@ -6024,7 +6042,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 166
+      "__id__": 167
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -6048,6 +6066,18 @@
     "_id": "53lFLeA1xCjoireSSqN5mA"
   },
   {
+    "__type__": "69e2fmk1YlA2rqRtSnl1cGJ",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 167
+    },
+    "_enabled": true,
+    "_shaderObject": null,
+    "_N$shaderFile": "WaveShader",
+    "_id": "a5AaaLe9NHS5Nt5fTOGg0N"
+  },
+  {
     "__type__": "cc.Node",
     "_name": "1p_qipaokuang2",
     "_objFlags": 0,
@@ -6059,7 +6089,10 @@
     "_level": 2,
     "_components": [
       {
-        "__id__": 169
+        "__id__": 171
+      },
+      {
+        "__id__": 172
       }
     ],
     "_prefab": null,
@@ -6113,7 +6146,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 168
+      "__id__": 170
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -6137,6 +6170,18 @@
     "_id": "22gmkeM2lOAbbiVNab6Naq"
   },
   {
+    "__type__": "69e2fmk1YlA2rqRtSnl1cGJ",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 170
+    },
+    "_enabled": true,
+    "_shaderObject": null,
+    "_N$shaderFile": "WaveShader",
+    "_id": "5fpCmU765CtYcZjY+xpo/a"
+  },
+  {
     "__type__": "cc.Node",
     "_name": "erweima1",
     "_objFlags": 0,
@@ -6148,7 +6193,7 @@
     "_level": 2,
     "_components": [
       {
-        "__id__": 171
+        "__id__": 174
       }
     ],
     "_prefab": null,
@@ -6202,7 +6247,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 170
+      "__id__": 173
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -6237,7 +6282,7 @@
     "_level": 2,
     "_components": [
       {
-        "__id__": 173
+        "__id__": 176
       }
     ],
     "_prefab": null,
@@ -6291,7 +6336,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 172
+      "__id__": 175
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -6326,7 +6371,7 @@
     "_level": 2,
     "_components": [
       {
-        "__id__": 175
+        "__id__": 178
       }
     ],
     "_prefab": null,
@@ -6380,7 +6425,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 174
+      "__id__": 177
     },
     "_enabled": true,
     "_srcBlendFactor": 770,

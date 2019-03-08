@@ -1514,7 +1514,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 489.82,
+      "width": 525.82,
       "height": 20
     },
     "_anchorPoint": {
@@ -1560,8 +1560,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "不要着急，可以打字高速老师哦~课程老师也会联系帮助你哒~",
-    "_N$string": "不要着急，可以打字高速老师哦~课程老师也会联系帮助你哒~",
+    "_string": "不要着急，可以打字告诉老师哦~课程顾问老师也会联系帮助你哒~",
+    "_N$string": "不要着急，可以打字告诉老师哦~课程顾问老师也会联系帮助你哒~",
     "_fontSize": 18,
     "_lineHeight": 20,
     "_enableWrapText": true,

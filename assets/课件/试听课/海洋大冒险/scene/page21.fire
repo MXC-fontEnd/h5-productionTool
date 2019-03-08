@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.7696759259259259,
-      "y": 0.7696759259259259,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -1732,8 +1732,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "想象&设计：\n你想象中的效\n果是什么样子",
-    "_N$string": "想象&设计：\n你想象中的效\n果是什么样子",
+    "_string": "思考&设计：\n你想象中的效\n果是什么样子",
+    "_N$string": "思考&设计：\n你想象中的效\n果是什么样子",
     "_fontSize": 14,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -1821,8 +1821,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "遇到了问题需\n要用程序解决",
-    "_N$string": "遇到了问题需\n要用程序解决",
+    "_string": "遇到了问题需\n要用编程解决",
+    "_N$string": "遇到了问题需\n要用编程解决",
     "_fontSize": 14,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -2215,8 +2215,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 552.15,
-      "height": 398.64
+      "width": 564.07,
+      "height": 532.1
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",

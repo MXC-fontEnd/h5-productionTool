@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.8406828703703704,
-      "y": 0.8406828703703704,
+      "x": 0.9645670572916667,
+      "y": 0.9645670572916667,
       "z": 1
     },
     "_quat": {
@@ -54,7 +54,7 @@
     },
     "_zIndex": 0,
     "groupIndex": 0,
-    "autoReleaseAssets": false,
+    "autoReleaseAssets": true,
     "_id": "3276f6d0-6914-49bc-bc6f-d880b514368e"
   },
   {

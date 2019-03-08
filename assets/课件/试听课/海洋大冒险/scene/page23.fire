@@ -73,7 +73,7 @@
     "_level": 0,
     "_components": [
       {
-        "__id__": 54
+        "__id__": 52
       }
     ],
     "_prefab": null,
@@ -161,23 +161,23 @@
         "__id__": 41
       },
       {
-        "__id__": 44
+        "__id__": 43
       },
       {
-        "__id__": 46
+        "__id__": 45
       },
       {
-        "__id__": 48
+        "__id__": 47
       },
       {
-        "__id__": 51
+        "__id__": 49
       }
     ],
     "_active": true,
     "_level": 1,
     "_components": [
       {
-        "__id__": 53
+        "__id__": 51
       }
     ],
     "_prefab": null,
@@ -1647,9 +1647,6 @@
     "_components": [
       {
         "__id__": 42
-      },
-      {
-        "__id__": 43
       }
     ],
     "_prefab": null,
@@ -1727,18 +1724,6 @@
     "_id": "84V1C2Bb9K1KcvP1J3BcdM"
   },
   {
-    "__type__": "69e2fmk1YlA2rqRtSnl1cGJ",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 41
-    },
-    "_enabled": true,
-    "_shaderObject": null,
-    "_N$shaderFile": "WaveShader",
-    "_id": "5bi25C6NdIOJRjVkJ5CD9T"
-  },
-  {
     "__type__": "cc.Node",
     "_name": "erweima2",
     "_objFlags": 0,
@@ -1750,7 +1735,7 @@
     "_level": 2,
     "_components": [
       {
-        "__id__": 45
+        "__id__": 44
       }
     ],
     "_prefab": null,
@@ -1804,7 +1789,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 44
+      "__id__": 43
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -1839,7 +1824,7 @@
     "_level": 2,
     "_components": [
       {
-        "__id__": 47
+        "__id__": 46
       }
     ],
     "_prefab": null,
@@ -1893,7 +1878,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 46
+      "__id__": 45
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -1928,10 +1913,7 @@
     "_level": 2,
     "_components": [
       {
-        "__id__": 49
-      },
-      {
-        "__id__": 50
+        "__id__": 48
       }
     ],
     "_prefab": null,
@@ -1985,7 +1967,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 48
+      "__id__": 47
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -2009,18 +1991,6 @@
     "_id": "fbY6/6MPtCSqMYD1+SAwfm"
   },
   {
-    "__type__": "69e2fmk1YlA2rqRtSnl1cGJ",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 48
-    },
-    "_enabled": true,
-    "_shaderObject": null,
-    "_N$shaderFile": "WaveShader",
-    "_id": "f1wtYbH7lL06k+IlSpEg7Y"
-  },
-  {
     "__type__": "cc.Node",
     "_name": "21p_miaoxiaocheng",
     "_objFlags": 0,
@@ -2032,7 +2002,7 @@
     "_level": 2,
     "_components": [
       {
-        "__id__": 52
+        "__id__": 50
       }
     ],
     "_prefab": null,
@@ -2086,7 +2056,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 51
+      "__id__": 49
     },
     "_enabled": true,
     "_srcBlendFactor": 770,

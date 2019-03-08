@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.8689844131469726,
+      "y": 0.8689844131469726,
       "z": 1
     },
     "_quat": {
@@ -1069,7 +1069,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 560,
+      "width": 616,
       "height": 20
     },
     "_anchorPoint": {
@@ -1079,8 +1079,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 22.6,
-      "y": 102.2,
+      "x": 55,
+      "y": 100,
       "z": 0
     },
     "_scale": {
@@ -1117,7 +1117,7 @@
     "_useOriginalSize": false,
     "_string": "1、为保证听课质量，老师在以下几种情况下会关闭大家的麦克~",
     "_N$string": "1、为保证听课质量，老师在以下几种情况下会关闭大家的麦克~",
-    "_fontSize": 20,
+    "_fontSize": 22,
     "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": {
@@ -1158,7 +1158,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 290,
+      "width": 319,
       "height": 20
     },
     "_anchorPoint": {
@@ -1168,8 +1168,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -100.4,
-      "y": 7.6,
+      "x": -92.4,
+      "y": 2.5999999999999996,
       "z": 0
     },
     "_scale": {
@@ -1206,7 +1206,7 @@
     "_useOriginalSize": false,
     "_string": "2、如果想要回答问题该怎么做？",
     "_N$string": "2、如果想要回答问题该怎么做？",
-    "_fontSize": 20,
+    "_fontSize": 22,
     "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": {
@@ -1247,7 +1247,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 410,
+      "width": 451,
       "height": 20
     },
     "_anchorPoint": {
@@ -1257,7 +1257,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -39.6,
+      "x": -27.6,
       "y": -89.2,
       "z": 0
     },
@@ -1295,7 +1295,7 @@
     "_useOriginalSize": false,
     "_string": "3、如果遇到了设备问题，影响了听课怎么办？",
     "_N$string": "3、如果遇到了设备问题，影响了听课怎么办？",
-    "_fontSize": 20,
+    "_fontSize": 22,
     "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": {
@@ -1336,7 +1336,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 243,
+      "width": 270,
       "height": 20
     },
     "_anchorPoint": {
@@ -1346,8 +1346,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -75,
-      "y": 63.8,
+      "x": -86,
+      "y": 64,
       "z": 0
     },
     "_scale": {
@@ -1384,7 +1384,7 @@
     "_useOriginalSize": false,
     "_string": "①讲课时  ②周围环境有噪音时",
     "_N$string": "①讲课时  ②周围环境有噪音时",
-    "_fontSize": 18,
+    "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": {
@@ -1425,7 +1425,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 496.91,
+      "width": 552.12,
       "height": 20
     },
     "_anchorPoint": {
@@ -1435,8 +1435,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 48.4,
-      "y": -33.1,
+      "x": 56,
+      "y": -33,
       "z": 0
     },
     "_scale": {
@@ -1473,7 +1473,7 @@
     "_useOriginalSize": false,
     "_string": "及时举手，老师给大家打开麦克风，要踊跃分享你的好想法哦~",
     "_N$string": "及时举手，老师给大家打开麦克风，要踊跃分享你的好想法哦~",
-    "_fontSize": 18,
+    "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": {
@@ -1514,7 +1514,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 525.82,
+      "width": 584.24,
       "height": 20
     },
     "_anchorPoint": {
@@ -1524,8 +1524,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 43.9,
-      "y": -129.3,
+      "x": 72,
+      "y": -129,
       "z": 0
     },
     "_scale": {
@@ -1562,7 +1562,7 @@
     "_useOriginalSize": false,
     "_string": "不要着急，可以打字告诉老师哦~课程顾问老师也会联系帮助你哒~",
     "_N$string": "不要着急，可以打字告诉老师哦~课程顾问老师也会联系帮助你哒~",
-    "_fontSize": 18,
+    "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": {

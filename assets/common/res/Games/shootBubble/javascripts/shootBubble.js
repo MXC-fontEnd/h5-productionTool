@@ -45,6 +45,18 @@ cc.Class({
             displayName: '鱼池'
         },
 
+        winGame: {
+            default: null,
+            type: cc.Node,
+            displayName: '胜利'
+        },
+
+        reStart: {
+            default: null,
+            type: cc.Node,
+            displayName: '再来一次'
+        },   
+
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -118,9 +130,14 @@ cc.Class({
             this.sentMessage('shootBubble','init');
         }
 
+        this.winGame.setPosition(cc.v2(0, 540));
+
         // 所选鱼坐标轴
         this.fishX = null;
         this.fishY = null;
+
+        // 鱼被射击总数
+        this.fishTotal = 0;
 
         // 
         this._labelStringChange(this.xCoo, '__');
@@ -203,7 +220,17 @@ cc.Class({
             if (this.fishCooArray[n].x == this.fishX && this.fishCooArray[n].y == this.fishY) {
                 let curFish = this.fishPool.children[n];
                 let sprite = curFish.getComponent(cc.Sprite);
-                sprite.enabled = false;
+                
+                if(sprite.enabled){
+                    sprite.enabled = false;
+                    this.fishTotal = this.fishTotal + 1;
+
+                    if(this.fishTotal === 9){
+                        let b1 = cc.moveTo(0, cc.v2(0, 0));
+                        this.winGame.runAction(b1);
+                    }
+                }
+
             }
         }
     },

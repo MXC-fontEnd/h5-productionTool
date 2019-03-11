@@ -7,19 +7,18 @@
     "scheme": "https",
     "skipRecord": false
   },
-  "appKey": "",
-  "appSecret": "",
   "encryptJs": true,
-  "excludeScenes": [],
+  "excludeScenes": [
+    "a4e8836c-48b1-4e13-8c86-9df46bdad056",
+    "dd4d923a-07fc-4599-ad70-d6fcf69a714a",
+    "7834707c-22e8-4ea4-bee1-ac85b64b4a9e"
+  ],
   "fb-instant-games": {},
-  "includeAnySDK": false,
   "includeSDKBox": false,
   "inlineSpriteFrames": true,
   "inlineSpriteFrames_native": true,
-  "jailbreakPlatform": false,
   "md5Cache": false,
   "mergeStartScene": false,
-  "oauthLoginServer": "",
   "optimizeHotUpdate": false,
   "orientation": {
     "landscapeLeft": true,
@@ -28,7 +27,6 @@
     "upsideDown": false
   },
   "packageName": "org.cocos2d.helloworld",
-  "privateKey": "",
   "qqplay": {
     "REMOTE_SERVER_ROOT": "",
     "orientation": "portrait",

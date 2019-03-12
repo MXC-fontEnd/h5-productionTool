@@ -821,7 +821,7 @@
     "pageCount": 25,
     "currentPageSeq": 1,
     "localDebugging": false,
-    "juniorCoursewareState": true,
+    "juniorCoursewareState": false,
     "juniorCoursewarePage": [
       1,
       2,
@@ -849,7 +849,7 @@
       24,
       25
     ],
-    "seniorCoursewareState": false,
+    "seniorCoursewareState": true,
     "seniorCoursewarePage": [
       1,
       2,
@@ -867,6 +867,7 @@
       33,
       15,
       34,
+      35,
       19,
       20,
       21,

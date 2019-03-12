@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.85625,
-      "y": 0.85625,
+      "x": 0.70390625,
+      "y": 0.70390625,
       "z": 1
     },
     "_quat": {
@@ -612,8 +612,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 347,
-      "height": 407
+      "width": 150,
+      "height": 176
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -628,8 +628,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.3,
-      "y": 0.3,
+      "x": 0.7,
+      "y": 0.7,
       "z": 1
     },
     "_rotationX": 0,
@@ -658,7 +658,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "21d5fb8a-dc2e-4335-981b-97aa69a0b6e6"
+      "__uuid__": "fdf052e0-1035-4170-9089-6681702ae930"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -701,8 +701,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 245,
-      "height": 49
+      "width": 400,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -717,8 +717,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.6,
+      "y": 0.6,
       "z": 1
     },
     "_rotationX": 0,
@@ -747,7 +747,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "86ae865b-efd4-422b-8261-49714cb0aec3"
+      "__uuid__": "d253c4eb-f8ba-4ee0-b287-8be18bffb66f"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -790,8 +790,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 347,
-      "height": 407
+      "width": 150,
+      "height": 176
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -801,13 +801,13 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -389,
-      "y": 5,
+      "y": 3,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.3,
-      "y": 0.3,
+      "x": 0.7,
+      "y": 0.7,
       "z": 1
     },
     "_rotationX": 0,
@@ -836,7 +836,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "9d18edee-5e14-4959-8386-4eca8432418c"
+      "__uuid__": "ef10e86f-84c9-444a-ad5b-0d9d5b60c12a"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -879,8 +879,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 245,
-      "height": 49
+      "width": 400,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -890,13 +890,13 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -300,
-      "y": -24,
+      "y": -25,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.6,
+      "y": 0.6,
       "z": 1
     },
     "_rotationX": 0,
@@ -925,7 +925,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "c46eeb30-6238-48af-acb5-aee9444fa3e7"
+      "__uuid__": "890112e7-3988-4584-956f-e997f88d4a70"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -968,8 +968,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 347,
-      "height": 407
+      "width": 150,
+      "height": 176
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -984,8 +984,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.3,
-      "y": 0.3,
+      "x": 0.7,
+      "y": 0.7,
       "z": 1
     },
     "_rotationX": 0,
@@ -1014,7 +1014,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "436ce80f-0bf9-4400-b94a-cfab6ef1aa08"
+      "__uuid__": "edf02c54-3107-4d03-bef0-35fc68e5bb86"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -1057,8 +1057,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 245,
-      "height": 49
+      "width": 400,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1073,8 +1073,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.6,
+      "y": 0.6,
       "z": 1
     },
     "_rotationX": 0,
@@ -1103,7 +1103,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "b7b3ec56-4c39-434e-97e8-ee610fe9148e"
+      "__uuid__": "88fa6640-f822-45bd-8a6a-3a979bc9e377"
     },
     "_type": 0,
     "_sizeMode": 1,

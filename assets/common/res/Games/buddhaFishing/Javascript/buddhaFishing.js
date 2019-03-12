@@ -415,7 +415,8 @@ cc.Class({
     },
 
     // 游戏失败
-    _gameFail() {
+    gameFail() {
+        this.LINE.clear();
         this.gemTime = null;
         this.gemSub = null;
         this.countDown = null;
@@ -534,7 +535,7 @@ cc.Class({
             progressBar.progress = progress;
         } else {
             this.countDown = false;
-            this._gameFail();
+            this.gameFail();
         }
     },
 

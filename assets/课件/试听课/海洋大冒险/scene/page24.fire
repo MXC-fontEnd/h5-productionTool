@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.829150390625,
-      "y": 0.829150390625,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -52,7 +52,6 @@
       "z": 0,
       "w": 1
     },
-    "_zIndex": 0,
     "groupIndex": 0,
     "autoReleaseAssets": true,
     "_id": "9f64ddd5-6e92-4166-9b39-e72531116363"
@@ -121,7 +120,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "296wKqbNtEtK9msdGhlen+"
   },
@@ -219,7 +217,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "b9jnunYKtG0rwp3uqOmUVs"
   },
@@ -280,7 +277,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "30E4mr1iBH2auD3/o9vZZH"
   },
@@ -292,8 +288,6 @@
       "__id__": 4
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
     "_spriteFrame": {
       "__uuid__": "acb69ac2-43ce-43a7-8ea4-7340ab58c649"
     },
@@ -310,6 +304,8 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_id": "fbsUg6sS1EdbTU3NSMX/oH"
   },
   {
@@ -371,7 +367,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "73hccQr25EIoSOoBQx8qSQ"
   },
@@ -383,8 +378,6 @@
       "__id__": 6
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 773,
     "_spriteFrame": {
       "__uuid__": "994ef29f-1369-4574-907c-3db1058aa7d7"
     },
@@ -401,6 +394,8 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 773,
     "_id": "cegxUiX49H1KrP2wnrya0V"
   },
   {
@@ -440,8 +435,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 276,
-      "height": 47
+      "width": 784,
+      "height": 119
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -456,8 +451,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.5,
+      "y": 0.5,
       "z": 1
     },
     "_rotationX": 0,
@@ -471,7 +466,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "03gbbFMB1KT6p7/ThQA8Bx"
   },
@@ -483,10 +477,8 @@
       "__id__": 9
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "13afcdae-0d98-4c5b-9806-ce88cfe9f996"
+      "__uuid__": "c08dc513-e0b6-4653-9211-3035fd3bbd7a"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -501,6 +493,8 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_id": "e0sqAdtSJOPbc3jUkElLhm"
   },
   {
@@ -560,7 +554,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "7e9bRlM1lKl5URBqzAKMeY"
   },
@@ -572,8 +565,6 @@
       "__id__": 11
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
     "_spriteFrame": {
       "__uuid__": "02803355-02b7-43a0-9855-105bac5482ff"
     },
@@ -590,6 +581,8 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_id": "54Uw3t9zVO5qDhbFMpmrlj"
   },
   {
@@ -618,8 +611,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 154,
-      "height": 70
+      "width": 50,
+      "height": 35
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -649,7 +642,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "60sevIF75BSYrjTKz3K9wy"
   },
@@ -661,12 +653,10 @@
       "__id__": 13
     },
     "_enabled": true,
-    "_srcBlendFactor": 1,
-    "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "初步了解图形化\n编程",
-    "_N$string": "初步了解图形化\n编程",
-    "_fontSize": 22,
+    "_string": "坐标",
+    "_N$string": "坐标",
+    "_fontSize": 25,
     "_lineHeight": 35,
     "_enableWrapText": true,
     "_N$file": {
@@ -679,6 +669,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
+    "_N$cacheMode": 0,
     "_id": "2fqPwiwm5AJa3TWHXhQvL3"
   },
   {
@@ -738,7 +729,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "8fAb2pddZGAb6ta2gshCJO"
   },
@@ -750,8 +740,6 @@
       "__id__": 15
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
     "_spriteFrame": {
       "__uuid__": "431b0538-9c9c-4e3d-a000-ae971ea79470"
     },
@@ -768,6 +756,8 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_id": "00Z9W8HEdGd6PD92V+PI2V"
   },
   {
@@ -827,7 +817,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "f0AW/OQ/tIL5APrSx/QWFE"
   },
@@ -839,8 +828,6 @@
       "__id__": 17
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
     "_spriteFrame": {
       "__uuid__": "91743681-0e5c-448b-a536-c04c2c8dbc5e"
     },
@@ -857,6 +844,8 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_id": "5d7+Ui3GNNoIwUEpuA/Pim"
   },
   {
@@ -885,8 +874,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 154,
-      "height": 70
+      "width": 100,
+      "height": 35
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -916,7 +905,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "34Brwn0L1FNoj9ori4vKw5"
   },
@@ -928,12 +916,10 @@
       "__id__": 19
     },
     "_enabled": true,
-    "_srcBlendFactor": 1,
-    "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "学习了编程中的\n重要知识点",
-    "_N$string": "学习了编程中的\n重要知识点",
-    "_fontSize": 22,
+    "_string": "编程规则",
+    "_N$string": "编程规则",
+    "_fontSize": 25,
     "_lineHeight": 35,
     "_enableWrapText": true,
     "_N$file": {
@@ -946,6 +932,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
+    "_N$cacheMode": 0,
     "_id": "e9cWjDsxdEuq/R7hIjvIP3"
   },
   {
@@ -1005,7 +992,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "a7S6KVVIpLerKBvG3v+/Hg"
   },
@@ -1017,8 +1003,6 @@
       "__id__": 21
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
     "_spriteFrame": {
       "__uuid__": "431b0538-9c9c-4e3d-a000-ae971ea79470"
     },
@@ -1035,6 +1019,8 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_id": "e8GKihJHFPk4At0bLSWEl8"
   },
   {
@@ -1094,7 +1080,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "53UL348VFEq4hxG1RF/LsM"
   },
@@ -1106,8 +1091,6 @@
       "__id__": 23
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
     "_spriteFrame": {
       "__uuid__": "c7e4d1ae-f539-41fc-a28f-7fba9368356d"
     },
@@ -1124,6 +1107,8 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_id": "4boh0um/5F16jDIWdI4XFZ"
   },
   {
@@ -1152,8 +1137,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 154,
-      "height": 70
+      "width": 100,
+      "height": 35
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1183,7 +1168,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "38aFFcAStFgo492mSkikLP"
   },
@@ -1195,12 +1179,10 @@
       "__id__": 25
     },
     "_enabled": true,
-    "_srcBlendFactor": 1,
-    "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "体验编程流程、\n补充作品",
-    "_N$string": "体验编程流程、\n补充作品",
-    "_fontSize": 22,
+    "_string": "制作程序",
+    "_N$string": "制作程序",
+    "_fontSize": 25,
     "_lineHeight": 35,
     "_enableWrapText": true,
     "_N$file": {
@@ -1213,6 +1195,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
+    "_N$cacheMode": 0,
     "_id": "32Yod5uiJGY4L+U5P46wrA"
   },
   {
@@ -1272,7 +1255,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "adLhF94MZA0r/ZqdFQhdJV"
   },
@@ -1284,8 +1266,6 @@
       "__id__": 27
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
     "_spriteFrame": {
       "__uuid__": "431b0538-9c9c-4e3d-a000-ae971ea79470"
     },
@@ -1302,6 +1282,8 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_id": "31KE9Dw75DsJ7Vdodp05zR"
   },
   {
@@ -1385,7 +1367,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": "54flrf4hJCUYBOQU5oIv0j"
   },

@@ -1,5 +1,6 @@
 
 const toolBox = require("toolBox");
+const DeviceDetect = require("DeviceDetect");
 const getRandomNum = toolBox.getRandomNum;
 const getNumFromAssign = toolBox.getNumFromAssign;
 const curNodeCoordinate = toolBox.curNodeCoordinate;
@@ -58,7 +59,6 @@ cc.Class({
     onLoad() {
         this.viewWidth = this.node.width;
         this.viewHeight = this.node.height;
-
         this.FLYSHIP = this.node.getChildByName("flyShip");
         this.SHIP = this.FLYSHIP.getChildByName("ship");
         this.LINE = this.FLYSHIP.getChildByName("line").getComponent(cc.Graphics);
@@ -75,19 +75,12 @@ cc.Class({
             startButton.on(cc.Node.EventType.TOUCH_START, this.gameStart, this);
         }
 
-        // 调整飞船位子
-        this.node.on(cc.Node.EventType.MOUSE_MOVE, this._positionChange, this);
-
-        // 监听鼠标位置,移动飞船位置并发射OMO
-        this.node.on(cc.Node.EventType.MOUSE_DOWN, this._fishing, this);
-
         // 捕鱼成功，OMO回家睡觉觉
         this.node.on('retakeOMO', this._retakeOMO, this);
 
         // 捕获宝石，增加游戏时间
         // 红：5秒；黄：3秒；
         this.node.on('addTime', this._addTime, this);
-
 
         this.buddhaFishingBind = function (e) {
             if (window === window.parent) return;
@@ -179,18 +172,33 @@ cc.Class({
 
         this.OMO.rank = 1;
         this.SHIP.scale = .8;
+        this.SHIP.x = 0;
         this.OMO.scale = .8;
         this.HARPOON.scale = .4;
         this.LINE.lineWidth = .8;
 
         let rankLabel = this.node.getChildByName('rank').getComponent(cc.Label);
         rankLabel.string = this.OMO.rank;
+
         // 飞船长大
         let seq = cc.sequence(
             cc.scaleTo(.2, .2),
             cc.scaleTo(.4, .4),
             cc.scaleTo(.6, .6),
             cc.scaleTo(.8, .8),
+            cc.callFunc(function(e){
+                if(DeviceDetect.isIpad){
+                    // 调整飞船位子
+                    this.node.on(cc.Node.EventType.TOUCH_MOVE, this._positionChange, this);
+                    // 监听鼠标位置,移动飞船位置并发射OMO
+                    this.node.on(cc.Node.EventType.TOUCH_START, this._fishing, this);
+                } else {
+                    // 调整飞船位子
+                    this.node.on(cc.Node.EventType.MOUSE_MOVE, this._positionChange, this);
+                    // 监听鼠标位置,移动飞船位置并发射OMO
+                    this.node.on(cc.Node.EventType.MOUSE_DOWN, this._fishing, this);
+                }
+            }, this)
         );
 
         setTimeout(function () {
@@ -200,7 +208,10 @@ cc.Class({
         this.SHIP.runAction(seq);
 
         // 播放背景音乐
-        cc.audioEngine.play(this.fishBgm, false, .1);
+        if(this.fishBgm){
+            cc.audioEngine.play(this.fishBgm, false, .1);
+        }
+        
     },
 
     onEnable: function () {
@@ -424,6 +435,17 @@ cc.Class({
         this.isLaunchOMO = null;
         this.isRetake = null;
 
+        if(DeviceDetect.isIpad){
+            // 调整飞船位子
+            this.node.off(cc.Node.EventType.TOUCH_MOVE, this._positionChange, this);
+            // 监听鼠标位置,移动飞船位置并发射OMO
+            this.node.off(cc.Node.EventType.TOUCH_START, this._fishing, this);
+        } else {
+            // 调整飞船位子
+            this.node.off(cc.Node.EventType.MOUSE_MOVE, this._positionChange, this);
+            // 监听鼠标位置,移动飞船位置并发射OMO
+            this.node.off(cc.Node.EventType.MOUSE_DOWN, this._fishing, this);
+        }
 
         let fishPool = this.node.getChildByName('fishPool');
         fishPool.removeAllChildren(true);

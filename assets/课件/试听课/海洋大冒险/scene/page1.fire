@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.85625,
-      "y": 0.85625,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -5567,9 +5567,7 @@
         "__uuid__": "ab41be03-ae08-4eb1-af5c-55dc15aa90f8"
       }
     ],
-    "fishBgm": {
-      "__uuid__": "290a5ff6-3d9f-4dea-9c1a-d0a927c9fcb5"
-    },
+    "fishBgm": null,
     "_id": "f8ShB4C5hIQaPTRe8QBlEf"
   },
   {

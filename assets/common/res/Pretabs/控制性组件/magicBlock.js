@@ -198,7 +198,7 @@
     },
 
     // 被点击
-    // 重复执行12次
+    // 重复执行10次
     // 等待一秒
     // 秒针旋转一格（30度）
     rotateNeedleRepeat12(event, CustomEventData) {
@@ -210,7 +210,7 @@
         let action1 = cc.delayTime(1);
         let action2 = cc.rotateBy(0.1, 6);
         let action3 = cc.sequence(action1, action2);
-        let action = cc.repeat(action3, 60);
+        let action = cc.repeat(action3, 10);
 
         this.controlledBoy.runAction(action);
     },

@@ -7,13 +7,24 @@
     "scheme": "https",
     "skipRecord": false
   },
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
   "encryptJs": true,
   "excludeScenes": [
     "3c019ad9-7b8c-4112-a779-7db961db7606",
-    "317ffb97-edc3-4280-8bde-1a912a0a5692",
-    "35b38a3a-e8de-4535-b507-c9939a3c7d2c",
-    "b6c4cf8b-bded-4b70-bf82-4a644a56c57c",
-    "8ee0757c-efe8-4f9a-a111-0b6bb4580f0d"
+    "a321d2d3-3789-4e8c-a534-5ed8a6616ebd",
+    "9f64ddd5-6e92-4166-9b39-e72531116363",
+    "3e18d4f7-39ee-40eb-a6d1-d1486b020def",
+    "66a4efc9-7695-4b97-8700-c5e825b8c0ef",
+    "8a787895-0d1a-42af-bd38-24b8653ed586",
+    "527928e8-8a9b-49fc-b57e-5dacce1fd74a",
+    "3283d861-0415-459b-a732-9e73f2f7a6a4",
+    "ac36c58f-c244-48b3-a2b8-d3a7398fcb2b"
   ],
   "fb-instant-games": {},
   "includeSDKBox": false,

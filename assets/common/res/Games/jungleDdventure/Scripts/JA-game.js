@@ -29,11 +29,6 @@ cc.Class({
             type: cc.Node
         },
 
-        backgroundAudio: {
-            default: null,
-            type: cc.AudioClip
-        },
-
         speed: 30
     },
 
@@ -67,12 +62,7 @@ cc.Class({
         this.sunRunnig = true;
         this.backgroundRunning = true;
 
-        // 播放背景音乐
-        cc.audioEngine.play(this.backgroundAudio, false, .1);
 
-        if(initMessage !== 'initMessage'){
-            postMessage({'type':'jungleAdventure-init'});
-        }
     },
 
     gameStop() {

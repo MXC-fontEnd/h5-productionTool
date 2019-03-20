@@ -11,28 +11,44 @@ cc.Class({
             displayName: '本地课件预览'
         },
 
+        // 低龄课件选中状态
         juniorCoursewareState: {
             default: true,
             displayName: '低龄课件'
         },
 
+        // 低龄课件页面配置
         juniorCoursewarePage: {
             default: [],
             type: [cc.Integer],
             displayName: '低龄课件页面'
         },
-
+        
+        // 高龄课件选中状态
         seniorCoursewareState: {
             default: false,
             displayName: '高龄课件'
         },
 
+        // 高龄课件页面配置
         seniorCoursewarePage: {
             default: [],
             type: [cc.Integer],
             displayName: '高龄课件页面'
         },
 
+        // 拓展课件选中状态
+        expandCoursewareState: {
+            default: false,
+            displayName: '拓展课件'
+        },
+
+        // 拓展课件页面配置
+        expandCoursewarePage: {
+            default: [],
+            type: [cc.Integer],
+            displayName: '拓展课件页面'
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -84,17 +100,24 @@ cc.Class({
     //
     loadscene(seq, callback) {
         seq = parseInt(seq);
-
         let curPageNum;
+
+        // 选中低龄课件
         if (this.juniorCoursewareState) {
             curPageNum = this.juniorCoursewarePage[seq - 1];
-        } else if (this.seniorCoursewareState) {
-            curPageNum = this.seniorCoursewarePage[seq - 1];
-        } else {
-            console.log('导航页-场景加载bug');
         }
-        if (!curPageNum) return;
+        
+        // 选中高龄课件
+        if (this.seniorCoursewareState) {
+            curPageNum = this.seniorCoursewarePage[seq - 1];
+        } 
 
+        // 选中拓展课件
+        if (this.expandCoursewareState) {
+            curPageNum = this.expandCoursewarePage[seq - 1];
+        }
+
+        if (!curPageNum) return;
         let page = 'page' + curPageNum;
         if (page) {
             cc.director.loadScene(page, function () {

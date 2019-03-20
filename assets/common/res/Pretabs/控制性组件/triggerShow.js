@@ -31,10 +31,14 @@ cc.Class({
         for (let index = 0; index < this.triggerPoint.length; index++) {
             // 下标赋值对象
             this.triggerPoint[index].curSub = index;
-            this.triggerPoint[index].on(cc.Node.EventType.TOUCH_END, this._pointClicked, this);
+            this.triggerPoint[index].on(cc.Node.EventType.TOUCH_END, this.pointClicked, this);
         }
 
         this._messageBind();
+    },
+
+    onDestroy() {
+        window.removeEventListener('message', this.triggerShowBind);
     },
 
     // message 绑定
@@ -47,7 +51,7 @@ cc.Class({
                 switch (data.method) {
                     case "onFileMessage":
                         if (data.handleData && data.handleData.type == 'triggerShow') {
-                            let method = data.handleData.CustomEvemethodntData;
+                            let method = data.handleData.method;
                             let sub = data.handleData.CustomEventData;
                             this[method]('', sub);
                         }
@@ -60,15 +64,17 @@ cc.Class({
     },
 
     // 触发点被点击
-    _pointClicked(event, message) {
+    pointClicked(event, message) {
         let sub;
-        if (message) {
+        // 0 布尔值为假
+        if (message || message === 0) {
             sub = message;
         } else {
             sub = event.currentTarget.curSub;
         }
+
         this.triggerContent[sub].runAction(cc.fadeIn(this.fadeInTime));
-        if (!message) this._sentMessage('triggerShow', '_pointClicked', sub);
+        if (!message && message !== 0) this._sentMessage('triggerShow', 'pointClicked', sub);
     },
 
     _sentMessage(type, method, CustomEventData) {

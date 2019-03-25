@@ -809,10 +809,10 @@
       "__id__": 2
     },
     "_enabled": true,
-    "pageCount": 18,
+    "pageCount": 20,
     "currentPageSeq": 1,
     "localDebugging": false,
-    "juniorCoursewareState": false,
+    "juniorCoursewareState": true,
     "juniorCoursewarePage": [
       1,
       2,
@@ -835,7 +835,7 @@
       24,
       26
     ],
-    "seniorCoursewareState": true,
+    "seniorCoursewareState": false,
     "seniorCoursewarePage": [
       1,
       2,
@@ -843,7 +843,7 @@
       50,
       4,
       5,
-      56,
+      57,
       52,
       32,
       33,

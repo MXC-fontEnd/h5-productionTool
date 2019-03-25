@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.9989420572916666,
-      "y": 0.9989420572916666,
+      "x": 0.9958170572916667,
+      "y": 0.9958170572916667,
       "z": 1
     },
     "_quat": {
@@ -53,7 +53,7 @@
       "w": 1
     },
     "groupIndex": 0,
-    "autoReleaseAssets": false,
+    "autoReleaseAssets": true,
     "_id": "f5db41f7-517a-4bee-8aab-6f558a181584"
   },
   {
@@ -2514,6 +2514,7 @@
       }
     ],
     "fishBgm": null,
+    "fishGrower": true,
     "_id": "3fU9HMOuRLNoCn592zpbk7"
   },
   {
@@ -5867,6 +5868,7 @@
       }
     ],
     "fishBgm": null,
+    "fishGrower": false,
     "_id": "294tnGAqdGbI+TDkGQyzF4"
   },
   {

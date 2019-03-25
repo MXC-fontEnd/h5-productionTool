@@ -51,7 +51,12 @@ cc.Class({
         fishBgm:{
             default:null,
             type:cc.AudioClip
-        }
+        },
+
+        fishGrower: {
+            default: true,
+            displayName: '飞船渐大'
+        },
 
     },
 
@@ -180,33 +185,28 @@ cc.Class({
         let rankLabel = this.node.getChildByName('rank').getComponent(cc.Label);
         rankLabel.string = this.OMO.rank;
 
-        // 飞船长大
-        let seq = cc.sequence(
-            cc.scaleTo(.2, .2),
-            cc.scaleTo(.4, .4),
-            cc.scaleTo(.6, .6),
-            cc.scaleTo(.8, .8),
-            cc.callFunc(function(e){
-                if(DeviceDetect.isIpad){
-                    // 调整飞船位子
-                    this.node.on(cc.Node.EventType.TOUCH_MOVE, this._positionChange, this);
-                    // 监听鼠标位置,移动飞船位置并发射OMO
-                    this.node.on(cc.Node.EventType.TOUCH_START, this._fishing, this);
-                } else {
-                    // 调整飞船位子
-                    this.node.on(cc.Node.EventType.MOUSE_MOVE, this._positionChange, this);
-                    // 监听鼠标位置,移动飞船位置并发射OMO
-                    this.node.on(cc.Node.EventType.MOUSE_DOWN, this._fishing, this);
-                }
-            }, this)
-        );
-
+        // 飞船是否长大
+        if(this.fishGrower){
+            let seq = cc.sequence(
+                cc.scaleTo(.2, .2),
+                cc.scaleTo(.4, .4),
+                cc.scaleTo(.6, .6),
+                cc.scaleTo(.8, .8),
+                cc.callFunc(function(e){
+                    this.flyShipBind();
+                }, this)
+            );
+            this.SHIP.runAction(seq); 
+        } else {
+            this.flyShipBind();
+        }
+        
+        // 创造鱼
         setTimeout(function () {
             this._createDeaultFish();
         }.bind(this), 1000);
 
-        this.SHIP.runAction(seq);
-
+       
         // 播放背景音乐
         if(this.fishBgm){
             cc.audioEngine.play(this.fishBgm, false, .1);
@@ -312,6 +312,20 @@ cc.Class({
         }
     },
 
+    // 飞船事件绑定
+    flyShipBind(){
+        if(DeviceDetect.isIpad){
+            // 调整飞船位子
+            this.node.on(cc.Node.EventType.TOUCH_MOVE, this._positionChange, this);
+            // 监听鼠标位置,移动飞船位置并发射OMO
+            this.node.on(cc.Node.EventType.TOUCH_START, this._fishing, this);
+        } else {
+            // 调整飞船位子
+            this.node.on(cc.Node.EventType.MOUSE_MOVE, this._positionChange, this);
+            // 监听鼠标位置,移动飞船位置并发射OMO
+            this.node.on(cc.Node.EventType.MOUSE_DOWN, this._fishing, this);
+        }
+    },
     // 根据鼠标移动，调整飞船x轴位置
     _positionChange(event, messageState, pars) {
         if (!this.coverDown) return;

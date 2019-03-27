@@ -24,7 +24,7 @@
       }
     ],
     "_active": true,
-    "_level": 1,
+    "_level": 2,
     "_components": [
       {
         "__id__": 67
@@ -53,14 +53,14 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
+      "x": 120,
+      "y": -22,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.9,
+      "y": 0.9,
       "z": 1
     },
     "_rotationX": 0,
@@ -2066,9 +2066,7 @@
         "__uuid__": "ab41be03-ae08-4eb1-af5c-55dc15aa90f8"
       }
     ],
-    "fishBgm": {
-      "__uuid__": "290a5ff6-3d9f-4dea-9c1a-d0a927c9fcb5"
-    },
+    "fishBgm": null,
     "fishGrower": true,
     "_id": ""
   },

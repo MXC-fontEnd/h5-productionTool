@@ -36,9 +36,13 @@ cc.Class({
 	// 翻页
 	handlePageChange(e) {
 		let data = e.getUserData(),
-			{ curPage } = data
+			{ curPage } = data,
+			moveIn = cc
+				.moveTo(0.6, cc.v2(this.rootSize.width * (curPage - 1), 0))
+				.easing(cc.easeCubicActionOut()),
+			cb = cc.callFunc(() => {})
 
-		this.pageCamera.x = this.rootSize.width * (curPage - 1)
+		this.pageCamera.runAction(cc.sequence([moveIn, cb]))
 	},
 	update: function(dt) {}
 })

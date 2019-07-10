@@ -34,13 +34,13 @@
     "Ui",
     "Background"
   ],
-  "last-module-event-record-time": 1553236723867,
+  "last-module-event-record-time": 1562744250440,
   "simulator-orientation": false,
   "simulator-resolution": {
     "height": 640,
     "width": 960
   },
+  "start-scene": "current",
   "use-customize-simulator": true,
-  "use-project-simulator-setting": false,
-  "start-scene": "current"
+  "use-project-simulator-setting": false
 }

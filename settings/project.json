@@ -1,5 +1,5 @@
 {
-  "assets-sort-type": "name",
+  "assets-sort-type": "ext",
   "collision-matrix": [
     [
       true

@@ -1,4 +1,5 @@
-import { trigger } from "../../common/utils"
+import { trigger } from "../../utils"
+import { customEvent } from "../../utils/postMsg"
 
 cc.Class({
 	extends: cc.Component,
@@ -15,7 +16,7 @@ cc.Class({
 		this.initialEvent()
 	},
 	start() {
-		// trigger(this.node, "pagination_skip_req", { type: "skip", toPage: 12 })
+		trigger(this.node, "pagination_skip_req", { type: "skip", toPage: 12 })
 	},
 	// 初始化数据
 	initialData() {
@@ -73,6 +74,7 @@ cc.Class({
 	// 查看类别
 	handleCategoryCheck(e) {
 		console.log("category")
+		e.stopPropagation()
 		if (this.actionLock) return
 
 		this.curStep.category.active = false

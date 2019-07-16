@@ -1,4 +1,4 @@
-import { trigger } from "../../common/utils"
+import { trigger } from "../../utils"
 
 cc.Class({
 	extends: cc.Component,

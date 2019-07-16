@@ -1,4 +1,5 @@
-import { trigger } from "../../common/utils"
+import { trigger } from "../../utils"
+import postMessage from "../../utils/postMsg"
 
 cc.Class({
 	extends: cc.Component,
@@ -40,6 +41,11 @@ cc.Class({
 	},
 	// 界面初始化
 	initialFrame() {
+		// 初始化postMessage
+		postMessage.init({
+			pageCount: this.totalPage,
+			setNextPageSeq: this.postMsgSkip.bind(this)
+		})
 		// editbox输入时居中
 		this.curIpt._impl._edTxt.style["text-align"] = "center"
 		// 界面淡化
@@ -112,11 +118,8 @@ cc.Class({
 	},
 	// 事件分发
 	distributeEvent(data) {
-		// 分发
-		trigger(this.node, "pagination_change", data)
-		// 更新
-		this.curPage = data.curPage
-		this.updatePage()
+		// postmessage广播
+		postMessage.jumpPage(data.curPage)
 	},
 	// 更新页码
 	updatePage() {
@@ -137,6 +140,19 @@ cc.Class({
 				break
 			default:
 		}
+	},
+	// postMessage跳页包装
+	postMsgSkip(page) {
+		// 分发
+		trigger(this.node, "pagination_change", {
+			type: "skip",
+			prevPage: this.curPage,
+			curPage: page
+		})
+		// 更新
+		this.curPage = page
+		this.updatePage()
+		// this.handleSkipPage({ string: String(page) })
 	},
 	update: function(dt) {}
 })

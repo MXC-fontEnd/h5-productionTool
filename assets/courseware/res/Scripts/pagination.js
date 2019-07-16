@@ -56,24 +56,20 @@ cc.Class({
 		this.root.on("pagination_skip_req", this.handleSkipReq, this)
 		// this.node.on("mouseenter", this.handleMouseEnter, this)
 		// this.node.on("mouseleave", this.handleMouseLeave, this)
-		this.node.on("mousedown", this.handleNodeEvent, this)
 		this.prevBtn.node.on("mousedown", this.handlePrevPage, this)
 		this.nextBtn.node.on("mousedown", this.handleNextPage, this)
 		this.curIpt.node.on("editing-return", this.handleSkipPage, this)
+		// 观察者监听跳页事件
+		observer.on("jumpPage", this.postMsgSkip, this)
 	},
 	// 卸载事件
 	unmountEvent() {
 		this.root.off("pagination_skip_req", this.handleSkipReq, this)
 		// this.node.off("mouseenter", this.handleMouseEnter, this)
 		// this.node.off("mouseleave", this.handleMouseLeave, this)
-		this.node.off("mousedown", this.handleNodeEvent, this)
 		this.prevBtn.node.off("mousedown", this.handlePrevPage, this)
 		this.nextBtn.node.off("mousedown", this.handleNextPage, this)
 		this.curIpt.node.off("editing-return", this.handleSkipPage, this)
-	},
-	// 父节点事件
-	handleNodeEvent(e) {
-		e.stopPropagation()
 	},
 	// 鼠标移入事件
 	handleMouseEnter() {

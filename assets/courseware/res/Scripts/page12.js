@@ -1,5 +1,5 @@
 import { trigger } from "../../utils"
-import { customEvent } from "../../utils/postMsg"
+import postMessage from "../../utils/postMsg"
 
 cc.Class({
 	extends: cc.Component,
@@ -16,7 +16,7 @@ cc.Class({
 		this.initialEvent()
 	},
 	start() {
-		trigger(this.node, "pagination_skip_req", { type: "skip", toPage: 12 })
+		// trigger(this.node, "pagination_skip_req", { type: "skip", toPage: 12 })
 	},
 	// 初始化数据
 	initialData() {
@@ -43,21 +43,42 @@ cc.Class({
 	// 事件初始化
 	initialEvent() {
 		this.stepNodes.forEach(step => {
-			step.before.on("mousedown", this.handlePreview, this)
-			step.after.on("mousedown", this.handlePreview, this)
-			step.preview.on("mousedown", this.handlePreviewClose, this)
-			step.category.on("mousedown", this.handleCategoryCheck, this)
+			step.before.on("mousedown", this.postPreview, this)
+			step.after.on("mousedown", this.postPreview, this)
+			step.preview.on("mousedown", this.postPreviewClose, this)
+			step.category.on("mousedown", this.postCategoryCheck, this)
 		})
-		this.node.on("mousedown", this.handlePreviewClose, this)
+		this.node.on("mousedown", this.postPreviewClose, this)
+
+		// postMessage接收处理
+		observer.on("p12Preview", this.handlePreview, this)
+		observer.on("p12PreviewClose", this.handlePreviewClose, this)
+		observer.on("p12CategoryCheck", this.handleCategoryCheck, this)
 	},
 	// 卸载事件
 	unmountEvent() {},
-	// 预览
-	handlePreview(e) {
-		console.log("preview")
+	// postMessage事件分发
+	postPreview(e) {
 		if (this.actionLock) return
+		// 打开预览
+		postMessage.customEvent("p12Preview", e.target.name)
+	},
+	postPreviewClose() {
+		if (this.actionLock) return
+		// 关闭预览
+		postMessage.customEvent("p12PreviewClose")
+	},
+	postCategoryCheck(e) {
+		e.stopPropagation()
+		if (this.actionLock) return
+		// 查看类别
+		postMessage.customEvent("p12CategoryCheck")
+	},
+	// 预览
+	handlePreview(name) {
+		console.log("preview")
 
-		const numMatch = e.target.name.match(/step(\d+)/),
+		const numMatch = name.match(/step(\d+)/),
 			num = numMatch ? numMatch[1] : 0,
 			step = this.stepNodes[num - 1]
 		if (!step) return
@@ -72,20 +93,19 @@ cc.Class({
 		this.openAction()
 	},
 	// 查看类别
-	handleCategoryCheck(e) {
+	handleCategoryCheck() {
 		console.log("category")
-		e.stopPropagation()
-		if (this.actionLock) return
 
 		this.curStep.category.active = false
 	},
 	// 关闭预览
-	handlePreviewClose(e) {
+	handlePreviewClose() {
 		console.log("close")
-		if (this.actionLock) return
 
-		// 收起效果
-		this.closeAction()
+		if (this.curStep && this.curStep.preview.active) {
+			// 收起效果
+			this.closeAction()
+		}
 	},
 	openAction() {
 		if (!this.curStep) return

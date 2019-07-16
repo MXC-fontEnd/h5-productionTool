@@ -31,7 +31,7 @@ module.exports = {
 						break
 					case "onJumpPage":
 						console.log("onJumpPage")
-						context.setNextPageSeq(data.toPage)
+						observer.emit("jumpPage", data.toPage)
 						break
 					case "onFileMessage":
 						const res = data.handleData
@@ -52,8 +52,9 @@ module.exports = {
 							triggerEle.dispatchEvent(ev)
 						}
 						if (res && res.isCustom) {
-							const { callback, data } = res
-							callback && callback(data)
+							const { type, data } = res
+							console.log("接收到事件：", type, "传递参数：", data)
+							observer.emit(type, data)
 						}
 						break
 				}
@@ -66,17 +67,19 @@ module.exports = {
 			"*"
 		)
 	},
-	customEvent(cb, data) {
+	customEvent(type, data) {
 		window.parent.postMessage(
 			JSON.stringify({
 				method: "onFileMessage",
 				handleData: {
 					isCustom: true,
-					callback: cb,
+					type,
 					data
 				}
 			}),
 			"*"
 		)
+		// onFileMessage事件第三方不会分发到本地，所以主动做本地分发
+		observer.emit(type, data)
 	}
 }

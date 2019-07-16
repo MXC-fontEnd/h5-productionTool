@@ -1,4 +1,5 @@
 import { trigger } from "../../utils"
+import postMessage from "../../utils/postMsg"
 
 cc.Class({
 	extends: cc.Component,
@@ -38,6 +39,12 @@ cc.Class({
 			this.videoNode.active = true
 			// 进入自动开始播放
 			this.videoPlayer.play()
+			// 每10s分发一次进度
+			// this.interval = setInterval(() => {
+			// 	postMessage.customEvent("videoProgress", this.videoPlayer.currentTime)
+			// }, 10000)
+			// postMessage监听
+			// observer.on("videoProgress", this.currentVideoProgress, this)
 		}
 	},
 	// 页面离开
@@ -45,6 +52,9 @@ cc.Class({
 		const { prevPage } = e.getUserData()
 		if (prevPage === this.node.pageNum) {
 			this.videoNode.active = false
+			// this.interval && clearInterval(this.interval)
+			// postMessage注销
+			// observer.off("videoProgress", this.currentVideoProgress, this)
 		}
 	},
 	// 视频状态监测
@@ -52,6 +62,14 @@ cc.Class({
 		if (status === cc.VideoPlayer.EventType.COMPLETED) {
 			// 播放完成自动跳转下一页
 			trigger(this.node, "pagination_skip_req", { type: "next" })
+		}
+	},
+	// 视频进度比对（10s一次，纠正范围±5s）
+	currentVideoProgress(time) {
+		const curTime = this.videoPlayer.currentTime
+		if (Math.abs(time - curTime) >= 5) {
+			this.videoPlayer.currentTime = time
+			console.log(`视频进度纠正：${curTime}->${time}`)
 		}
 	},
 	update: function(dt) {}

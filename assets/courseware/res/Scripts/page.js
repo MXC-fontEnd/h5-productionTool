@@ -35,6 +35,7 @@ cc.Class({
 		// 每页位置初始化
 		this.node.children.forEach((node, idx) => {
 			node.x = size.width * idx
+			node.y = 0
 			node.pageNum = idx + 1
 		})
 		// 初始化切换方式

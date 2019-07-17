@@ -43,19 +43,25 @@ cc.Class({
 	initialFrame() {
 		// 初始化postMessage
 		postMessage.init({
-			pageCount: this.totalPage,
-			setNextPageSeq: this.postMsgSkip.bind(this)
+			pageCount: this.totalPage
 		})
 		// editbox输入时居中
 		this.curIpt._impl._edTxt.style["text-align"] = "center"
 		// 界面淡化
-		// this.handleMouseLeave()
+		this.handleMouseLeave()
 	},
 	// 事件初始化
 	initialEvent() {
 		this.root.on("pagination_skip_req", this.handleSkipReq, this)
-		// this.node.on("mouseenter", this.handleMouseEnter, this)
-		// this.node.on("mouseleave", this.handleMouseLeave, this)
+		// 组件显隐控制
+		this.node.on("mouseenter", this.handleMouseEnter, this)
+		this.node.on("mouseleave", this.handleMouseLeave, this)
+		// 前后页按钮绑定事件就会和父组件的事件冲突，所以给它们也绑定下
+		this.prevBtn.node.on("mouseenter", this.handleMouseEnter, this)
+		this.nextBtn.node.on("mouseenter", this.handleMouseEnter, this)
+		// mouseleave事件偶尔失灵，补救措施全局绑定mousemove
+		this.root.on("mousemove", this.handleMouseLeave, this)
+		// 翻页事件
 		this.prevBtn.node.on("mousedown", this.handlePrevPage, this)
 		this.nextBtn.node.on("mousedown", this.handleNextPage, this)
 		this.curIpt.node.on("editing-return", this.handleSkipPage, this)
@@ -65,8 +71,8 @@ cc.Class({
 	// 卸载事件
 	unmountEvent() {
 		this.root.off("pagination_skip_req", this.handleSkipReq, this)
-		// this.node.off("mouseenter", this.handleMouseEnter, this)
-		// this.node.off("mouseleave", this.handleMouseLeave, this)
+		this.node.off("mouseenter", this.handleMouseEnter, this)
+		this.node.off("mouseleave", this.handleMouseLeave, this)
 		this.prevBtn.node.off("mousedown", this.handlePrevPage, this)
 		this.nextBtn.node.off("mousedown", this.handleNextPage, this)
 		this.curIpt.node.off("editing-return", this.handleSkipPage, this)

@@ -1,0 +1,174 @@
+
+miaocode1.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg
+  rotate: false
+  xy: 2, 591
+  size: 1922, 1082
+  orig: 1922, 1082
+  offset: 0, 0
+  index: -1
+black
+  rotate: false
+  xy: 56, 64
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 283, 461
+  size: 185, 128
+  orig: 185, 128
+  offset: 0, 0
+  index: -1
+cheng-brouse
+  rotate: true
+  xy: 2026, 1589
+  size: 84, 13
+  orig: 84, 13
+  offset: 0, 0
+  index: -1
+cheng-close
+  rotate: false
+  xy: 283, 381
+  size: 87, 7
+  orig: 87, 7
+  offset: 0, 0
+  index: -1
+cheng-eye
+  rotate: false
+  xy: 96, 153
+  size: 79, 24
+  orig: 79, 24
+  offset: 0, 0
+  index: -1
+cheng-right
+  rotate: true
+  xy: 231, 250
+  size: 123, 44
+  orig: 123, 44
+  offset: 0, 0
+  index: -1
+hair2
+  rotate: false
+  xy: 2, 375
+  size: 279, 214
+  orig: 279, 214
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 179
+  size: 227, 194
+  orig: 227, 194
+  offset: 0, 0
+  index: -1
+jiaoleft
+  rotate: false
+  xy: 2, 2
+  size: 23, 25
+  orig: 23, 25
+  offset: 0, 0
+  index: -1
+jiaoright
+  rotate: false
+  xy: 1944, 1545
+  size: 23, 29
+  orig: 23, 29
+  offset: 0, 0
+  index: -1
+left
+  rotate: false
+  xy: 283, 390
+  size: 96, 69
+  orig: 96, 69
+  offset: 0, 0
+  index: -1
+leftfeet
+  rotate: false
+  xy: 2, 85
+  size: 92, 92
+  orig: 92, 92
+  offset: 0, 0
+  index: -1
+omobody
+  rotate: false
+  xy: 1926, 1576
+  size: 98, 97
+  orig: 98, 97
+  offset: 0, 0
+  index: -1
+omobrouse
+  rotate: false
+  xy: 96, 140
+  size: 20, 11
+  orig: 20, 11
+  offset: 0, 0
+  index: -1
+omoclose
+  rotate: true
+  xy: 1926, 1416
+  size: 22, 10
+  orig: 22, 10
+  offset: 0, 0
+  index: -1
+omoldfthand
+  rotate: false
+  xy: 2, 29
+  size: 52, 54
+  orig: 52, 54
+  offset: 0, 0
+  index: -1
+omomouse
+  rotate: false
+  xy: 470, 462
+  size: 62, 37
+  orig: 62, 37
+  offset: 0, 0
+  index: -1
+omorighthand
+  rotate: true
+  xy: 381, 432
+  size: 27, 70
+  orig: 27, 70
+  offset: 0, 0
+  index: -1
+omotooth
+  rotate: true
+  xy: 231, 187
+  size: 61, 30
+  orig: 61, 30
+  offset: 0, 0
+  index: -1
+rightfeet
+  rotate: false
+  xy: 470, 501
+  size: 85, 88
+  orig: 85, 88
+  offset: 0, 0
+  index: -1
+saihong
+  rotate: true
+  xy: 1926, 1440
+  size: 134, 16
+  orig: 134, 16
+  offset: 0, 0
+  index: -1
+yanbai
+  rotate: false
+  xy: 557, 540
+  size: 49, 49
+  orig: 49, 49
+  offset: 0, 0
+  index: -1
+zui
+  rotate: false
+  xy: 2026, 1573
+  size: 20, 14
+  orig: 20, 14
+  offset: 0, 0
+  index: -1

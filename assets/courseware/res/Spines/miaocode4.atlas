@@ -1,0 +1,90 @@
+
+miaocode4.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Blush
+  rotate: true
+  xy: 738, 334
+  size: 79, 60
+  orig: 79, 60
+  offset: 0, 0
+  index: -1
+Left Shoe
+  rotate: false
+  xy: 538, 96
+  size: 61, 90
+  orig: 61, 90
+  offset: 0, 0
+  index: -1
+Left hand
+  rotate: true
+  xy: 654, 223
+  size: 85, 58
+  orig: 85, 58
+  offset: 0, 0
+  index: -1
+Right shoe
+  rotate: false
+  xy: 738, 415
+  size: 77, 76
+  orig: 77, 76
+  offset: 0, 0
+  index: -1
+bg
+  rotate: true
+  xy: 2, 23
+  size: 468, 534
+  orig: 468, 534
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 538, 188
+  size: 114, 120
+  orig: 114, 120
+  offset: 0, 0
+  index: -1
+closeeye
+  rotate: true
+  xy: 601, 128
+  size: 58, 45
+  orig: 58, 45
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 538, 44
+  size: 58, 50
+  orig: 58, 50
+  offset: 0, 0
+  index: -1
+eyebrow
+  rotate: false
+  xy: 883, 450
+  size: 53, 41
+  orig: 53, 41
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 538, 310
+  size: 198, 181
+  orig: 198, 181
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 2, 2
+  size: 23, 19
+  orig: 23, 19
+  offset: 0, 0
+  index: -1
+right hand
+  rotate: false
+  xy: 817, 417
+  size: 64, 74
+  orig: 64, 74
+  offset: 0, 0
+  index: -1

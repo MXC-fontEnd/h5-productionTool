@@ -1,0 +1,132 @@
+
+omostandby.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+WATER
+  rotate: false
+  xy: 309, 145
+  size: 42, 72
+  orig: 42, 72
+  offset: 0, 0
+  index: -1
+Z2
+  rotate: false
+  xy: 401, 136
+  size: 22, 23
+  orig: 22, 23
+  offset: 0, 0
+  index: -1
+Z3
+  rotate: false
+  xy: 425, 143
+  size: 15, 16
+  orig: 15, 16
+  offset: 0, 0
+  index: -1
+brouse
+  rotate: true
+  xy: 480, 181
+  size: 36, 23
+  orig: 36, 23
+  offset: 0, 0
+  index: -1
+cicle
+  rotate: false
+  xy: 2, 25
+  size: 95, 92
+  orig: 95, 92
+  offset: 0, 0
+  index: -1
+closeeye
+  rotate: false
+  xy: 401, 161
+  size: 37, 9
+  orig: 37, 9
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 356, 94
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+eye1
+  rotate: false
+  xy: 105, 125
+  size: 95, 91
+  orig: 95, 91
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 291, 219
+  size: 218, 288
+  orig: 218, 288
+  offset: 0, 0
+  index: -1
+jiao
+  rotate: true
+  xy: 423, 172
+  size: 45, 55
+  orig: 45, 55
+  offset: 0, 0
+  index: -1
+jiao™
+  rotate: false
+  xy: 309, 88
+  size: 45, 55
+  orig: 45, 55
+  offset: 0, 0
+  index: -1
+kuang
+  rotate: false
+  xy: 2, 119
+  size: 101, 97
+  orig: 101, 97
+  offset: 0, 0
+  index: -1
+lefthand
+  rotate: false
+  xy: 256, 94
+  size: 51, 122
+  orig: 51, 122
+  offset: 0, 0
+  index: -1
+open
+  rotate: false
+  xy: 2, 218
+  size: 287, 289
+  orig: 287, 289
+  offset: 0, 0
+  index: -1
+puple
+  rotate: false
+  xy: 353, 172
+  size: 68, 45
+  orig: 68, 45
+  offset: 0, 0
+  index: -1
+righthand
+  rotate: false
+  xy: 202, 90
+  size: 52, 126
+  orig: 52, 126
+  offset: 0, 0
+  index: -1
+sun1
+  rotate: false
+  xy: 356, 132
+  size: 43, 38
+  orig: 43, 38
+  offset: 0, 0
+  index: -1
+word
+  rotate: false
+  xy: 2, 2
+  size: 96, 21
+  orig: 96, 21
+  offset: 0, 0
+  index: -1

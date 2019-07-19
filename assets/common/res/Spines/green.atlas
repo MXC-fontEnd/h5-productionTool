@@ -1,0 +1,139 @@
+
+green.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+WATER
+  rotate: false
+  xy: 244, 94
+  size: 42, 72
+  orig: 42, 72
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 283, 213
+  size: 218, 290
+  orig: 218, 290
+  offset: 0, 0
+  index: -1
+closeleft
+  rotate: false
+  xy: 413, 162
+  size: 28, 9
+  orig: 28, 9
+  offset: 0, 0
+  index: -1
+closeright
+  rotate: false
+  xy: 34, 2
+  size: 28, 9
+  orig: 28, 9
+  offset: 0, 0
+  index: -1
+eyeleft
+  rotate: false
+  xy: 244, 24
+  size: 26, 23
+  orig: 26, 23
+  offset: 0, 0
+  index: -1
+eyeright
+  rotate: false
+  xy: 333, 148
+  size: 25, 23
+  orig: 25, 23
+  offset: 0, 0
+  index: -1
+flybody
+  rotate: false
+  xy: 333, 131
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+hair
+  rotate: false
+  xy: 2, 13
+  size: 240, 153
+  orig: 240, 153
+  offset: 0, 0
+  index: -1
+lefthand
+  rotate: true
+  xy: 283, 173
+  size: 38, 98
+  orig: 38, 98
+  offset: 0, 0
+  index: -1
+legA
+  rotate: true
+  xy: 360, 150
+  size: 21, 25
+  orig: 21, 25
+  offset: 0, 0
+  index: -1
+legB
+  rotate: true
+  xy: 387, 150
+  size: 21, 24
+  orig: 21, 24
+  offset: 0, 0
+  index: -1
+open
+  rotate: false
+  xy: 2, 168
+  size: 279, 335
+  orig: 279, 335
+  offset: 0, 0
+  index: -1
+righthand
+  rotate: true
+  xy: 383, 173
+  size: 38, 98
+  orig: 38, 98
+  offset: 0, 0
+  index: -1
+sairight
+  rotate: true
+  xy: 2, 2
+  size: 9, 30
+  orig: 9, 30
+  offset: 0, 0
+  index: -1
+sialeft
+  rotate: false
+  xy: 483, 181
+  size: 9, 30
+  orig: 9, 30
+  offset: 0, 0
+  index: -1
+sun1
+  rotate: true
+  xy: 244, 49
+  size: 43, 38
+  orig: 43, 38
+  offset: 0, 0
+  index: -1
+sun2
+  rotate: false
+  xy: 288, 133
+  size: 43, 38
+  orig: 43, 38
+  offset: 0, 0
+  index: -1
+sun3
+  rotate: false
+  xy: 288, 133
+  size: 43, 38
+  orig: 43, 38
+  offset: 0, 0
+  index: -1
+zui
+  rotate: false
+  xy: 288, 102
+  size: 39, 29
+  orig: 39, 29
+  offset: 0, 0
+  index: -1

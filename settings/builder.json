@@ -16,7 +16,8 @@
   },
   "encryptJs": true,
   "excludeScenes": [
-    "6aa68282-5532-4eac-a1f6-08104a20150b"
+    "6aa68282-5532-4eac-a1f6-08104a20150b",
+    "3c019ad9-7b8c-4112-a779-7db961db7606"
   ],
   "fb-instant-games": {},
   "includeSDKBox": false,
@@ -37,7 +38,7 @@
     "orientation": "portrait",
     "zip": false
   },
-  "startScene": "831726cf-6135-4e09-9807-fa534c75f110",
+  "startScene": "9025fc0a-e29f-4a58-81fe-90ae40bebab8",
   "title": "courseware",
   "webOrientation": "auto",
   "wechatgame": {

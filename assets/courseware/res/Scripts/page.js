@@ -22,7 +22,8 @@ cc.Class({
 				this._useCamera = v
 				this.movingNode = v ? this.pageCamera : this.node
 			}
-		}
+		},
+		isSimple: true
 	},
 	onLoad: function() {
 		this.initialFrame()

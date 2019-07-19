@@ -1,4 +1,5 @@
 {
+  "assets-sort-type": "name",
   "collision-matrix": [
     [
       true
@@ -33,7 +34,7 @@
     "Ui",
     "Background"
   ],
-  "last-module-event-record-time": 1562744250440,
+  "last-module-event-record-time": 1563358331023,
   "simulator-orientation": false,
   "simulator-resolution": {
     "height": 640,
@@ -41,6 +42,5 @@
   },
   "start-scene": "current",
   "use-customize-simulator": true,
-  "use-project-simulator-setting": false,
-  "assets-sort-type": "name"
+  "use-project-simulator-setting": false
 }

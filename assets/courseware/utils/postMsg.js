@@ -18,7 +18,6 @@ module.exports = {
 
 		// 端对端通信
 		window.addEventListener("message", function(e) {
-			// if (window.top === window.self || typeof e.data !== "string") return
 			var data = JSON.parse(e.data)
 			if (data) {
 				switch (data.method) {
@@ -34,6 +33,7 @@ module.exports = {
 						observer.emit("jumpPage", data.toPage)
 						break
 					case "onFileMessage":
+						if (window.top === window.self || typeof e.data !== "string") return
 						const res = data.handleData
 						if (data.handleData && data.handleData.isDocument) {
 							let triggerEle = document

@@ -129,19 +129,9 @@ cc.Class({
 	},
 	// 外部请求页面跳转事件
 	handleSkipReq(e) {
-		const { type, toPage } = e.getUserData()
-		switch (type) {
-			case "prev":
-				this.handlePrevPage()
-				break
-			case "next":
-				this.handleNextPage()
-				break
-			case "skip":
-				this.handleSkipPage({ string: String(toPage) })
-				break
-			default:
-		}
+		const { toPage } = e.getUserData(),
+			page = Math.min(Math.max(toPage, 1), this.totalPage)
+		this.postMsgSkip(page)
 	},
 	// postMessage跳页包装
 	postMsgSkip(page) {

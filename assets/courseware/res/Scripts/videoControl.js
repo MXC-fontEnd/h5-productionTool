@@ -61,7 +61,10 @@ cc.Class({
 	videoStatusChanged(event, status) {
 		if (status === cc.VideoPlayer.EventType.COMPLETED) {
 			// 播放完成自动跳转下一页
-			trigger(this.node, "pagination_skip_req", { type: "next" })
+			trigger(this.node, "pagination_skip_req", {
+				type: "skip",
+				toPage: this.node.pageNum + 1
+			})
 		}
 	},
 	// 视频进度比对（10s一次，纠正范围±5s）

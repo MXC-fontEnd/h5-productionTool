@@ -1,0 +1,111 @@
+
+skeleton.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_dashou
+  rotate: true
+  xy: 1101, 348
+  size: 155, 145
+  orig: 155, 145
+  offset: 0, 0
+  index: -1
+L_jiao
+  rotate: false
+  xy: 1536, 615
+  size: 152, 327
+  orig: 152, 327
+  offset: 0, 0
+  index: -1
+L_shou
+  rotate: false
+  xy: 1924, 1777
+  size: 122, 247
+  orig: 122, 247
+  offset: 0, 0
+  index: -1
+L_xiaoshou
+  rotate: true
+  xy: 1690, 597
+  size: 144, 177
+  orig: 144, 177
+  offset: 0, 0
+  index: -1
+R_dashou
+  rotate: false
+  xy: 1690, 743
+  size: 193, 199
+  orig: 193, 199
+  offset: 0, 0
+  index: -1
+R_jiao
+  rotate: false
+  xy: 325, 62
+  size: 124, 326
+  orig: 124, 326
+  offset: 0, 0
+  index: -1
+R_shou
+  rotate: false
+  xy: 451, 142
+  size: 131, 246
+  orig: 131, 246
+  offset: 0, 0
+  index: -1
+R_xiaoshou
+  rotate: true
+  xy: 1924, 1606
+  size: 169, 93
+  orig: 169, 93
+  offset: 0, 0
+  index: -1
+bg
+  rotate: false
+  xy: 2, 944
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+omo
+  rotate: false
+  xy: 1206, 583
+  size: 328, 359
+  orig: 328, 359
+  offset: 0, 0
+  index: -1
+xiaocheng_shenzi
+  rotate: false
+  xy: 2, 2
+  size: 321, 386
+  orig: 321, 386
+  offset: 0, 0
+  index: -1
+xiaocheng_tou
+  rotate: false
+  xy: 671, 505
+  size: 533, 437
+  orig: 533, 437
+  offset: 0, 0
+  index: -1
+xiaocheng_tou_1
+  rotate: false
+  xy: 671, 351
+  size: 428, 152
+  orig: 428, 152
+  offset: 0, 0
+  index: -1
+xiaocheng_toufa
+  rotate: false
+  xy: 2, 390
+  size: 667, 552
+  orig: 667, 552
+  offset: 0, 0
+  index: -1
+xiaocheng_yanjing
+  rotate: false
+  xy: 1206, 515
+  size: 198, 66
+  orig: 198, 66
+  offset: 0, 0
+  index: -1

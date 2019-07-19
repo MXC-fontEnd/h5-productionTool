@@ -36,7 +36,7 @@ cc.Class({
 	},
 	// 数据初始化
 	initialData() {
-		this.totalPage = this.pageRoot.children.length
+		this.totalPage = this.pageRoot._childNum
 		this.updatePage()
 	},
 	// 界面初始化

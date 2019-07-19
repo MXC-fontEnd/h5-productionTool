@@ -31,14 +31,32 @@ cc.Class({
 	},
 	// 初始化界面
 	initialFrame() {
+		console.log("2")
 		const size = this.root.getContentSize()
 		this.rootSize = size
-		// 每页位置初始化
-		this.node.children.forEach((node, idx) => {
-			node.x = size.width * idx
-			node.y = 0
-			node.pageNum = idx + 1
-		})
+		// 页面初始化
+		const childs = this.node.children
+			.filter(node => {
+				// 高低龄页面过滤
+				return !(this.isSimple ? /complex/ : /simple/).test(node.name)
+			})
+			.map((node, idx) => {
+				// 位置初始化
+				node.x = size.width * idx
+				node.y = 0
+				node.pageNum = idx + 1
+				// 过滤高低龄内容
+				let simpleNode = node.getChildByName("simple"),
+					complexNode = node.getChildByName("complex")
+				if (this.isSimple) {
+					complexNode && (complexNode.active = false)
+				} else {
+					simpleNode && (simpleNode.active = false)
+				}
+				return node
+			})
+
+		this.node._childNum = childs.length
 		// 初始化切换方式
 		this.movingNode = this.useCamera ? this.pageCamera : this.node
 	},

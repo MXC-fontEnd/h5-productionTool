@@ -8,8 +8,6 @@ cc.Class({
 	onLoad: function () {
 		this.target = null;
 		this.sortGarbageMessage = function (e) {
-			console.log('father-sortGarbageMessage');
-			console.log(e);
 			if (typeof e.data !== 'string') return;
 			var data = JSON.parse(e.data);
 			if (data) {

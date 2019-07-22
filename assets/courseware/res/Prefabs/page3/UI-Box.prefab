@@ -12,7 +12,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Video-Box",
+    "_name": "UI-Box",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -22,13 +22,9 @@
     ],
     "_active": true,
     "_level": 1,
-    "_components": [
-      {
-        "__id__": 5
-      }
-    ],
+    "_components": [],
     "_prefab": {
-      "__id__": 6
+      "__id__": 5
     },
     "_opacity": 255,
     "_color": {
@@ -76,7 +72,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "video",
+    "_name": "skeleton",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -102,8 +98,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 960,
-      "height": 540
+      "width": 1920,
+      "height": 1292.98
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -118,8 +114,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.5,
+      "y": 0.5,
       "z": 1
     },
     "_rotationX": 0,
@@ -137,23 +133,39 @@
     "_id": ""
   },
   {
-    "__type__": "cc.VideoPlayer",
+    "__type__": "sp.Skeleton",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 2
     },
     "_enabled": true,
-    "_resourceType": 1,
-    "_remoteURL": "https://res.miaocode.com/0098612students.mp4",
-    "_clip": {
-      "__uuid__": "265bec3d-dec7-445b-ab28-00fe3e53bed1"
+    "paused": false,
+    "defaultSkin": "",
+    "defaultAnimation": "loop_xiaocheng",
+    "_preCacheMode": 0,
+    "_cacheMode": 0,
+    "loop": true,
+    "premultipliedAlpha": true,
+    "timeScale": 1,
+    "_accTime": 0,
+    "_playCount": 0,
+    "_frameCache": null,
+    "_curFrame": null,
+    "_skeletonCache": null,
+    "_animationName": "loop_xiaocheng",
+    "_animationQueue": [],
+    "_headAniInfo": null,
+    "_playTimes": 0,
+    "_isAniComplete": true,
+    "_N$skeletonData": {
+      "__uuid__": "c16cea93-d127-4acf-97dd-05c5623545a3"
     },
-    "_volume": 1,
-    "_mute": false,
-    "videoPlayerEvent": [],
-    "_N$keepAspectRatio": true,
-    "_N$isFullscreen": false,
+    "_N$_defaultCacheMode": 0,
+    "_N$debugSlots": false,
+    "_N$debugBones": false,
+    "_N$useTint": false,
+    "_N$enableBatch": false,
     "_id": ""
   },
   {
@@ -162,31 +174,20 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "5a814075-087b-443b-bb9b-339136cb55b2"
+      "__uuid__": "e74cc574-9e41-46b9-98d0-55e3dd3cfcce"
     },
-    "fileId": "997f3oPq1DrYW3zD3LBFIr",
+    "fileId": "8eBwuQzlBBs7LqPdxtHV7I",
     "sync": false
   },
   {
-    "__type__": "4fafeXn+NlLvYEsbcyH4YHG",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "root": null,
-    "_id": ""
-  },
-  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "5a814075-087b-443b-bb9b-339136cb55b2"
+      "__uuid__": "e74cc574-9e41-46b9-98d0-55e3dd3cfcce"
     },
-    "fileId": "15a5Mog0JDAoWA3Rjea5h1",
+    "fileId": "be4ToHlOFKUJXzX2NtmY4u",
     "sync": false
   }
 ]

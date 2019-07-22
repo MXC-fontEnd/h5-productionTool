@@ -4,12 +4,7 @@ import postMessage from "../../utils/postMsg"
 cc.Class({
 	extends: cc.Component,
 
-	properties: {
-		root: {
-			default: null,
-			type: cc.Node
-		}
-	},
+	properties: {},
 	onLoad: function() {
 		this.initialData()
 		this.initialFrame()
@@ -20,6 +15,8 @@ cc.Class({
 	},
 	// 初始化数据
 	initialData() {
+		this.root = cc.find("Canvas")
+		this.pageRoot = this.node.parent
 		this.stepNodes = []
 		for (let i = 1; i < 5; i++) {
 			this.stepNodes.push({
@@ -48,15 +45,13 @@ cc.Class({
 			step.preview.on("mousedown", this.postPreviewClose, this)
 			step.category.on("mousedown", this.postCategoryCheck, this)
 		})
-		this.node.on("mousedown", this.postPreviewClose, this)
+		this.pageRoot.on("mousedown", this.postPreviewClose, this)
 
 		// postMessage接收处理
 		observer.on("p12Preview", this.handlePreview, this)
 		observer.on("p12PreviewClose", this.handlePreviewClose, this)
 		observer.on("p12CategoryCheck", this.handleCategoryCheck, this)
 	},
-	// 卸载事件
-	unmountEvent() {},
 	// postMessage事件分发
 	postPreview(e) {
 		if (this.actionLock) return

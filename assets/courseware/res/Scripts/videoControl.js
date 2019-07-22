@@ -4,18 +4,15 @@ import postMessage from "../../utils/postMsg"
 cc.Class({
 	extends: cc.Component,
 
-	properties: {
-		root: {
-			default: null,
-			type: cc.Node
-		}
-	},
+	properties: {},
 	onLoad: function() {
 		this.initialFrame()
 		this.initialEvent()
 	},
 	// 初始化界面
 	initialFrame() {
+		this.root = cc.find("Canvas")
+		this.pageRoot = this.node.parent
 		this.videoNode = this.node.getChildByName("video")
 		this.videoPlayer = this.videoNode.getComponent(cc.VideoPlayer)
 
@@ -38,7 +35,7 @@ cc.Class({
 	// 页面进入
 	handlePageEnter(e) {
 		const { curPage } = e.getUserData()
-		if (curPage === this.node.pageNum) {
+		if (curPage === this.pageRoot.pageNum) {
 			this.videoNode.active = true
 			// 进入自动开始播放
 			this.videoPlayer.play()
@@ -53,7 +50,7 @@ cc.Class({
 	// 页面离开
 	handlePageLeave(e) {
 		const { prevPage } = e.getUserData()
-		if (prevPage === this.node.pageNum) {
+		if (prevPage === this.pageRoot.pageNum) {
 			this.videoPlayer.pause()
 			// this.videoNode.active = false
 			// this.interval && clearInterval(this.interval)
@@ -96,9 +93,9 @@ cc.Class({
 		}
 	},
 	skipPage(offset) {
-		trigger(this.node, "pagination_skip_req", {
+		trigger(this.pageRoot, "pagination_skip_req", {
 			type: "skip",
-			toPage: this.node.pageNum + offset
+			toPage: this.pageRoot.pageNum + offset
 		})
 	},
 	update: function(dt) {}

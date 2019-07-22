@@ -21,7 +21,7 @@
       }
     ],
     "_active": true,
-    "_level": 1,
+    "_level": 3,
     "_components": [
       {
         "__id__": 5
@@ -147,11 +147,13 @@
     "_resourceType": 1,
     "_remoteURL": "https://res.miaocode.com/0098612students.mp4",
     "_clip": {
-      "__uuid__": "265bec3d-dec7-445b-ab28-00fe3e53bed1"
+      "__uuid__": "c4c1a08d-36a3-465f-89f6-f52a948dbfa8"
     },
     "_volume": 1,
     "_mute": false,
-    "videoPlayerEvent": [],
+    "videoPlayerEvent": [
+      null
+    ],
     "_N$keepAspectRatio": true,
     "_N$isFullscreen": false,
     "_id": ""
@@ -162,9 +164,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "5a814075-087b-443b-bb9b-339136cb55b2"
+      "__id__": 0
     },
-    "fileId": "997f3oPq1DrYW3zD3LBFIr",
+    "fileId": "7dHwJDD9xFAbfEJm6ZCq39",
     "sync": false
   },
   {
@@ -175,7 +177,6 @@
       "__id__": 1
     },
     "_enabled": true,
-    "root": null,
     "_id": ""
   },
   {
@@ -184,9 +185,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "5a814075-087b-443b-bb9b-339136cb55b2"
+      "__id__": 0
     },
-    "fileId": "15a5Mog0JDAoWA3Rjea5h1",
+    "fileId": "7aOZauusFLwb7lYUlM+Oh1",
     "sync": false
   }
 ]

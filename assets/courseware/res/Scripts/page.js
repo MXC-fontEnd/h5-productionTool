@@ -31,7 +31,6 @@ cc.Class({
 	},
 	// 初始化界面
 	initialFrame() {
-		console.log("2")
 		const size = this.root.getContentSize()
 		this.rootSize = size
 		// 页面初始化
@@ -72,31 +71,16 @@ cc.Class({
 	// 翻页
 	handlePageChange(e) {
 		let data = e.getUserData(),
-			{ curPage } = data,
-			moveIn = cc
-				.moveTo(
-					0.6,
-					cc.v2(
-						this.rootSize.width * (curPage - 1) * (this.useCamera ? 1 : -1),
-						0
-					)
-				)
-				.easing(cc.easeCubicActionOut()),
-			cb = cc.callFunc(() => {
-				// 进入页面事件分发
-				trigger(this.node, "pagination_enter", data)
-			}),
-			actionSequence = cc.sequence([moveIn, cb])
+			{ curPage } = data
 		// 离开页面事件分发
 		trigger(this.node, "pagination_leave", data)
-		// 结束上一个action序列
-		if (this.actionSequence) {
-			this.movingNode.stopAction(this.actionSequence)
-		}
-		// 缓存action序列
-		this.actionSequence = actionSequence
-		// 开始新的action序列
-		this.movingNode.runAction(actionSequence)
+		// 无动画版
+		this.node.position = cc.v2(
+			this.rootSize.width * (curPage - 1) * (this.useCamera ? 1 : -1),
+			0
+		)
+		// 进入页面事件分发
+		trigger(this.node, "pagination_enter", data)
 	},
 	// toggle切换
 	useCameraChanged(toggle) {

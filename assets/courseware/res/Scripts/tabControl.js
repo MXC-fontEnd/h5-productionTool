@@ -17,7 +17,7 @@ cc.Class({
 	},
 	// 初始化界面
 	initialFrame() {
-		this.tabSwitch({ uuid: this.node.uuid, idx: this.initIdx })
+		this.tabSwitch({ uuid: this.node.name, idx: this.initIdx })
 	},
 	// 初始化事件
 	initialEvent() {
@@ -25,7 +25,7 @@ cc.Class({
 	},
 	// 按钮点击事件
 	tabClicked(e, idx) {
-		this.tabChanged({ uuid: this.node.uuid, idx: +idx })
+		this.tabChanged({ uuid: this.node.name, idx: +idx })
 	},
 	// tab切换事件广播
 	tabChanged(data) {
@@ -34,7 +34,7 @@ cc.Class({
 	// tab切换
 	tabSwitch(data) {
 		const { uuid, idx } = data
-		if (uuid === this.node.uuid) {
+		if (uuid === this.node.name) {
 			this.nodeArr.forEach((item, i) => {
 				if (item.active !== (i === idx)) {
 					item.active = i === idx

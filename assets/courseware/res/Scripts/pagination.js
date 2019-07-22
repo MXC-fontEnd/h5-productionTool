@@ -131,7 +131,11 @@ cc.Class({
 	handleSkipReq(e) {
 		const { toPage } = e.getUserData(),
 			page = Math.min(Math.max(toPage, 1), this.totalPage)
-		this.postMsgSkip(page)
+		this.distributeEvent({
+			type: "skip",
+			prevPage: this.curPage,
+			curPage: page
+		})
 	},
 	// postMessage跳页包装
 	postMsgSkip(page) {

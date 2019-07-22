@@ -51,7 +51,7 @@ cc.Class({
 	handlePageLeave(e) {
 		const { prevPage } = e.getUserData()
 		if (prevPage === this.pageRoot.pageNum) {
-			this.videoPlayer.pause()
+			this.videoPlayer.stop()
 			// this.videoNode.active = false
 			// this.interval && clearInterval(this.interval)
 			// postMessage注销

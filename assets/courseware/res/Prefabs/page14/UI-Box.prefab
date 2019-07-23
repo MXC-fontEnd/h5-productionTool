@@ -24,7 +24,7 @@
       }
     ],
     "_active": true,
-    "_level": 3,
+    "_level": 1,
     "_components": [],
     "_prefab": {
       "__id__": 8
@@ -169,7 +169,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "e7970e25-9272-488c-8792-db7cc12d8fa7"
     },
     "fileId": "a4a1zN7K5Kpo474UzCjOun",
     "sync": false
@@ -246,7 +246,7 @@
     "_enabled": true,
     "paused": false,
     "defaultSkin": "",
-    "defaultAnimation": "",
+    "defaultAnimation": "animation",
     "_preCacheMode": 0,
     "_cacheMode": 0,
     "loop": true,
@@ -278,7 +278,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "e7970e25-9272-488c-8792-db7cc12d8fa7"
     },
     "fileId": "49mLVXjelOE4mr/9tBeMuO",
     "sync": false
@@ -289,7 +289,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "e7970e25-9272-488c-8792-db7cc12d8fa7"
     },
     "fileId": "00V33oBWJGLK4G71YFNIPe",
     "sync": false

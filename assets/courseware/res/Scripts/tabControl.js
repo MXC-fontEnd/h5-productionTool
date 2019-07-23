@@ -1,4 +1,4 @@
-import postMessage from "../../../../utils/postMsg"
+import postMessage from "../../utils/postMsg"
 
 cc.Class({
 	extends: cc.Component,

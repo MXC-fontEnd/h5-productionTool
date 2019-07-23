@@ -91,19 +91,66 @@ cc.Class({
                 stop: 'jojo-stop',
             },
         };
+
+        this.shootLjBind = function (e) {
+            if (window === window.parent) return;
+            if (typeof e.data !== 'string') return;
+            let data = JSON.parse(e.data);
+            if (data) {
+                switch (data.method) {
+                    case "onFileMessage":
+                        if (data.handleData && data.handleData.type == 'shootLj') {
+                            let method = data.handleData.method;
+                            let pars = parseInt(data.handleData.pars);
+                            switch (method) {
+                                case 'resetGame':
+                                        this.resetGame();
+                                    break;
+                                case 'setX':
+                                        this.setX(null,pars);
+                                    break;
+                                case 'setY':
+                                        this.setY(null,pars);
+                                    break;
+                                    default:
+                                    break;
+                            }
+                        }
+                }
+            }
+        }.bind(this);
+        window.addEventListener("message", this.shootLjBind, false);
     },
 
     start() {
 
     },
 
+    // 发射messAge
+    sentMessage(type, method, pars) {
+        if (window !== window.parent) {
+            let data = JSON.stringify({
+                method: 'onFileMessage',
+                handleData: {
+                    type: type,
+                    method: method,
+                    pars: pars
+                },
+            });
+            window.parent.postMessage(data, '*');
+        }
+    },
+
     resetGame(){
         for (let i = 0; i < this.ljList.length; i++) {
            this.ljList[i].active = true;   
         }
+
+        this.sentMessage('shootLj','resetGame');
     },
 
     setX(e, v) {
+        if(e) this.sentMessage('shootLj','setX',v);
         this.xText.string = v;
         switch (parseInt(v)) {
             case 10:
@@ -118,9 +165,11 @@ cc.Class({
                 this.setXFn(2);
                 break;
         }
+
     },
 
     setY(e, v) {
+        if(e) this.sentMessage('shootLj','setY',v);
         this.yText.string = v;
         switch (parseInt(v)) {
             case 10:
@@ -199,5 +248,9 @@ cc.Class({
             }, .5);
         }
     },
+
+    onDestroy(){
+        window.removeEventListener("message", this.shootLjBind);
+    }
 
 });

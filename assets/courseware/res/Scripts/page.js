@@ -41,6 +41,7 @@ cc.Class({
 			})
 			.map((node, idx) => {
 				// 位置初始化
+				node.active = idx === 0
 				node.x = size.width * idx
 				node.y = 0
 				node.pageNum = idx + 1
@@ -54,6 +55,8 @@ cc.Class({
 				}
 				return node
 			})
+
+		this._childs = childs
 
 		this.node._childNum = childs.length
 		// 初始化切换方式
@@ -71,15 +74,17 @@ cc.Class({
 	// 翻页
 	handlePageChange(e) {
 		let data = e.getUserData(),
-			{ curPage } = data
+			{ curPage, prevPage } = data
 		// 离开页面事件分发
 		trigger(this.node, "pagination_leave", data)
+		this._childs[prevPage - 1].active = false
 		// 无动画版
 		this.node.position = cc.v2(
 			this.rootSize.width * (curPage - 1) * (this.useCamera ? 1 : -1),
 			0
 		)
 		// 进入页面事件分发
+		this._childs[curPage - 1].active = true
 		trigger(this.node, "pagination_enter", data)
 	},
 	// toggle切换

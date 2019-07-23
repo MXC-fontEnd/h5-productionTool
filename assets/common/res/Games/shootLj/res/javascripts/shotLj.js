@@ -35,14 +35,72 @@ cc.Class({
             default: [],
             type: [cc.Node]
         },
+
+        ljBarrels: {
+            default: [],
+            type: [sp.Skeleton]
+        },
+
     },
 
     onLoad() {
         this.flag = true;
+
+        this.khsLjBarrel = this.ljBarrels[0];
+        this.ydLjBarrel = this.ljBarrels[1];
+        this.sLjBarrel = this.ljBarrels[2];
+        this.gLjBarrel = this.ljBarrels[3];
+        // 垃圾坐标
+        this.ljCoor = [cc.v2(10, 10), cc.v2(10, 20), cc.v2(10, 30), cc.v2(20, 10), cc.v2(20, 20), cc.v2(20, 30), cc.v2(30, 10), cc.v2(30, 20), cc.v2(30, 30)];
+
+        // 垃圾桶配置
+        this.ljtConfig = ['sLjBarrel','gLjBarrel','gLjBarrel','khsLjBarrel','ydLjBarrel','khsLjBarrel','ydLjBarrel','gLjBarrel','sLjBarrel'];
+
+        // spine命名不规范适配
+        this.ljtSpineList = {
+            khsLjBarrel: {
+                seq: 0,
+                open: 'open',
+                happy: 'omo-happy',
+                sad: 'omo-sad',
+                kwy: 'omostandby',
+                stop: 'stop',
+            },
+            ydLjBarrel: {
+                seq: 1,
+                open: 's-open',
+                happy: 's-happy',
+                sad: 's-sad',
+                kwy: 's-standby',
+                stop: 's-stop',
+            },
+            sLjBarrel: {
+                seq: 2,
+                open: 'open',
+                happy: 'green-happy',
+                sad: 'green-sad',
+                kwy: 'green-standby',
+                stop: 'stop',
+            },
+            gLjBarrel: {
+                seq: 3,
+                open: 'jojo-open',
+                happy: 'jojo-happy',
+                sad: 'jojo-sad',
+                kwy: 'jojo-standby',
+                stop: 'jojo-stop',
+            },
+        };
     },
 
     start() {
 
+    },
+
+    resetGame(){
+        for (let i = 0; i < this.ljList.length; i++) {
+           this.ljList[i].active = true;   
+        }
     },
 
     setX(e, v) {
@@ -101,10 +159,10 @@ cc.Class({
         }
     },
 
-    ljConfig(n){
+    ljConfig(n) {
         let seq;
-        [10*10,10*20,10*30,20*10,20*20,20*30,30*10,30*20,30*30].forEach((element,i) => {
-           if(element == n)  seq = i;
+        this.ljCoor.forEach((element, i) => {
+            if (element.x == n.x && element.y == n.y) seq = i;
         });
         return seq;
     },
@@ -112,12 +170,23 @@ cc.Class({
     update(dt) {
         if (this.xText.string && this.yText.string && this.flag) {
             this.flag = false;
-            let seq = this.ljConfig(parseInt(this.xText.string)*parseInt(this.yText.string));
-            let act1 = cc.scaleTo(.4,.5);
-            let act2 = cc.callFunc(()=>{
-                this.ljList[seq].destroy();
-            }, this)
-            let action = cc.sequence(act1, act2);
+            let seq = this.ljConfig(cc.v2(parseInt(this.xText.string), parseInt(this.yText.string)));
+            let old_ljPosition = this.ljList[seq].getPosition();
+            let ljtPosition = this[this.ljtConfig[seq]].node.getPosition();
+
+            let act1 = cc.scaleTo(.3, .6);
+            let act2 = cc.callFunc(() => {
+                this[this.ljtConfig[seq]].setAnimation(0,this.ljtSpineList[this.ljtConfig[seq]]['open'],false);
+            }, this);
+            let act3 = cc.moveTo(1.2, cc.v2(ljtPosition.x,ljtPosition.y + 70));
+            let act4 = cc.callFunc(() => {
+                this.ljList[seq].active = false;
+                this.ljList[seq].setPosition(old_ljPosition);
+                this.ljList[seq].setScale(1);
+                this[this.ljtConfig[seq]].setAnimation(0,this.ljtSpineList[this.ljtConfig[seq]]['happy'],false);
+                this[this.ljtConfig[seq]].addAnimation(0,this.ljtSpineList[this.ljtConfig[seq]]['kwy'],true);
+            }, this);
+            let action = cc.sequence(act1, act2,act3,act4);
             this.ljList[seq].runAction(action);
 
             this.scheduleOnce(function () {

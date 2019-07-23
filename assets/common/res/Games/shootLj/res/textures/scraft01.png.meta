@@ -1,6 +1,6 @@
 {
   "ver": "2.2.0",
-  "uuid": "3e60c409-a784-4c87-9627-7f48deb25bc4",
+  "uuid": "2b3b2a27-0dfd-4d7b-aa8c-5826cd76b1de",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -8,8 +8,8 @@
   "subMetas": {
     "scraft01": {
       "ver": "1.0.4",
-      "uuid": "2535a2df-5539-4eb0-a802-fba271f3ae42",
-      "rawTextureUuid": "3e60c409-a784-4c87-9627-7f48deb25bc4",
+      "uuid": "054548fd-c6f4-4670-9a5c-9565fe3948fc",
+      "rawTextureUuid": "2b3b2a27-0dfd-4d7b-aa8c-5826cd76b1de",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

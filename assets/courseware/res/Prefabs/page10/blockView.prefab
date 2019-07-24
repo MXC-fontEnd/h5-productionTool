@@ -37,9 +37,13 @@
     ],
     "_active": true,
     "_level": 1,
-    "_components": [],
+    "_components": [
+      {
+        "__id__": 24
+      }
+    ],
     "_prefab": {
-      "__id__": 23
+      "__id__": 25
     },
     "_opacity": 255,
     "_color": {
@@ -638,11 +642,11 @@
     "_level": 5,
     "_components": [
       {
-        "__id__": 21
+        "__id__": 22
       }
     ],
     "_prefab": {
-      "__id__": 22
+      "__id__": 23
     },
     "_opacity": 255,
     "_color": {
@@ -704,7 +708,7 @@
       }
     ],
     "_prefab": {
-      "__id__": 20
+      "__id__": 21
     },
     "_opacity": 255,
     "_color": {
@@ -759,9 +763,23 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_url": "",
-    "webviewEvents": [],
+    "_url": "https://res.miaocode.com/scrathBlock/ljfl/01/index.html",
+    "webviewEvents": [
+      {
+        "__id__": 20
+      }
+    ],
     "_id": ""
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "",
+    "_componentId": "608bbNLU4pKX5qfryK08BdZ",
+    "handler": "onWebFinishLoad",
+    "customEventData": ""
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -812,6 +830,16 @@
     },
     "fileId": "44KMLPWHlBba42S3TmGd2k",
     "sync": false
+  },
+  {
+    "__type__": "608bbNLU4pKX5qfryK08BdZ",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_id": ""
   },
   {
     "__type__": "cc.PrefabInfo",

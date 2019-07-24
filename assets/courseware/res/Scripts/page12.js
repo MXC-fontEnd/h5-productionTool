@@ -40,12 +40,20 @@ cc.Class({
 	// 事件初始化
 	initialEvent() {
 		this.stepNodes.forEach(step => {
-			step.before.on("mousedown", this.postPreview, this)
-			step.after.on("mousedown", this.postPreview, this)
-			step.preview.on("mousedown", this.postPreviewClose, this)
-			step.category.on("mousedown", this.postCategoryCheck, this)
+			step.before.on(cc.Node.EventType.TOUCH_START, this.postPreview, this)
+			step.after.on(cc.Node.EventType.TOUCH_START, this.postPreview, this)
+			step.preview.on(
+				cc.Node.EventType.TOUCH_START,
+				this.postPreviewClose,
+				this
+			)
+			step.category.on(
+				cc.Node.EventType.TOUCH_START,
+				this.postCategoryCheck,
+				this
+			)
 		})
-		this.pageRoot.on("mousedown", this.postPreviewClose, this)
+		this.pageRoot.on(cc.Node.EventType.TOUCH_START, this.postPreviewClose, this)
 
 		// postMessage接收处理
 		observer.on("p12Preview", this.handlePreview, this)

@@ -52,7 +52,7 @@ cc.Class({
 		this.root.on("pagination_enter", this.handlePageEnter, this)
 		this.root.on("pagination_leave", this.handlePageLeave, this)
 		this.ske.setCompleteListener(this.playComplete.bind(this))
-		this.btn.on("mousedown", this.postEvent, this)
+		this.btn.on(cc.Node.EventType.TOUCH_START, this.postEvent, this)
 		observer.on("p5SendEmail", this.sendMail, this)
 	},
 

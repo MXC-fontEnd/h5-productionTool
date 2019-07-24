@@ -26,12 +26,6 @@ cc.Class({
 		// 视频点击监听
 		this.videoNode.on("clicked", this.handleVideoClicked, this)
 	},
-	// 卸载事件
-	unmountEvent() {
-		this.root.off("pagination_enter", this.handlePageEnter, this)
-		this.root.off("pagination_leave", this.handlePageLeave, this)
-		this.videoNode.off("clicked", this.handleVideoClicked, this)
-	},
 	// 页面进入
 	handlePageEnter(e) {
 		const { curPage } = e.getUserData()

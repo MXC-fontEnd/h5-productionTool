@@ -62,20 +62,19 @@ cc.Class({
 		// mouseleave事件偶尔失灵，补救措施全局绑定mousemove
 		this.root.on("mousemove", this.handleMouseLeave, this)
 		// 翻页事件
-		this.prevBtn.node.on("mousedown", this.handlePrevPage, this)
-		this.nextBtn.node.on("mousedown", this.handleNextPage, this)
+		this.prevBtn.node.on(
+			cc.Node.EventType.TOUCH_START,
+			this.handlePrevPage,
+			this
+		)
+		this.nextBtn.node.on(
+			cc.Node.EventType.TOUCH_START,
+			this.handleNextPage,
+			this
+		)
 		this.curIpt.node.on("editing-return", this.handleSkipPage, this)
 		// 观察者监听跳页事件
 		observer.on("jumpPage", this.postMsgSkip, this)
-	},
-	// 卸载事件
-	unmountEvent() {
-		this.root.off("pagination_skip_req", this.handleSkipReq, this)
-		this.node.off("mouseenter", this.handleMouseEnter, this)
-		this.node.off("mouseleave", this.handleMouseLeave, this)
-		this.prevBtn.node.off("mousedown", this.handlePrevPage, this)
-		this.nextBtn.node.off("mousedown", this.handleNextPage, this)
-		this.curIpt.node.off("editing-return", this.handleSkipPage, this)
 	},
 	// 鼠标移入事件
 	handleMouseEnter() {

@@ -1,4 +1,5 @@
 import { trigger } from "../../utils"
+import postMessage from "../../utils/postMsg"
 // Learn cc.Class:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/class.html
 //  - [English] http://docs.cocos2d-x.org/creator/manual/en/scripting/class.html
@@ -51,7 +52,8 @@ cc.Class({
 		this.root.on("pagination_enter", this.handlePageEnter, this)
 		this.root.on("pagination_leave", this.handlePageLeave, this)
 		this.ske.setCompleteListener(this.playComplete.bind(this))
-		this.btn.on("mousedown", this.sendMail, this)
+		this.btn.on("mousedown", this.postEvent, this)
+		observer.on("p5SendEmail", this.sendMail, this)
 	},
 
 	handlePageEnter() {},
@@ -59,6 +61,10 @@ cc.Class({
 		this.btn.active = true
 		this.ske.clearTracks()
 		this.ske.setToSetupPose()
+	},
+
+	postEvent() {
+		postMessage.customEvent("p5SendEmail")
 	},
 
 	sendMail() {

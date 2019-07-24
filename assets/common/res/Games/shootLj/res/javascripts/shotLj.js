@@ -104,7 +104,7 @@ cc.Class({
                             let pars = parseInt(data.handleData.pars);
                             switch (method) {
                                 case 'resetGame':
-                                        this.resetGame();
+                                        this.resetGame('stop');
                                     break;
                                 case 'setX':
                                         this.setX(null,pars);
@@ -141,12 +141,11 @@ cc.Class({
         }
     },
 
-    resetGame(){
+    resetGame(v){
         for (let i = 0; i < this.ljList.length; i++) {
            this.ljList[i].active = true;   
         }
-
-        this.sentMessage('shootLj','resetGame');
+        if(v !== 'stop') this.sentMessage('shootLj','resetGame');
     },
 
     setX(e, v) {

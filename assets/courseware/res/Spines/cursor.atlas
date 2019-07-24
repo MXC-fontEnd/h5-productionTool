@@ -1,0 +1,13 @@
+
+cursor.png
+size: 128,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hand
+  rotate: false
+  xy: 2, 2
+  size: 110, 133
+  orig: 110, 133
+  offset: 0, 0
+  index: -1

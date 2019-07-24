@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.9302083333333333,
-      "y": 0.9302083333333333,
+      "x": 0.7979166666666666,
+      "y": 0.7979166666666666,
       "z": 1
     },
     "_quat": {
@@ -1895,7 +1895,7 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_url": "https://res.miaocode.com/scrathGame/sortGarbage/15/index.html",
+    "_url": "https://res.miaocode.com/scrathGame/sortGarbage/17/index.html",
     "webviewEvents": [
       {
         "__id__": 43

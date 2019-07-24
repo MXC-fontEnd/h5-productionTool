@@ -399,7 +399,9 @@
     "_enabled": true,
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": null,
+    "_spriteFrame": {
+      "__uuid__": "fa65d8f1-f152-473c-b1dd-1589c7e73e95"
+    },
     "_type": 0,
     "_sizeMode": 1,
     "_fillType": 0,
@@ -493,7 +495,7 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "7c7f1bfYYdEzJb/8exCF6ft",
+    "_componentId": "5e40c6J4NJPCLy8qubfqxYw",
     "handler": "resetGame",
     "customEventData": ""
   },
@@ -756,7 +758,7 @@
     "asset": {
       "__uuid__": "0e58dbac-26c5-482a-8137-6fcbf89f4dea"
     },
-    "fileId": "666ywLCSZElo94ntBCwtUH",
+    "fileId": "129ONN3J5NuILj3RfvqU6j",
     "sync": false
   },
   {
@@ -854,7 +856,7 @@
     "asset": {
       "__uuid__": "0e58dbac-26c5-482a-8137-6fcbf89f4dea"
     },
-    "fileId": "dcrlC1lOFDmLwxcL21NfVK",
+    "fileId": "c8rfF+QBZEzLjV5q7jLD5B",
     "sync": false
   },
   {
@@ -952,7 +954,7 @@
     "asset": {
       "__uuid__": "0e58dbac-26c5-482a-8137-6fcbf89f4dea"
     },
-    "fileId": "96uOxtyKJE+LR5ec6b55J+",
+    "fileId": "b3E+pOAZdL9627E+65NWQA",
     "sync": false
   },
   {
@@ -1050,7 +1052,7 @@
     "asset": {
       "__uuid__": "0e58dbac-26c5-482a-8137-6fcbf89f4dea"
     },
-    "fileId": "43dJvGwKpE7pGFBWBhM01e",
+    "fileId": "a9yTYPAZ9DBoVV6VrpKU+K",
     "sync": false
   },
   {

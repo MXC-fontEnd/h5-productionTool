@@ -188,14 +188,14 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "p10-sp1",
+    "_name": "miaocode2",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
     },
     "_children": [],
     "_active": true,
-    "_level": 5,
+    "_level": 2,
     "_components": [
       {
         "__id__": 6
@@ -214,8 +214,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 116,
-      "height": 132
+      "width": 207,
+      "height": 236
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -224,14 +224,14 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -366,
-      "y": 194,
+      "x": -370,
+      "y": 100,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.45,
+      "y": 0.45,
       "z": 1
     },
     "_rotationX": 0,
@@ -249,31 +249,39 @@
     "_id": ""
   },
   {
-    "__type__": "cc.Sprite",
+    "__type__": "sp.Skeleton",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 5
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "cd2d5aba-607e-481e-b5c3-30b20a382883"
+    "paused": false,
+    "defaultSkin": "",
+    "defaultAnimation": "animation",
+    "_preCacheMode": 0,
+    "_cacheMode": 0,
+    "loop": true,
+    "premultipliedAlpha": true,
+    "timeScale": 1,
+    "_accTime": 0,
+    "_playCount": 0,
+    "_frameCache": null,
+    "_curFrame": null,
+    "_skeletonCache": null,
+    "_animationName": "animation",
+    "_animationQueue": [],
+    "_headAniInfo": null,
+    "_playTimes": 0,
+    "_isAniComplete": true,
+    "_N$skeletonData": {
+      "__uuid__": "05f5f5d1-0245-471b-babe-32da4a6ddeb2"
     },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_state": 0,
-    "_atlas": null,
+    "_N$_defaultCacheMode": 0,
+    "_N$debugSlots": false,
+    "_N$debugBones": false,
+    "_N$useTint": false,
+    "_N$enableBatch": false,
     "_id": ""
   },
   {
@@ -284,19 +292,19 @@
     "asset": {
       "__uuid__": "3c4ffcff-1faf-4e31-bcc2-570da0029c09"
     },
-    "fileId": "83QfaOQuhGno4wOkD4sU61",
+    "fileId": "a2EpUqP1ZPuK6dDiRvb+28",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "p10-sp2",
+    "_name": "cloud01",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
     },
     "_children": [],
     "_active": true,
-    "_level": 5,
+    "_level": 2,
     "_components": [
       {
         "__id__": 9
@@ -305,7 +313,7 @@
     "_prefab": {
       "__id__": 10
     },
-    "_opacity": 255,
+    "_opacity": 150,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -315,8 +323,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 51,
-      "height": 29
+      "width": 182,
+      "height": 108
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -325,14 +333,14 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -455,
-      "y": 192,
+      "x": 376,
+      "y": 212,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.2,
+      "y": 0.2,
       "z": 1
     },
     "_rotationX": 0,
@@ -350,31 +358,39 @@
     "_id": ""
   },
   {
-    "__type__": "cc.Sprite",
+    "__type__": "sp.Skeleton",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 8
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "b85ab5be-5730-443d-a4e2-d502d7086a0e"
+    "paused": false,
+    "defaultSkin": "",
+    "defaultAnimation": "animation",
+    "_preCacheMode": 0,
+    "_cacheMode": 0,
+    "loop": true,
+    "premultipliedAlpha": true,
+    "timeScale": 0.2,
+    "_accTime": 0,
+    "_playCount": 0,
+    "_frameCache": null,
+    "_curFrame": null,
+    "_skeletonCache": null,
+    "_animationName": "animation",
+    "_animationQueue": [],
+    "_headAniInfo": null,
+    "_playTimes": 0,
+    "_isAniComplete": true,
+    "_N$skeletonData": {
+      "__uuid__": "011e1c22-491c-40cc-b947-cce29ef7ca61"
     },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_state": 0,
-    "_atlas": null,
+    "_N$_defaultCacheMode": 0,
+    "_N$debugSlots": false,
+    "_N$debugBones": false,
+    "_N$useTint": false,
+    "_N$enableBatch": false,
     "_id": ""
   },
   {
@@ -385,19 +401,19 @@
     "asset": {
       "__uuid__": "3c4ffcff-1faf-4e31-bcc2-570da0029c09"
     },
-    "fileId": "e6qrk9MbRBbKV4EIsDOqxm",
+    "fileId": "1apVetuOpCRZ6UGfCyowqf",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "p10-sp3",
+    "_name": "cloud01",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
     },
     "_children": [],
     "_active": true,
-    "_level": 5,
+    "_level": 2,
     "_components": [
       {
         "__id__": 12
@@ -416,8 +432,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 75,
-      "height": 53
+      "width": 182,
+      "height": 108
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -426,14 +442,14 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 442,
-      "y": 211,
+      "x": -470,
+      "y": 142,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.3,
+      "y": 0.3,
       "z": 1
     },
     "_rotationX": 0,
@@ -451,31 +467,39 @@
     "_id": ""
   },
   {
-    "__type__": "cc.Sprite",
+    "__type__": "sp.Skeleton",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 11
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "bd91dce4-cf65-4231-86cd-bdb8ea6d394c"
+    "paused": false,
+    "defaultSkin": "",
+    "defaultAnimation": "animation",
+    "_preCacheMode": 0,
+    "_cacheMode": 0,
+    "loop": true,
+    "premultipliedAlpha": true,
+    "timeScale": 0.4,
+    "_accTime": 0,
+    "_playCount": 0,
+    "_frameCache": null,
+    "_curFrame": null,
+    "_skeletonCache": null,
+    "_animationName": "animation",
+    "_animationQueue": [],
+    "_headAniInfo": null,
+    "_playTimes": 0,
+    "_isAniComplete": true,
+    "_N$skeletonData": {
+      "__uuid__": "011e1c22-491c-40cc-b947-cce29ef7ca61"
     },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_state": 0,
-    "_atlas": null,
+    "_N$_defaultCacheMode": 0,
+    "_N$debugSlots": false,
+    "_N$debugBones": false,
+    "_N$useTint": false,
+    "_N$enableBatch": false,
     "_id": ""
   },
   {
@@ -486,19 +510,19 @@
     "asset": {
       "__uuid__": "3c4ffcff-1faf-4e31-bcc2-570da0029c09"
     },
-    "fileId": "08Amek331Kup8N2gz/H9r4",
+    "fileId": "e45PPLlQpGxbHpdCmHUU4G",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "p10-sp4",
+    "_name": "cloud01",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
     },
     "_children": [],
     "_active": true,
-    "_level": 5,
+    "_level": 2,
     "_components": [
       {
         "__id__": 15
@@ -517,8 +541,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 37,
-      "height": 21
+      "width": 182,
+      "height": 108
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -527,14 +551,14 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 374,
-      "y": 241,
+      "x": 447,
+      "y": 134,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.5,
+      "y": 0.5,
       "z": 1
     },
     "_rotationX": 0,
@@ -552,31 +576,39 @@
     "_id": ""
   },
   {
-    "__type__": "cc.Sprite",
+    "__type__": "sp.Skeleton",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 14
     },
     "_enabled": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "8ae9a7d7-68ca-443c-82ca-7b8617dad9ef"
+    "paused": false,
+    "defaultSkin": "",
+    "defaultAnimation": "animation",
+    "_preCacheMode": 0,
+    "_cacheMode": 0,
+    "loop": true,
+    "premultipliedAlpha": true,
+    "timeScale": 0.8,
+    "_accTime": 0,
+    "_playCount": 0,
+    "_frameCache": null,
+    "_curFrame": null,
+    "_skeletonCache": null,
+    "_animationName": "animation",
+    "_animationQueue": [],
+    "_headAniInfo": null,
+    "_playTimes": 0,
+    "_isAniComplete": true,
+    "_N$skeletonData": {
+      "__uuid__": "011e1c22-491c-40cc-b947-cce29ef7ca61"
     },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_state": 0,
-    "_atlas": null,
+    "_N$_defaultCacheMode": 0,
+    "_N$debugSlots": false,
+    "_N$debugBones": false,
+    "_N$useTint": false,
+    "_N$enableBatch": false,
     "_id": ""
   },
   {
@@ -587,7 +619,7 @@
     "asset": {
       "__uuid__": "3c4ffcff-1faf-4e31-bcc2-570da0029c09"
     },
-    "fileId": "d6IaT30z1BGLmOWyFdhoul",
+    "fileId": "48unP0eUFLsKqv+t0ypvWh",
     "sync": false
   },
   {

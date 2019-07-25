@@ -44,7 +44,7 @@ cc.Class({
 	handlePageLeave(e) {
 		const { prevPage } = e.getUserData()
 		if (prevPage === this.pageRoot.pageNum) {
-			this.videoPlayer.stop()
+			this.videoPlayer && this.videoPlayer.stop()
 			// this.videoNode.active = false
 			// this.interval && clearInterval(this.interval)
 			// postMessage注销
@@ -52,11 +52,11 @@ cc.Class({
 		}
 	},
 	// 视频状态监测
-	videoStatusChanged(videoplayer, status) {
+	videoStatusChanged(videoplayer, status, noSkip) {
 		switch (status) {
 			case cc.VideoPlayer.EventType.COMPLETED:
 				// 播放完成自动跳转下一页
-				this.skipPage(1)
+				!noSkip && this.skipPage(1)
 				break
 			case cc.VideoPlayer.EventType.READY_TO_PLAY:
 				console.log("初次加载播放")

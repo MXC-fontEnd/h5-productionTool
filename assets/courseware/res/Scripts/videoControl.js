@@ -14,9 +14,8 @@ cc.Class({
 		this.root = cc.find("Canvas")
 		this.pageRoot = this.node.parent
 		this.videoNode = this.node.getChildByName("video")
-		this.videoPlayer = this.videoNode.getComponent(cc.VideoPlayer)
 
-		// this.videoNode.active = false
+		// this.videoPlayer = this.videoNode.getComponent(cc.VideoPlayer)
 	},
 	// 事件初始化
 	initialEvent() {
@@ -30,9 +29,9 @@ cc.Class({
 	handlePageEnter(e) {
 		const { curPage } = e.getUserData()
 		if (curPage === this.pageRoot.pageNum) {
-			this.videoNode.active = true
 			// 进入自动开始播放
-			this.videoPlayer.play()
+			console.log("再次播放")
+			this.videoPlayer && this.videoPlayer.play()
 			// 每10s分发一次进度
 			// this.interval = setInterval(() => {
 			// 	postMessage.customEvent("videoProgress", this.videoPlayer.currentTime)
@@ -53,10 +52,20 @@ cc.Class({
 		}
 	},
 	// 视频状态监测
-	videoStatusChanged(event, status) {
-		if (status === cc.VideoPlayer.EventType.COMPLETED) {
-			// 播放完成自动跳转下一页
-			this.skipPage(1)
+	videoStatusChanged(videoplayer, status) {
+		switch (status) {
+			case cc.VideoPlayer.EventType.COMPLETED:
+				// 播放完成自动跳转下一页
+				this.skipPage(1)
+				break
+			case cc.VideoPlayer.EventType.READY_TO_PLAY:
+				console.log("初次加载播放")
+				this.videoPlayer = videoplayer
+				if (this.pageRoot.active) {
+					this.videoPlayer.play()
+				}
+				break
+			default:
 		}
 	},
 	// 视频进度比对（10s一次，纠正范围±5s）

@@ -125,7 +125,7 @@ cc.Class({
         if(!this.complete && !this.highAge){
             let streetBg = this.upStreet.getComponent(cc.Sprite);
             streetBg.spriteFrame = this.otherBg;
-            streetBg.node.height =560;
+            streetBg.node.y = streetBg.node.y + 50;
         }
     },
 
@@ -251,6 +251,8 @@ cc.Class({
         let act2 = cc.callFunc(() => {
             curTrash.destroy();
             this.trashBarrels[seq].setAnimation(0, this.ljtSpineList[data.name]['happy'], false);
+            
+            this.trashBarrels[seq].addAnimation(0, this.ljtSpineList[data.name]['kwy'], true);
             this.curTrash = null;
             this.createTrash();
             this.scoreText.string = parseInt(this.scoreText.string) + 1;

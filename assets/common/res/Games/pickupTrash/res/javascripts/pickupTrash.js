@@ -13,6 +13,12 @@ cc.Class({
             displayName: '秒小程'
         },
 
+        mxcAtlas: {
+            default: null,
+            type: cc.SpriteAtlas,
+            displayName: '秒小程图集'
+        },
+
         upStreet: {
             default: null,
             type: cc.Node,
@@ -36,6 +42,13 @@ cc.Class({
             type: [sp.Skeleton],
             displayName: '垃圾桶列表'
         },
+
+        otherBg: {
+            default: null,
+            type: cc.SpriteFrame,
+            displayName: '其他的背景'
+        },
+
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -83,6 +96,7 @@ cc.Class({
         this.startGame = this.node.getChildByName('startGame');
         this.ship = this.node.getChildByName('ship');
         this.mxc.runAction(cc.fadeOut());
+        this.scrollBgState = false;
 
         this.pickupTrashBind = function (e) {
             if (window === window.parent) return;
@@ -107,6 +121,12 @@ cc.Class({
             }
         }.bind(this);
         window.addEventListener("message", this.pickupTrashBind, false);
+
+        if(!this.complete && !this.highAge){
+            let streetBg = this.upStreet.getComponent(cc.Sprite);
+            streetBg.spriteFrame = this.otherBg;
+            streetBg.node.height =560;
+        }
     },
 
     // 发射messAge
@@ -131,7 +151,6 @@ cc.Class({
         this.scoreText.string = 0;
         this.curTrash = null;
         let ans = this.mxc.getComponent(cc.Animation);
-        ans.pause();
 
         let shipAct1 = cc.moveTo(.5, cc.v2(100, 260));
         let shipAct2 = cc.callFunc(() => {
@@ -144,18 +163,18 @@ cc.Class({
 
         let mxcAct1 = cc.fadeIn(.3);
         let mxcAct2 = cc.scaleTo(1, 1);
-        let mxcAct3 = cc.moveTo(1, cc.v2(-100, -70));
+        let mxcAct3 = cc.moveTo(1, cc.v2(-100, -160));
         let mxcAct4 = cc.spawn(mxcAct2, mxcAct3);
         let mxcAct5 = cc.callFunc(() => {
             this.ship.setPosition(cc.v2(300, 460));
             this.createTrash();
             this.curTrashMoveState = true;
+            this.scrollBgState = true;
             ans.play('walk');
-
             if (!this.complete && this.highAge) {
                 this.scheduleOnce(function () {
                     ans.pause();
-                }, 1);
+                }, .1);
             }
 
         }, this)
@@ -165,10 +184,11 @@ cc.Class({
     },
 
     update(dt) {
-        if (this.startGame.active) return;
-        this.upStreet.x -= this.moveSpeed * dt;
-        if (this.upStreet.x < -4500) {
-            this.upStreet.x = -240
+        if (this.scrollBgState){
+            this.upStreet.x -= this.moveSpeed * dt;
+            if (this.upStreet.x < -4500) {
+                this.upStreet.x = -240
+            }
         }
 
         if (this.curTrash && this.curTrashMoveState) {
@@ -179,11 +199,13 @@ cc.Class({
                 this.curTrashMoveState = false;
                 this.curTrash.destroy();
                 this.curTrash = null;
+                this.scrollBgState = false;
 
                 this.scheduleOnce(function () {
                     this.intro.active = true;
                     this.startGame.active = true;
-                    ans.play('walk');
+                    ans.play('stand');
+
                     let act1 = cc.fadeOut();
                     let act2 = cc.moveTo(0, cc.v2(100, 220));
                     let act3 = cc.scaleTo(0, .6);
@@ -246,12 +268,14 @@ cc.Class({
         let trashCir = trash.getComponent(cc.CircleCollider);
         trashCir.tag = ['glj', 'slj', 'khslj', 'ydlj'][seq];
         trash.parent = this.node;
-        trash.setPosition(360, -40);
+        trash.setPosition(360, -130);
         this.curTrash = trash;
     },
 
     // 垃圾桶出动
     trashBarrelAction(e, data) {
+        if (!this.complete && !this.highAge || !this.complete && this.highAge) return;
+
         let trashBarrel = cc.find("underStreet/" + this.ljtSpineList[data]['name'], this.node);
         let curSpine = trashBarrel.getComponent(sp.Skeleton);
         curSpine.setAnimation(0, this.ljtSpineList[data]['open'], false);

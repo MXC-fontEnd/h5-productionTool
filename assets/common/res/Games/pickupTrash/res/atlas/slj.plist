@@ -4,21 +4,6 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>果壳.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{64,42}</string>
-                <key>spriteSourceSize</key>
-                <string>{64,42}</string>
-                <key>textureRect</key>
-                <string>{{1,48},{64,42}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
             <key>苹果核.png</key>
             <dict>
                 <key>aliases</key>
@@ -30,7 +15,7 @@
                 <key>spriteSourceSize</key>
                 <string>{34,34}</string>
                 <key>textureRect</key>
-                <string>{{1,92},{34,34}}</string>
+                <string>{{150,1},{34,34}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -45,7 +30,7 @@
                 <key>spriteSourceSize</key>
                 <string>{39,45}</string>
                 <key>textureRect</key>
-                <string>{{68,1},{39,45}}</string>
+                <string>{{109,1},{39,45}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -60,9 +45,9 @@
                 <key>spriteSourceSize</key>
                 <string>{37,27}</string>
                 <key>textureRect</key>
-                <string>{{67,48},{37,27}}</string>
+                <string>{{221,1},{37,27}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>香蕉皮.png</key>
             <dict>
@@ -75,7 +60,7 @@
                 <key>spriteSourceSize</key>
                 <string>{39,47}</string>
                 <key>textureRect</key>
-                <string>{{72,77},{39,47}}</string>
+                <string>{{68,1},{39,47}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -105,7 +90,7 @@
                 <key>spriteSourceSize</key>
                 <string>{34,33}</string>
                 <key>textureRect</key>
-                <string>{{37,92},{34,33}}</string>
+                <string>{{186,1},{34,33}}</string>
                 <key>textureRotated</key>
                 <true/>
             </dict>
@@ -121,9 +106,9 @@
             <key>realTextureFileName</key>
             <string>slj.png</string>
             <key>size</key>
-            <string>{112,127}</string>
+            <string>{249,49}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a71ae29bdf0020e336e551b56d55d099:b2954832bbb4cf8bbbddad5f401b197e:84fed4b678ac8525cc158d0aa8cb7057$</string>
+            <string>$TexturePacker:SmartUpdate:e03dc4755838ea9afbee0744287987e4:b5b8d62306a041cc260f70876a617567:84fed4b678ac8525cc158d0aa8cb7057$</string>
             <key>textureFileName</key>
             <string>slj.png</string>
         </dict>

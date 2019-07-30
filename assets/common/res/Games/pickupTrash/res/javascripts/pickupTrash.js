@@ -79,10 +79,10 @@ cc.Class({
 
         // 收集垃圾成功，摧毁之
         this.node.on('detroyTrash', this._detroyTrash, this);
-
         this.intro = this.node.getChildByName('intro');
         this.startGame = this.node.getChildByName('startGame');
         this.ship = this.node.getChildByName('ship');
+        this.mxc.runAction(cc.fadeOut());
 
         this.pickupTrashBind = function (e) {
             if (window === window.parent) return;
@@ -142,7 +142,7 @@ cc.Class({
         let shipAct = cc.sequence(shipAct1, shipAct2);
         this.ship.runAction(shipAct);
 
-        let mxcAct1 = cc.fadeIn(0.3);
+        let mxcAct1 = cc.fadeIn(.3);
         let mxcAct2 = cc.scaleTo(1, 1);
         let mxcAct3 = cc.moveTo(1, cc.v2(-100, -70));
         let mxcAct4 = cc.spawn(mxcAct2, mxcAct3);

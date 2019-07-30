@@ -54,7 +54,7 @@ cc.Class({
         this.ljCoor = [cc.v2(10, 10), cc.v2(10, 20), cc.v2(10, 30), cc.v2(20, 10), cc.v2(20, 20), cc.v2(20, 30), cc.v2(30, 10), cc.v2(30, 20), cc.v2(30, 30)];
 
         // 垃圾桶配置
-        this.ljtConfig = ['sLjBarrel','gLjBarrel','gLjBarrel','khsLjBarrel','ydLjBarrel','khsLjBarrel','ydLjBarrel','gLjBarrel','sLjBarrel'];
+        this.ljtConfig = ['sLjBarrel','gLjBarrel','gLjBarrel','khsLjBarrel','ydLjBarrel','khsLjBarrel','ydLjBarrel','khsLjBarrel','sLjBarrel'];
 
         // spine命名不规范适配
         this.ljtSpineList = {

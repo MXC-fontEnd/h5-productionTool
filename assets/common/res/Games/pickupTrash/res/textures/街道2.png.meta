@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "2e7a9359-a3f1-4650-86ed-2aad89e90603",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "街道2": {
+      "ver": "1.0.4",
+      "uuid": "0ba596af-92bf-4621-8207-16fb47bbe1ce",
+      "rawTextureUuid": "2e7a9359-a3f1-4650-86ed-2aad89e90603",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 480,
+      "height": 254,
+      "rawWidth": 480,
+      "rawHeight": 254,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

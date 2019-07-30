@@ -1,0 +1,31 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "down",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.6,
+  "sample": 10,
+  "speed": 1,
+  "wrapMode": "0",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "21c2bb4d-dd6e-4141-a80f-bc87f2382ec3"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "6d5be977-2122-4dd1-9c86-9690f6869cf8"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

@@ -42,16 +42,13 @@
       },
       {
         "__id__": 26
-      },
-      {
-        "__id__": 29
       }
     ],
     "_active": true,
     "_level": 1,
     "_components": [],
     "_prefab": {
-      "__id__": 32
+      "__id__": 29
     },
     "_opacity": 255,
     "_color": {
@@ -337,8 +334,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -320,
-      "y": -130,
+      "x": -241,
+      "y": -128,
       "z": 0
     },
     "_scale": {
@@ -438,8 +435,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -321,
-      "y": -12,
+      "x": -242,
+      "y": -10,
       "z": 0
     },
     "_scale": {
@@ -539,8 +536,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -322,
-      "y": 105,
+      "x": -243,
+      "y": 107,
       "z": 0
     },
     "_scale": {
@@ -741,8 +738,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -157,
-      "y": 108,
+      "x": -80,
+      "y": 111,
       "z": 0
     },
     "_scale": {
@@ -831,7 +828,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 352,
+      "width": 242,
       "height": 40
     },
     "_anchorPoint": {
@@ -841,8 +838,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -93,
-      "y": -8,
+      "x": -69,
+      "y": -9,
       "z": 0
     },
     "_scale": {
@@ -874,8 +871,8 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_string": "2.举手发言，遇到问题举手寻求帮助",
-    "_N$string": "2.举手发言，遇到问题举手寻求帮助",
+    "_string": "2.发言或提问前，请举手",
+    "_N$string": "2.发言或提问前，请举手",
     "_fontSize": 22,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -931,7 +928,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 451,
+      "width": 418,
       "height": 40
     },
     "_anchorPoint": {
@@ -941,8 +938,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -43,
-      "y": -110,
+      "x": 18,
+      "y": -129,
       "z": 0
     },
     "_scale": {
@@ -974,8 +971,8 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_string": "3、如果遇到了设备问题，影响了听课怎么办？",
-    "_N$string": "3、如果遇到了设备问题，影响了听课怎么办？",
+    "_string": "3.遇到设备问题不用着急，老师会帮助你的",
+    "_N$string": "3.遇到设备问题不用着急，老师会帮助你的",
     "_fontSize": 22,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1001,106 +998,6 @@
       "__uuid__": "60300bb1-785d-449d-8c22-a892d0349269"
     },
     "fileId": "f1u8vZgHJKVbElPNV/1Pbh",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "New Label",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_level": 2,
-    "_components": [
-      {
-        "__id__": 30
-      }
-    ],
-    "_prefab": {
-      "__id__": 31
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 0,
-      "g": 79,
-      "b": 131,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 638,
-      "height": 40
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 48,
-      "y": -146,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_rotationX": 0,
-    "_rotationY": 0,
-    "_quat": {
-      "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 29
-    },
-    "_enabled": true,
-    "_useOriginalSize": false,
-    "_string": "不要着急，可以打字告诉老师哦~课程顾问老师也会联系帮助你哒~",
-    "_N$string": "不要着急，可以打字告诉老师哦~课程顾问老师也会联系帮助你哒~",
-    "_fontSize": 22,
-    "_lineHeight": 40,
-    "_enableWrapText": true,
-    "_N$file": {
-      "__uuid__": "30f5351b-e37d-4b64-9b58-aff483eb2d72"
-    },
-    "_isSystemFontUsed": false,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_N$horizontalAlign": 1,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
-    "_N$overflow": 0,
-    "_N$cacheMode": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "60300bb1-785d-449d-8c22-a892d0349269"
-    },
-    "fileId": "97vIi+BspPqLIrv31udXz+",
     "sync": false
   },
   {

@@ -6,7 +6,7 @@
   "filterMode": "bilinear",
   "premultiplyAlpha": false,
   "subMetas": {
-    "街道1": {
+    "street": {
       "ver": "1.0.4",
       "uuid": "d0a5fa9b-36c9-41d6-9073-8f284bb92ec8",
       "rawTextureUuid": "d5562cdf-9f0a-490f-a835-a0beebc85950",
@@ -17,10 +17,10 @@
       "offsetY": 0,
       "trimX": 0,
       "trimY": 0,
-      "width": 4740,
-      "height": 572,
-      "rawWidth": 4740,
-      "rawHeight": 572,
+      "width": 2370,
+      "height": 286,
+      "rawWidth": 2370,
+      "rawHeight": 286,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

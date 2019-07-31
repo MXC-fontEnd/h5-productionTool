@@ -153,16 +153,7 @@ cc.Class({
         this.curTrash = null;
         let ans = this.mxc.getComponent(cc.Animation);
 
-        let shipAct1 = cc.moveTo(.5, cc.v2(100, 260));
-        let shipAct2 = cc.callFunc(() => {
-            if (this.complete && this.highAge || this.complete && !this.highAge || !this.complete && this.highAge) {
-                this.mxc.runAction(mxcAct);
-            }
-        }, this);
-        let shipAct = cc.sequence(shipAct1, shipAct2);
-        this.ship.runAction(shipAct);
-
-        let mxcAct1 = cc.fadeIn(.2);
+        let mxcAct1 = cc.fadeIn(0.3);
         let mxcAct2 = cc.scaleTo(1, 1);
         let mxcAct3 = cc.moveTo(1, cc.v2(-100, -160));
         let mxcAct4 = cc.spawn(mxcAct2, mxcAct3);
@@ -177,9 +168,17 @@ cc.Class({
                     ans.pause();
                 }, .1);
             }
-
         }, this)
         let mxcAct = cc.sequence(mxcAct1, mxcAct4, mxcAct5);
+
+        let shipAct1 = cc.moveTo(.5, cc.v2(100, 260));
+        let shipAct2 = cc.callFunc(() => {
+            if (this.complete && this.highAge || this.complete && !this.highAge || !this.complete && this.highAge) {
+                this.mxc.runAction(mxcAct);
+            }
+        }, this);
+        let shipAct = cc.sequence(shipAct1, shipAct2);
+        this.ship.runAction(shipAct);
 
         if (v !== 'stop') this.sentMessage('pickupTrash', 'startGameFn');
     },
@@ -292,7 +291,7 @@ cc.Class({
         mxcCir.tag = data;
         mxcCir.radius = 80;
         this.scheduleOnce(function () {
-            curSpine.setAnimation(0, this.ljtSpineList[data]['kwy'], false);
+            curSpine.setAnimation(0, this.ljtSpineList[data]['kwy'], true);
         }, 1);
 
         if (e) this.sentMessage('pickupTrash', 'trashBarrelAction', data);

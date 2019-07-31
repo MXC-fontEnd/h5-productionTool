@@ -6198,7 +6198,7 @@
       "__id__": 117
     },
     "component": "",
-    "_componentId": "46c0do/pOVFD4b9cDZ+q80g",
+    "_componentId": "31e4aJdKy9JkYkUjLaGN8WU",
     "handler": "trashBarrelAction",
     "customEventData": "glj"
   },
@@ -6352,7 +6352,7 @@
       "__id__": 117
     },
     "component": "",
-    "_componentId": "46c0do/pOVFD4b9cDZ+q80g",
+    "_componentId": "31e4aJdKy9JkYkUjLaGN8WU",
     "handler": "trashBarrelAction",
     "customEventData": "slj"
   },
@@ -6506,7 +6506,7 @@
       "__id__": 117
     },
     "component": "",
-    "_componentId": "46c0do/pOVFD4b9cDZ+q80g",
+    "_componentId": "31e4aJdKy9JkYkUjLaGN8WU",
     "handler": "trashBarrelAction",
     "customEventData": "khslj"
   },
@@ -6660,7 +6660,7 @@
       "__id__": 117
     },
     "component": "",
-    "_componentId": "46c0do/pOVFD4b9cDZ+q80g",
+    "_componentId": "31e4aJdKy9JkYkUjLaGN8WU",
     "handler": "trashBarrelAction",
     "customEventData": "ydlj"
   },
@@ -7614,12 +7614,12 @@
       "__id__": 117
     },
     "component": "",
-    "_componentId": "46c0do/pOVFD4b9cDZ+q80g",
+    "_componentId": "31e4aJdKy9JkYkUjLaGN8WU",
     "handler": "startGameFn",
     "customEventData": ""
   },
   {
-    "__type__": "46c0do/pOVFD4b9cDZ+q80g",
+    "__type__": "31e4aJdKy9JkYkUjLaGN8WU",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -7672,7 +7672,7 @@
     "otherBg": {
       "__uuid__": "f00b7577-67fb-484a-8054-de1f91cfe8b3"
     },
-    "_id": "barpxUf7FB9osJkZ7tJ2we"
+    "_id": "298G6voDlBopFLmk4qFOpQ"
   },
   {
     "__type__": "cc.Mask",
@@ -11007,7 +11007,7 @@
       "__id__": 220
     },
     "component": "",
-    "_componentId": "46c0do/pOVFD4b9cDZ+q80g",
+    "_componentId": "31e4aJdKy9JkYkUjLaGN8WU",
     "handler": "trashBarrelAction",
     "customEventData": "glj"
   },
@@ -11161,7 +11161,7 @@
       "__id__": 220
     },
     "component": "",
-    "_componentId": "46c0do/pOVFD4b9cDZ+q80g",
+    "_componentId": "31e4aJdKy9JkYkUjLaGN8WU",
     "handler": "trashBarrelAction",
     "customEventData": "slj"
   },
@@ -11315,7 +11315,7 @@
       "__id__": 220
     },
     "component": "",
-    "_componentId": "46c0do/pOVFD4b9cDZ+q80g",
+    "_componentId": "31e4aJdKy9JkYkUjLaGN8WU",
     "handler": "trashBarrelAction",
     "customEventData": "khslj"
   },
@@ -11469,7 +11469,7 @@
       "__id__": 220
     },
     "component": "",
-    "_componentId": "46c0do/pOVFD4b9cDZ+q80g",
+    "_componentId": "31e4aJdKy9JkYkUjLaGN8WU",
     "handler": "trashBarrelAction",
     "customEventData": "ydlj"
   },
@@ -12423,12 +12423,12 @@
       "__id__": 220
     },
     "component": "",
-    "_componentId": "46c0do/pOVFD4b9cDZ+q80g",
+    "_componentId": "31e4aJdKy9JkYkUjLaGN8WU",
     "handler": "startGameFn",
     "customEventData": ""
   },
   {
-    "__type__": "46c0do/pOVFD4b9cDZ+q80g",
+    "__type__": "31e4aJdKy9JkYkUjLaGN8WU",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -12437,7 +12437,7 @@
     "_enabled": true,
     "highAge": true,
     "complete": true,
-    "moveSpeed": 80,
+    "moveSpeed": 40,
     "mxc": {
       "__id__": 256
     },
@@ -12481,7 +12481,7 @@
     "otherBg": {
       "__uuid__": "f00b7577-67fb-484a-8054-de1f91cfe8b3"
     },
-    "_id": "b962yhvphIpYIZ0q8nU7hR"
+    "_id": "245I9+GShNqYeS5yYASeLn"
   },
   {
     "__type__": "cc.Mask",

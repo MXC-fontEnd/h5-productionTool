@@ -97,17 +97,18 @@ cc.Class({
         this.ship = this.node.getChildByName('ship');
         this.mxc.runAction(cc.fadeOut());
         this.scrollBgState = false;
+        this.trashSeq = 0;
 
-        this.pickupTrashBind = function (e) {
+        this.pickupTrashSemiBind = function (e) {
             if (window === window.parent) return;
             if (typeof e.data !== 'string') return;
             let data = JSON.parse(e.data);
             if (data) {
                 switch (data.method) {
                     case "onFileMessage":
-                        if (data.handleData && data.handleData.type == 'pickupTrash') {
+                        if (data.handleData && data.handleData.type == 'pickupTrashSemi') {
                             let method = data.handleData.method;
-                            let pars = parseInt(data.handleData.pars);
+                            let pars = data.handleData.pars;
                             switch (method) {
                                 case 'startGameFn':
                                     this.startGameFn('stop');
@@ -120,7 +121,7 @@ cc.Class({
                 }
             }
         }.bind(this);
-        window.addEventListener("message", this.pickupTrashBind, false);
+        window.addEventListener("message", this.pickupTrashSemiBind, false);
 
         if(!this.complete && !this.highAge){
             let streetBg = this.upStreet.getComponent(cc.Sprite);
@@ -180,7 +181,7 @@ cc.Class({
         }, this)
         let mxcAct = cc.sequence(mxcAct1, mxcAct4, mxcAct5);
 
-        if (v !== 'stop') this.sentMessage('pickupTrash', 'startGameFn');
+        if (v !== 'stop') this.sentMessage('pickupTrashSemi', 'startGameFn');
     },
 
     update(dt) {
@@ -227,7 +228,7 @@ cc.Class({
     },
 
     onDestroy() {
-        window.removeEventListener("message", this.pickupTrashBind);
+        window.removeEventListener("message", this.pickupTrashSemiBind);
     },
 
     getBarrelSeq(name) {
@@ -265,10 +266,15 @@ cc.Class({
     // 创建垃圾
     createTrash() {
         this.curTrashMoveState = true;
-        let seq = Math.floor(Math.random() * this.trashPrefabs.length)
-        let trash = cc.instantiate(this.trashPrefabs[seq]);
+        if(this.trashSeq < 3){
+            this.trashSeq++
+        } else {
+            this.trashSeq = 0;
+        }
+        // let seq = Math.floor(Math.random() * this.trashPrefabs.length)
+        let trash = cc.instantiate(this.trashPrefabs[this.trashSeq]);
         let trashCir = trash.getComponent(cc.CircleCollider);
-        trashCir.tag = ['glj', 'slj', 'khslj', 'ydlj'][seq];
+        trashCir.tag = ['glj', 'slj', 'khslj', 'ydlj'][this.trashSeq];
         trash.parent = this.node;
         trash.setPosition(360, -130);
         this.curTrash = trash;
@@ -277,7 +283,6 @@ cc.Class({
     // 垃圾桶出动
     trashBarrelAction(e, data) {
         if (!this.complete && !this.highAge || !this.complete && this.highAge) return;
-
         let trashBarrel = cc.find("underStreet/" + this.ljtSpineList[data]['name'], this.node);
         let curSpine = trashBarrel.getComponent(sp.Skeleton);
         curSpine.setAnimation(0, this.ljtSpineList[data]['open'], false);
@@ -290,7 +295,7 @@ cc.Class({
             curSpine.setAnimation(0, this.ljtSpineList[data]['kwy'], false);
         }, 1);
 
-        if (e) this.sentMessage('pickupTrash', 'trashBarrelAction', data);
+        if (e) this.sentMessage('pickupTrashSemi', 'trashBarrelAction', data);
     },
 
 });

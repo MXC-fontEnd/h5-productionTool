@@ -95,7 +95,7 @@ cc.Class({
         this.intro = this.node.getChildByName('intro');
         this.startGame = this.node.getChildByName('startGame');
         this.ship = this.node.getChildByName('ship');
-        this.mxc.runAction(cc.fadeOut());
+        this.mxc.runAction(cc.fadeOut(0.1));
         this.scrollBgState = false;
         this.trashSeq = 0;
 
@@ -207,7 +207,7 @@ cc.Class({
                     this.startGame.active = true;
                     ans.play('stand');
 
-                    let act1 = cc.fadeOut();
+                    let act1 = cc.fadeOut(0.1);
                     let act2 = cc.moveTo(0, cc.v2(100, 220));
                     let act3 = cc.scaleTo(0, .6);
                     let act = cc.spawn(act1, act2, act3);

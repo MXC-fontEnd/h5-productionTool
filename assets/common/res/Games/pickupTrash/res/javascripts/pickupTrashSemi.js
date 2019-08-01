@@ -95,7 +95,7 @@ cc.Class({
         this.intro = this.node.getChildByName('intro');
         this.startGame = this.node.getChildByName('startGame');
         this.ship = this.node.getChildByName('ship');
-        this.mxc.runAction(cc.fadeOut(0.1));
+        this.mxc.runAction(cc.hide());
         this.scrollBgState = false;
         this.trashSeq = 0;
         
@@ -106,7 +106,7 @@ cc.Class({
             ans.play('stand');
             let act2 = cc.moveTo(0.1, cc.v2(100, 220));
             let act1 = cc.scaleTo(0.1, .6);
-            let act3 = cc.fadeOut(0.1);
+            let act3 = cc.hide();
             let act = cc.spawn(act1, act2, act3);
             this.mxc.runAction(act);
             this.unschedule(this.initGame);
@@ -166,7 +166,7 @@ cc.Class({
         this.curTrash = null;
         let ans = this.mxc.getComponent(cc.Animation);
 
-        let mxcAct1 = cc.fadeIn(0.3);
+        let mxcAct1 = cc.show();
         let mxcAct2 = cc.scaleTo(1, 1);
         let mxcAct3 = cc.moveTo(1, cc.v2(-100, -160));
         let mxcAct4 = cc.spawn(mxcAct2, mxcAct3);

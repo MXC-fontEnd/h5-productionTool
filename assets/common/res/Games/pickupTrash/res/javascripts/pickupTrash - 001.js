@@ -99,6 +99,19 @@ cc.Class({
         this.scrollBgState = false;
         this.trashSeq = 0;
 
+        this.initGame = function() {
+            this.intro.active = true;
+            this.startGame.active = true;
+            let ans = this.mxc.getComponent(cc.Animation);
+            ans.play('stand');
+            let act2 = cc.moveTo(0.1, cc.v2(100, 220));
+            let act1 = cc.scaleTo(0.1, .6);
+            let act3 = cc.fadeOut(0.1);
+            let act = cc.spawn(act1, act2, act3);
+            this.mxc.runAction(act);
+            this.unschedule(this.initGame);
+        },
+
         this.pickupTrashBind = function (e) {
             if (window === window.parent) return;
             if (typeof e.data !== 'string') return;
@@ -201,20 +214,12 @@ cc.Class({
                 this.curTrash = null;
                 this.scrollBgState = false;
 
-                this.scheduleOnce(function () {
-                    this.intro.active = true;
-                    this.startGame.active = true;
-                    ans.play('stand');
-
-                    let act1 = cc.fadeOut(0.1);
-                    let act2 = cc.moveTo(0, cc.v2(100, 220));
-                    let act3 = cc.scaleTo(0, .6);
-                    let act = cc.spawn(act1, act2, act3);
-                    this.mxc.runAction(act);
-                }, 2);
+                this.scheduleOnce(this.initGame, 1.5);
             }
         }
     },
+
+
 
     onEnable: function () {
         cc.director.getCollisionManager().enabled = true;

@@ -98,7 +98,20 @@ cc.Class({
         this.mxc.runAction(cc.fadeOut(0.1));
         this.scrollBgState = false;
         this.trashSeq = 0;
-
+        
+        this.initGame = function() {
+            this.intro.active = true;
+            this.startGame.active = true;
+            let ans = this.mxc.getComponent(cc.Animation);
+            ans.play('stand');
+            let act2 = cc.moveTo(0.1, cc.v2(100, 220));
+            let act1 = cc.scaleTo(0.1, .6);
+            let act3 = cc.fadeOut(0.1);
+            let act = cc.spawn(act1, act2, act3);
+            this.mxc.runAction(act);
+            this.unschedule(this.initGame);
+        },
+        
         this.pickupTrashSemiBind = function (e) {
             if (window === window.parent) return;
             if (typeof e.data !== 'string') return;
@@ -123,7 +136,7 @@ cc.Class({
         }.bind(this);
         window.addEventListener("message", this.pickupTrashSemiBind, false);
 
-        if(!this.complete && !this.highAge){
+        if (!this.complete && !this.highAge) {
             let streetBg = this.upStreet.getComponent(cc.Sprite);
             streetBg.spriteFrame = this.otherBg;
             streetBg.node.y = streetBg.node.y + 50;
@@ -185,7 +198,7 @@ cc.Class({
     },
 
     update(dt) {
-        if (this.scrollBgState){
+        if (this.scrollBgState) {
             this.upStreet.x -= this.moveSpeed * dt;
             if (this.upStreet.x < -4500) {
                 this.upStreet.x = -240
@@ -201,18 +214,8 @@ cc.Class({
                 this.curTrash.destroy();
                 this.curTrash = null;
                 this.scrollBgState = false;
-
-                this.scheduleOnce(function () {
-                    this.intro.active = true;
-                    this.startGame.active = true;
-                    ans.play('stand');
-
-                    let act1 = cc.fadeOut(0.1);
-                    let act2 = cc.moveTo(0, cc.v2(100, 220));
-                    let act3 = cc.scaleTo(0, .6);
-                    let act = cc.spawn(act1, act2, act3);
-                    this.mxc.runAction(act);
-                }, 2);
+        
+                this.scheduleOnce(this.initGame, 1.5);
             }
         }
     },
@@ -252,7 +255,7 @@ cc.Class({
         let act2 = cc.callFunc(() => {
             curTrash.destroy();
             this.trashBarrels[seq].setAnimation(0, this.ljtSpineList[data.name]['happy'], false);
-            
+
             this.trashBarrels[seq].addAnimation(0, this.ljtSpineList[data.name]['kwy'], true);
             this.curTrash = null;
             this.createTrash();
@@ -266,7 +269,7 @@ cc.Class({
     // 创建垃圾
     createTrash() {
         this.curTrashMoveState = true;
-        if(this.trashSeq < 3){
+        if (this.trashSeq < 3) {
             this.trashSeq++
         } else {
             this.trashSeq = 0;

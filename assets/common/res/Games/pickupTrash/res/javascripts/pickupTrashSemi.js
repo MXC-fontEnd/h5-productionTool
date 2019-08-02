@@ -167,9 +167,8 @@ cc.Class({
         let ans = this.mxc.getComponent(cc.Animation);
 
         let mxcAct1 = cc.show();
-        let mxcAct2 = cc.scaleTo(1, 1);
-        let mxcAct3 = cc.moveTo(1, cc.v2(-100, -160));
-        let mxcAct4 = cc.spawn(mxcAct2, mxcAct3);
+        let mxcAct2 = cc.scaleTo(.4, 1);
+        let mxcAct3 = cc.moveTo(.8, cc.v2(-100, -160));
         let mxcAct5 = cc.callFunc(() => {
             this.ship.setPosition(cc.v2(300, 460));
             this.createTrash();
@@ -181,9 +180,8 @@ cc.Class({
                     ans.pause();
                 }, .1);
             }
-
-        }, this);
-        let mxcAct = cc.sequence(mxcAct1, mxcAct4, mxcAct5);
+        }, this)
+        let mxcAct = cc.sequence(mxcAct1, mxcAct2,mxcAct3, mxcAct5);
 
         let shipAct1 = cc.moveTo(.5, cc.v2(100, 260));
         let shipAct2 = cc.callFunc(() => {

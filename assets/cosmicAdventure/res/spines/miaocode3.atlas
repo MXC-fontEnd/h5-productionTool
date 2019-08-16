@@ -1,0 +1,181 @@
+
+miaocode3.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Blush
+  rotate: true
+  xy: 2, 24
+  size: 130, 14
+  orig: 130, 14
+  offset: 0, 0
+  index: -1
+Flag
+  rotate: false
+  xy: 276, 461
+  size: 74, 95
+  orig: 74, 95
+  offset: 0, 0
+  index: -1
+Left Shoe
+  rotate: false
+  xy: 1926, 1475
+  size: 49, 123
+  orig: 49, 123
+  offset: 0, 0
+  index: -1
+Left hand
+  rotate: true
+  xy: 2, 156
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+Left horn
+  rotate: false
+  xy: 56, 167
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+Right shoe
+  rotate: false
+  xy: 129, 295
+  size: 49, 124
+  orig: 49, 124
+  offset: 0, 0
+  index: -1
+bg
+  rotate: false
+  xy: 2, 651
+  size: 1922, 1082
+  orig: 1922, 1082
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 286
+  size: 125, 133
+  orig: 125, 133
+  offset: 0, 0
+  index: -1
+closeeye
+  rotate: true
+  xy: 352, 463
+  size: 93, 9
+  orig: 93, 9
+  offset: 0, 0
+  index: -1
+eye
+  rotate: true
+  xy: 56, 198
+  size: 86, 27
+  orig: 86, 27
+  offset: 0, 0
+  index: -1
+eyebrow
+  rotate: false
+  xy: 370, 566
+  size: 85, 13
+  orig: 85, 13
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 2, 421
+  size: 272, 228
+  orig: 272, 228
+  offset: 0, 0
+  index: -1
+hand
+  rotate: false
+  xy: 1926, 1600
+  size: 110, 133
+  orig: 110, 133
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: true
+  xy: 2030, 1565
+  size: 33, 16
+  orig: 33, 16
+  offset: 0, 0
+  index: -1
+omo  right hand
+  rotate: false
+  xy: 1926, 1403
+  size: 38, 70
+  orig: 38, 70
+  offset: 0, 0
+  index: -1
+omo Eye white
+  rotate: false
+  xy: 1977, 1546
+  size: 51, 52
+  orig: 51, 52
+  offset: 0, 0
+  index: -1
+omo Left hand
+  rotate: false
+  xy: 180, 352
+  size: 43, 67
+  orig: 43, 67
+  offset: 0, 0
+  index: -1
+omo Tooth
+  rotate: false
+  xy: 465, 636
+  size: 42, 13
+  orig: 42, 13
+  offset: 0, 0
+  index: -1
+omo body
+  rotate: false
+  xy: 276, 558
+  size: 92, 91
+  orig: 92, 91
+  offset: 0, 0
+  index: -1
+omo eyebrow
+  rotate: true
+  xy: 2, 2
+  size: 20, 14
+  orig: 20, 14
+  offset: 0, 0
+  index: -1
+omo mouth
+  rotate: false
+  xy: 276, 438
+  size: 43, 21
+  orig: 43, 21
+  offset: 0, 0
+  index: -1
+omo pupil
+  rotate: false
+  xy: 85, 265
+  size: 21, 19
+  orig: 21, 19
+  offset: 0, 0
+  index: -1
+omocloseeye
+  rotate: true
+  xy: 2038, 1708
+  size: 25, 8
+  orig: 25, 8
+  offset: 0, 0
+  index: -1
+right hand
+  rotate: true
+  xy: 370, 581
+  size: 68, 93
+  orig: 68, 93
+  offset: 0, 0
+  index: -1
+right horn
+  rotate: false
+  xy: 18, 125
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1

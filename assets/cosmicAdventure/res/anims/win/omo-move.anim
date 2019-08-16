@@ -1,0 +1,98 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "omo-move",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 3,
+  "sample": 20,
+  "speed": 1,
+  "wrapMode": "1",
+  "curveData": {
+    "props": {
+      "position": [
+        {
+          "frame": 0.5,
+          "value": [
+            -169,
+            -236
+          ]
+        },
+        {
+          "frame": 1,
+          "value": [
+            -32,
+            103
+          ]
+        },
+        {
+          "frame": 2,
+          "value": [
+            -32,
+            103
+          ]
+        },
+        {
+          "frame": 2.5,
+          "value": [
+            -65,
+            210
+          ]
+        },
+        {
+          "frame": 3,
+          "value": [
+            -65,
+            210
+          ]
+        }
+      ],
+      "rotation": [
+        {
+          "frame": 1.5,
+          "value": 0
+        },
+        {
+          "frame": 2,
+          "value": 45
+        }
+      ],
+      "scale": [
+        {
+          "frame": 2,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "frame": 2.5,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 0,
+            "y": 0
+          }
+        }
+      ]
+    },
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 1.5,
+            "value": {
+              "__uuid__": "46deb744-bce3-49c0-bb1b-e8a8def0ed43"
+            }
+          },
+          {
+            "frame": 2,
+            "value": {
+              "__uuid__": "aa21a02e-6f70-4e2b-97af-ed108a943f46"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

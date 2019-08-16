@@ -1,0 +1,45 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "ufo-move",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 3,
+  "sample": 20,
+  "speed": 1,
+  "wrapMode": "1",
+  "curveData": {
+    "props": {
+      "position": [
+        {
+          "frame": 1,
+          "value": [
+            -148,
+            495
+          ]
+        },
+        {
+          "frame": 1.5,
+          "value": [
+            -83,
+            260
+          ]
+        },
+        {
+          "frame": 2.5,
+          "value": [
+            -83,
+            260
+          ]
+        },
+        {
+          "frame": 3,
+          "value": [
+            -148,
+            496
+          ]
+        }
+      ]
+    }
+  },
+  "events": []
+}

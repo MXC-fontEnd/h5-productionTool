@@ -1,4 +1,4 @@
-const { trigger } = require("ua-index")
+const { trigger } = require("ua-utils")
 
 cc.Class({
 	extends: cc.Component,

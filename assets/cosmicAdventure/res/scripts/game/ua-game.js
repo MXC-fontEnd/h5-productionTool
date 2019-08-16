@@ -1,4 +1,4 @@
-const { trigger } = require("ua-index")
+const { trigger, createUUID, customEvent } = require("ua-utils")
 
 cc.Class({
 	extends: cc.Component,
@@ -12,7 +12,11 @@ cc.Class({
 		items: [cc.Prefab],
 		itemsSpeed: 15,
 		winScore: 30,
-		audios: [cc.AudioClip],
+		audios: {
+			type: cc.AudioClip,
+			default: []
+		},
+		_isHost: false,
 		_bulletType: 1,
 		_bulletPool: [],
 		_monsterPool: [],
@@ -27,19 +31,30 @@ cc.Class({
 		this.initialEvent()
 	},
 
-	start() {},
+	onEnable() {
+		this.heroToStage()
+	},
 	// 事件初始化
 	initialEvent() {
 		// PC端鼠标移动，人物移动；移动端鼠标点击，人物移动。
-		this.node.on(cc.Node.EventType.MOUSE_MOVE, this.heroMove, this)
-		this.node.on(cc.Node.EventType.TOUCH_START, this.heroAttack, this)
+		this.node.on(cc.Node.EventType.MOUSE_MOVE, this.postEvent, this)
+		this.node.on(cc.Node.EventType.TOUCH_START, this.postEvent, this)
 
 		this.node.on("gain-items", this.gainItems, this)
 		this.node.on("hit-monster", this.hitMonster, this)
 		this.node.on("gameover", this.gameover, this)
+		this._root.on("restart", this.restart, this)
+
+		observer.on("calibration-host", this.calibrationHost, this)
+		observer.on("hero-move", this.heroMove, this)
+		observer.on("hero-attack", this.heroAttack, this)
+		observer.on("create-monster", this.monsterInvade, this)
+		observer.on("create-items", this.createItems, this)
 	},
 	// 数据初始化
 	initialData() {
+		this._root = cc.find("Canvas")
+		this._uuid = createUUID()
 		this._heroNode = this.node.getChildByName("hero")
 		this._bulletNode = this.node.getChildByName("bullet")
 		this._monsterNode = this.node.getChildByName("monster")
@@ -50,7 +65,29 @@ cc.Class({
 	initialFrame() {
 		cc.director.getCollisionManager().enabled = true
 		// cc.director.getCollisionManager().enabledDebugDraw = true
-		this.heroToStage()
+	},
+	// 事件分发
+	postEvent(e) {
+		if (!this._isHost) {
+			customEvent("calibration-host", { uuid: this._uuid })
+		}
+		switch (e.type) {
+			case "mousemove":
+				customEvent("hero-move", {
+					pos: this.node.convertToNodeSpace(e.getLocation())
+				})
+				break
+			case "touchstart":
+				customEvent("hero-attack", {
+					pos: this.node.convertToNodeSpace(e.getLocation()),
+					colorRd: Math.random()
+				})
+				break
+		}
+	},
+	// 校准身份
+	calibrationHost(data) {
+		this._isHost = this._uuid === data.uuid
 	},
 	// 英雄登场
 	heroToStage() {
@@ -99,11 +136,15 @@ cc.Class({
 			console.log("这个英雄没有开场白呢")
 		}
 	},
+	// 主机分发怪物信息
+	postCreateMonster() {
+		customEvent("create-monster", { typeRd: Math.random(), xRd: Math.random() })
+	},
 	// 怪物入侵
-	monsterInvade() {
+	monsterInvade(info) {
 		if (this.monster.length) {
 			// 随机创建怪物
-			const type = ~~(Math.random() * this.monster.length),
+			const type = ~~(info.typeRd * this.monster.length),
 				{ width, height } = this.node
 			let monster = null
 			// 缓存池检查
@@ -124,7 +165,7 @@ cc.Class({
 			// 定位
 			monster.setPosition(
 				cc.v2(
-					(Math.random() - 0.5) * width,
+					(info.xRd - 0.5) * width,
 					(monster.height * monster.scale) / 2 + height / 2
 				)
 			)
@@ -138,7 +179,7 @@ cc.Class({
 	},
 	// 怪物移动
 	monsterMove() {
-		const { height } = cc.winSize,
+		const { height } = this.node,
 			activeMonsters = this._monsterPool.filter(ms => ms.active)
 
 		for (let monster of activeMonsters) {
@@ -150,33 +191,34 @@ cc.Class({
 		}
 
 		if (
-			!activeMonsters.length ||
-			height / 2 - this._lastMonster.y > Math.random() * 50 + 100
+			(!activeMonsters.length ||
+				height / 2 - this._lastMonster.y > Math.random() * 50 + 100) &&
+			this._isHost
 		) {
-			this.monsterInvade()
+			this.postCreateMonster()
 		}
 	},
 	// 英雄移动
-	heroMove(e) {
+	heroMove(data) {
 		if (!this._start) return
 
-		const { x } = e.getLocation(),
-			{ width } = cc.winSize
+		const { x } = data.pos,
+			{ width } = this.node
 
-		this._hero.x = (x - width / 2) * (1 / this.node.parent.scale)
+		this._hero.x = x - width / 2
 	},
 	// 英雄攻击
-	heroAttack(e) {
+	heroAttack(data) {
 		if (!this._start) return
 		// 移动端没有hover事件，所以攻击前移动到相应位置
-		this.heroMove(e)
+		this.heroMove(data)
 
 		if (this.bullet) {
 			// 创建子弹
 			const deactiveBullets = this._bulletPool.filter(bt => !bt.active),
 				createBullet = this.createBullet(deactiveBullets),
 				initScale = this.bullet.data.scale,
-				color = [65535, 65280, 255][~~(Math.random() * 3)]
+				color = [65535, 65280, 255][~~(data.colorRd * 3)]
 			let bullet = []
 
 			if (this._bulletType === 1) {
@@ -248,11 +290,19 @@ cc.Class({
 			}
 		}
 	},
+	// 分发创建道具信息
+	postCreateItems() {
+		customEvent("create-items", {
+			typeRd: Math.random(),
+			xRd: Math.random(),
+			scaleRd: Math.random()
+		})
+	},
 	// 创建道具
-	createItems() {
+	createItems(info) {
 		if (this.items.length) {
 			// 生成道具
-			const type = ~~(Math.random() * this.items.length),
+			const type = ~~(info.typeRd * this.items.length),
 				{ width, height } = this.node,
 				initScale = this.items[type].data.scale
 			let items = null
@@ -273,9 +323,9 @@ cc.Class({
 			}
 			// 定位
 			items.setPosition(
-				cc.v2((Math.random() - 0.5) * width, items.height / 2 + height / 2)
+				cc.v2((info.xRd - 0.5) * width, items.height / 2 + height / 2)
 			)
-			items.scale = (Math.random() * 0.5 + 0.5) * initScale
+			items.scale = (info.scaleRd * 0.5 + 0.5) * initScale
 			// 激活
 			items.active = true
 		} else {
@@ -295,9 +345,9 @@ cc.Class({
 			}
 		}
 
-		if (!this._itemsTimeout) {
+		if (this._start && !this._itemsTimeout && this._isHost) {
 			this._itemsTimeout = setTimeout(() => {
-				this.createItems()
+				this.postCreateItems()
 				this._itemsTimeout = null
 			}, Math.random() * 3000 + 2000)
 		}
@@ -313,6 +363,10 @@ cc.Class({
 	// 击中怪物
 	hitMonster() {
 		this._score += 1
+		this.updateScore()
+	},
+	// 更新分数
+	updateScore() {
 		const label = this._scoreNode.children[0].getComponents(cc.Label)[0]
 		label.string = this._score
 
@@ -324,6 +378,24 @@ cc.Class({
 	// 游戏结束
 	gameover() {
 		this._start = false
+	},
+	// 重新开始
+	restart() {
+		this._start = false
+		this._score = 0
+		this.updateScore()
+		this._monsterPool = []
+		this._bulletPool = []
+		this._itemsPool = []
+		this._heroNode.destroyAllChildren()
+		this._monsterNode.destroyAllChildren()
+		this._bulletNode.destroyAllChildren()
+		this._itemsNode.destroyAllChildren()
+
+		if (this._itemsTimeout) {
+			clearTimeout(this._itemsTimeout)
+			this._itemsTimeout = null
+		}
 	},
 
 	update(dt) {

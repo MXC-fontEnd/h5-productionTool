@@ -316,6 +316,28 @@
       "spriteType": "normal",
       "subMetas": {}
     },
+    "restart.png": {
+      "ver": "1.0.4",
+      "uuid": "fa0ed2be-c3f0-478d-a09c-6e8dd2766ce5",
+      "rawTextureUuid": "12743a73-ff3e-4f89-9209-b866d006a2c3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": true,
+      "offsetX": -5,
+      "offsetY": -1,
+      "trimX": 1237,
+      "trimY": 220,
+      "width": 62,
+      "height": 32,
+      "rawWidth": 124,
+      "rawHeight": 48,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    },
     "score.png": {
       "ver": "1.0.4",
       "uuid": "4f613663-e476-48b0-8ead-2f2d9ae9eb88",

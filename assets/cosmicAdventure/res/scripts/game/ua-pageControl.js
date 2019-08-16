@@ -1,9 +1,12 @@
+const { createObserver } = require("ua-utils")
+
 cc.Class({
 	extends: cc.Component,
 
 	properties: {},
 
 	onLoad() {
+		createObserver()
 		this.initialData()
 		this.initialEvent()
 		this.initialFrame()
@@ -22,6 +25,7 @@ cc.Class({
 		this.node.on("gamestart", this.gamestart, this)
 		this.node.on("gameover", this.gameover, this)
 		this.node.on("gamewin", this.gamewin, this)
+		this.node.on("restart", this.restart, this)
 	},
 	// 界面初始化
 	initialFrame() {
@@ -44,6 +48,10 @@ cc.Class({
 	gamewin() {
 		this.successNode.active = true
 		this.gameNode.active = false
+	},
+	// 重新开始
+	restart() {
+		this.initialFrame()
 	}
 	// update (dt) {},
 })

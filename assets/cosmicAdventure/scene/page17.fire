@@ -53,8 +53,8 @@
       "w": 1
     },
     "groupIndex": 0,
-    "autoReleaseAssets": true,
-    "_id": "0e5f3605-204a-4035-bd52-affab9cfb4a5"
+    "autoReleaseAssets": false,
+    "_id": "4cd9451a-bb8f-48ca-b355-beaa7de98adf"
   },
   {
     "__type__": "cc.Node",
@@ -725,7 +725,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "groupIndex": 0,
-    "_id": "60c87zxyBOh6KTrQcKpUo2"
+    "_id": "9aiN2CCLpMHZtX4NP5d3ai"
   },
   {
     "__type__": "cc.Sprite",
@@ -753,7 +753,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "baS9oL5L5L6avtWd6HWILY"
+    "_id": "e6yeqAdmtD45rpeeGPb0To"
   },
   {
     "__type__": "cc.Node",

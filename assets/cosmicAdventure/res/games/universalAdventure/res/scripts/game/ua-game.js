@@ -32,7 +32,11 @@ cc.Class({
 	},
 
 	onEnable() {
-		this.heroToStage()
+		if (this.node._complete) {
+			this.heroToStage()
+		} else {
+			this._start = true
+		}
 	},
 	// 事件初始化
 	initialEvent() {
@@ -45,16 +49,21 @@ cc.Class({
 		this.node.on("gameover", this.gameover, this)
 		this._root.on("restart", this.restart, this)
 
-		observer.on("calibration-host", this.calibrationHost, this)
-		observer.on("hero-move", this.heroMove, this)
-		observer.on("hero-attack", this.heroAttack, this)
-		observer.on("create-monster", this.monsterInvade, this)
-		observer.on("create-items", this.createItems, this)
+		observer.on(
+			"calibration-host-" + this.node._seq,
+			this.calibrationHost,
+			this
+		)
+		observer.on("hero-move-" + this.node._seq, this.heroMove, this)
+		observer.on("hero-attack-" + this.node._seq, this.heroAttack, this)
+		observer.on("create-monster-" + this.node._seq, this.monsterInvade, this)
+		observer.on("create-items-" + this.node._seq, this.createItems, this)
 	},
 	// 数据初始化
 	initialData() {
 		this._root = cc.find("Canvas")
 		this._uuid = createUUID()
+		this._bgNode = this.node.getChildByName("bg")
 		this._heroNode = this.node.getChildByName("hero")
 		this._bulletNode = this.node.getChildByName("bullet")
 		this._monsterNode = this.node.getChildByName("monster")
@@ -69,16 +78,17 @@ cc.Class({
 	// 事件分发
 	postEvent(e) {
 		if (!this._isHost) {
-			customEvent("calibration-host", { uuid: this._uuid })
+			customEvent("calibration-host-" + this.node._seq, { uuid: this._uuid })
 		}
+		if (!this.node._complete) return
 		switch (e.type) {
 			case "mousemove":
-				customEvent("hero-move", {
+				customEvent("hero-move-" + this.node._seq, {
 					pos: this.node.convertToNodeSpace(e.getLocation())
 				})
 				break
 			case "touchstart":
-				customEvent("hero-attack", {
+				customEvent("hero-attack-" + this.node._seq, {
 					pos: this.node.convertToNodeSpace(e.getLocation()),
 					colorRd: Math.random()
 				})
@@ -138,7 +148,10 @@ cc.Class({
 	},
 	// 主机分发怪物信息
 	postCreateMonster() {
-		customEvent("create-monster", { typeRd: Math.random(), xRd: Math.random() })
+		customEvent("create-monster-" + this.node._seq, {
+			typeRd: Math.random(),
+			xRd: Math.random()
+		})
 	},
 	// 怪物入侵
 	monsterInvade(info) {
@@ -292,7 +305,7 @@ cc.Class({
 	},
 	// 分发创建道具信息
 	postCreateItems() {
-		customEvent("create-items", {
+		customEvent("create-items-" + this.node._seq, {
 			typeRd: Math.random(),
 			xRd: Math.random(),
 			scaleRd: Math.random()
@@ -359,6 +372,8 @@ cc.Class({
 		setTimeout(() => {
 			this._bulletType = 1
 		}, 1000)
+
+		this._bgNode.getComponents(cc.Animation).forEach(ani => ani.play())
 	},
 	// 击中怪物
 	hitMonster() {

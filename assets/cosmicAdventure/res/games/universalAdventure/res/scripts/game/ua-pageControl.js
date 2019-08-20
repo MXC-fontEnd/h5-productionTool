@@ -3,7 +3,10 @@ const { createObserver } = require("ua-utils")
 cc.Class({
 	extends: cc.Component,
 
-	properties: {},
+	properties: {
+		complete: false,
+		_zindex: 0
+	},
 
 	onLoad() {
 		createObserver()
@@ -19,6 +22,10 @@ cc.Class({
 		this.gameNode = this.node.getChildByName("game")
 		this.gameoverNode = this.node.getChildByName("gameover")
 		this.successNode = this.node.getChildByName("success")
+		this.node.children.forEach(node => {
+			node._seq = this.node.getSiblingIndex()
+			node._complete = this.complete
+		})
 	},
 	// 事件初始化
 	initialEvent() {

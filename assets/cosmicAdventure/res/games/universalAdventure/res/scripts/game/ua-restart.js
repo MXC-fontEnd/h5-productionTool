@@ -14,11 +14,11 @@ cc.Class({
 	initialEvent() {
 		this.node.on(cc.Node.EventType.TOUCH_START, this.postEvent, this)
 
-		observer.on("restart", this.restart, this)
+		observer.on("restart-" + this.node._seq, this.restart, this)
 	},
 
 	postEvent() {
-		customEvent("restart")
+		customEvent("restart-" + this.node._seq)
 	},
 
 	restart() {

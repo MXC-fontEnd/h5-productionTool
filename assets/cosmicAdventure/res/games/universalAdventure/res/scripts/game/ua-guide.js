@@ -13,11 +13,11 @@ cc.Class({
 	// 事件初始化
 	initialEvent() {
 		this.node.getChildByName("guide-btn").on("touchstart", this.postEvent, this)
-		observer.on("ua-guide", this.gamestart, this)
+		observer.on("ua-guide-" + this.node._seq, this.gamestart, this)
 	},
 	// 事件发送
 	postEvent() {
-		customEvent("ua-guide")
+		customEvent("ua-guide-" + this.node._seq)
 	},
 	// 开始游戏
 	gamestart() {

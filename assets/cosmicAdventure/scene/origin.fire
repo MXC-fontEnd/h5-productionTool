@@ -140,7 +140,7 @@
         "__id__": 12
       }
     ],
-    "_active": true,
+    "_active": false,
     "_level": 2,
     "_components": [],
     "_prefab": {
@@ -811,8 +811,8 @@
     "_enabled": true,
     "pageCount": 14,
     "currentPageSeq": 1,
-    "localDebugging": true,
-    "juniorCoursewareState": true,
+    "localDebugging": false,
+    "juniorCoursewareState": false,
     "juniorCoursewarePage": [
       1,
       2,
@@ -829,8 +829,23 @@
       13,
       14
     ],
-    "seniorCoursewareState": false,
-    "seniorCoursewarePage": [],
+    "seniorCoursewareState": true,
+    "seniorCoursewarePage": [
+      1,
+      2,
+      3,
+      4,
+      15,
+      6,
+      7,
+      8,
+      16,
+      17,
+      11,
+      18,
+      13,
+      14
+    ],
     "expandCoursewareState": false,
     "expandCoursewarePage": [],
     "_id": "84mMfEgQxMxq0BBYgpVzM8"

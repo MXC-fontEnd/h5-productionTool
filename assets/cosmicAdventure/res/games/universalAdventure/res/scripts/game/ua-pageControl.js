@@ -23,7 +23,8 @@ cc.Class({
 		this.gameoverNode = this.node.getChildByName("gameover")
 		this.successNode = this.node.getChildByName("success")
 		this.node.children.forEach(node => {
-			node._seq = this.node.getSiblingIndex()
+			// node._seq = this.node.getSiblingIndex()
+			node._seq = +this.complete
 			node._complete = this.complete
 		})
 	},

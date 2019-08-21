@@ -17,9 +17,10 @@
   "encryptJs": true,
   "excludeScenes": [
     "3c019ad9-7b8c-4112-a779-7db961db7606",
-    "b4a9d1fc-44bc-41ea-b185-79088d9560d5",
-    "2ed36fbe-bcac-4b22-ba88-8eb654570fc9",
-    "1cde4e10-d2de-4e15-a6d3-bbf1d6ce500f"
+    "783b103a-e61f-40c6-99e5-317c699a3993",
+    "22a731ef-08dd-47f4-b7c1-d7d2369e191d",
+    "6c86851f-8aac-4be5-87c3-da0973613a1a",
+    "22dc9422-a522-40e0-9d02-edd9998f0522"
   ],
   "fb-instant-games": {},
   "includeSDKBox": false,
@@ -40,7 +41,7 @@
     "orientation": "portrait",
     "zip": false
   },
-  "startScene": "1d6f3140-b937-4e36-8581-a5322d46884a",
+  "startScene": "b4a9d1fc-44bc-41ea-b185-79088d9560d5",
   "title": "courseware",
   "webOrientation": "auto",
   "wechatgame": {

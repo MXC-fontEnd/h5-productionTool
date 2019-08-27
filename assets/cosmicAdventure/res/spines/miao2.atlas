@@ -1,0 +1,27 @@
+
+miao2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jimu@2x
+  rotate: true
+  xy: 2, 2
+  size: 248, 404
+  orig: 248, 404
+  offset: 0, 0
+  index: -1
+miao@2x
+  rotate: false
+  xy: 2, 252
+  size: 840, 662
+  orig: 840, 662
+  offset: 0, 0
+  index: -1
+omo@2x
+  rotate: false
+  xy: 408, 70
+  size: 276, 180
+  orig: 276, 180
+  offset: 0, 0
+  index: -1

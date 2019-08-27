@@ -1,7 +1,15 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-13 14:33:27
+ * @LastEditTime: 2019-08-27 14:02:23
+ * @LastEditors: Please set LastEditors
+ */
 cc.Class({
     extends: cc.Component,
 
     properties: {
+        seq:1,
         contents: {
             default: [],
             type: [cc.Node]
@@ -15,11 +23,10 @@ cc.Class({
             if (window === window.parent) return;
             if (typeof e.data !== 'string') return;
             let data = JSON.parse(e.data);
-
             if (data) {
                 switch (data.method) {
                     case "onFileMessage":
-                        if (data.handleData && data.handleData.type == 'tabContent') {
+                        if (data.handleData && data.handleData.type == ('tabContent' + this.seq)) {
                             let method = data.handleData.method;
                             let pars = parseInt(data.handleData.pars);
                             this[method](null, pars);
@@ -31,13 +38,11 @@ cc.Class({
     },
 
     trigger(e, pars) {
-        console.log(e);
-        console.log(pars);
-
+        console.log(pars)
         for (let i = 0; i < this.contents.length; i++) {
             this.contents[i].active = pars == i ? true : false;
         }
-        if (e) this.sendMessage('tabContent', 'trigger', pars);
+        if (e) this.sendMessage('tabContent' + this.seq, 'trigger', pars);
     },
 
     sendMessage(type, method, pars) {
@@ -54,13 +59,9 @@ cc.Class({
         }
     },
 
-    onDisable() {
-        console.log('onDisable');
-        window.removeEventListener('message', this.tabContent, false);
-    },
-
     onDestroy() {
         console.log('onDestroy');
+        window.removeEventListener('message', this.tabContent, false);
     },
     // update (dt) {},
 });

@@ -1,3 +1,13 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-03-27 16:29:31
+ * @LastEditTime: 2019-08-27 18:58:52
+ * @LastEditors: Please set LastEditors
+ */
+
+const { sendMessage } = require("messageUtils");
+
 cc.Class({
     extends: cc.Component,
     properties: {
@@ -32,30 +42,18 @@ cc.Class({
         // 监听视频被点击发射事件
         this.node.on('videoplayerClicked', this._videoClicked, this);
 
-        this.switchVideoBind = function (e) {
-            console.log('switchVideoBind');
-            if (window === window.parent) return;
-            if (typeof e.data !== 'string') return;
-            var data = JSON.parse(e.data);
-
-            if (data) {
-                switch (data.method) {
-                    case "onFileMessage":
-                        if (data.handleData && data.handleData.type == 'switchPlay') {
-                            let sub = parseInt(data.handleData.sub);
-                            let curVideoplayer = this.videoplayerList[sub];
-                            this._switchAnimation(curVideoplayer, sub);
-                        }
-                        break;
-                }
+        // 监听课件message
+        window.messageCallback = (data) => {
+            switch (data.type) {
+                case "SWITCH_VIDEO_PLAY":
+                    let sub = parseInt(data.handleData.sub);
+                    let curVideoplayer = this.videoplayerList[sub];
+                    this._switchAnimation(curVideoplayer, sub);
+                    break;
+                default:
+                    break;
             }
-        }.bind(this);
-
-        window.addEventListener("message", this.switchVideoBind, false);
-    },
-
-    onDestroy(){
-        window.removeEventListener('message', this.switchVideoBind);
+        }
     },
 
     _videoClicked(event) {
@@ -73,7 +71,7 @@ cc.Class({
         }
 
         // 发送message
-        this.sentMessage('switchPlay', curVideoplayerSub);
+        sendMessage("SWITCH_VIDEO_PLAY", { sub: curVideoplayerSub });
 
         // 切换动画
         this._switchAnimation(curVideoplayer, curVideoplayerSub);
@@ -107,19 +105,6 @@ cc.Class({
     _afterClicked(event, videoplayer) {
         if (videoplayer) {
             videoplayer.play();
-        }
-    },
-
-    sentMessage(type, sub) {
-        if (window !== window.parent) {
-            let data = JSON.stringify({
-                method: 'onFileMessage',
-                handleData: {
-                    type: type,
-                    sub: sub
-                },
-            });
-            window.parent.postMessage(data, '*');
         }
     },
 

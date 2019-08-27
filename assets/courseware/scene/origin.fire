@@ -44,8 +44,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.9388888888888889,
-      "y": 0.9388888888888889,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -735,20 +735,25 @@
     "customEventData": ""
   },
   {
-    "__type__": "12af8flL51PpIsusQFtiGbw",
+    "__type__": "399eeq9gEhE74tdMki/d9VV",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 2
     },
     "_enabled": true,
-    "pageCount": 20,
+    "pageCount": 3,
+    "initPage": 1,
     "localDebugging": false,
-    "juniorCoursewareState": false,
-    "juniorCoursewarePage": "",
+    "juniorCoursewareState": true,
+    "juniorCoursewarePage": [
+      1,
+      2,
+      5
+    ],
     "seniorCoursewareState": false,
-    "seniorCoursewarePage": "",
-    "_id": "84mMfEgQxMxq0BBYgpVzM8"
+    "seniorCoursewarePage": [],
+    "_id": "4cQz/MCfhHF5hl5n8bykkw"
   },
   {
     "__type__": "cc.Node",

@@ -1,4 +1,11 @@
-const {postMessage} = require('JA-common');
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-03-27 16:29:31
+ * @LastEditTime: 2019-08-27 18:40:59
+ * @LastEditors: Please set LastEditors
+ */
+const { sendMessage } = require('JA-common');
 
 cc.Class({
     extends: cc.Component,
@@ -22,27 +29,19 @@ cc.Class({
     },
 
     onLoad: function () {
-        this.jungleAdventure = function (e) {
-            if (window === window.parent) return;
-            if (typeof e.data !== 'string') return;
-            var data = JSON.parse(e.data);
-            if (data) {
-                switch (data.method) {
-                    case "onFileMessage":
-                    
-                        if (data.handleData && data.handleData.type == 'jungleAdventure-init') {
-                            this.node.dispatchEvent(new cc.Event.EventCustom('init', true));
-                        }
-                    
-                        if (data.handleData && data.handleData.type == 'jungleAdventure-jump') {
-                            this.jump('jumpMessage');
-                        }
-                }
+        window.messageCallback = (data) => {
+            switch (data.type) {
+                case "JUNGLE_ADVENTURE_JUMP":
+                    this.jump('jumpMessage');
+                    break;
+
+                case "JUNGLE_ADVENTURE_INIT":
+                    this.node.dispatchEvent(new cc.Event.EventCustom('init', true));
+                    break;
+                default:
+                    break;
             }
-        }.bind(this);
-
-        window.addEventListener("message", this.jungleAdventure, false);
-
+        }
         // 跳跃的状态
         this.jumping = false;
         // 前进方向 东西 南北
@@ -77,21 +76,13 @@ cc.Class({
         // cc.director.getCollisionManager().enabledDebugDraw = false;
     },
 
-    onDestroy() {
-        console.log('onDestroy - monitorPlayer');
-        window.removeEventListener('message', this.jungleAdventure, false);
-    },
-
     // 跳跃
     jump(jumpMessage) {
         if (!this.jumping) {
             cc.audioEngine.play(this.jumpAudio, false, .1);
             this.jumping = true;
             this.speed.y = this.jumpSpeed;
-
-            if(jumpMessage !== 'jumpMessage'){
-                postMessage({'type':'jungleAdventure-jump'});
-            }
+            if (jumpMessage !== 'jumpMessage') sendMessage("JUNGLE_ADVENTURE_JUMP");
         }
 
     },
@@ -103,7 +94,7 @@ cc.Class({
         var playerAnim = this.getComponent(cc.Animation);
         playerAnim.play('stay')
         cc.audioEngine.stopAll();
-        
+
         setTimeout(function () {
             this.node.getComponent(cc.BoxCollider).enabled = false;
             cc.audioEngine.play(this.failAudio, false, .1);

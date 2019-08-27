@@ -1,4 +1,11 @@
-const {postMessage} = require('JA-common');
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-03-27 16:29:31
+ * @LastEditTime: 2019-08-27 18:42:58
+ * @LastEditors: Please set LastEditors
+ */
+const { sendMessage } = require('JA-common');
 
 cc.Class({
     extends: cc.Component,
@@ -61,8 +68,8 @@ cc.Class({
         this.cloudRunnig = true;
         this.sunRunnig = true;
         this.backgroundRunning = true;
-
-
+        
+       if(initMessage !== "initMessage") sendMessage("JUNGLE_ADVENTURE_INIT");
     },
 
     gameStop() {

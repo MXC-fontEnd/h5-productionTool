@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-27 16:18:10
+ * @LastEditTime: 2019-08-27 16:18:59
+ * @LastEditors: Please set LastEditors
+ */
 
 module.exports = {
     init: function (context) {

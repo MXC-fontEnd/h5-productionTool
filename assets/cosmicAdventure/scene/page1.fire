@@ -810,6 +810,7 @@
       "__id__": 16
     },
     "_enabled": true,
+    "seq": 1,
     "contents": [
       {
         "__id__": 12
@@ -1703,9 +1704,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 230,
-      "g": 230,
-      "b": 230,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {

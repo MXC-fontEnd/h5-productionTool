@@ -812,7 +812,7 @@
     "pageCount": 14,
     "currentPageSeq": 1,
     "localDebugging": false,
-    "juniorCoursewareState": true,
+    "juniorCoursewareState": false,
     "juniorCoursewarePage": [
       1,
       2,
@@ -829,7 +829,7 @@
       13,
       14
     ],
-    "seniorCoursewareState": false,
+    "seniorCoursewareState": true,
     "seniorCoursewarePage": [
       1,
       2,

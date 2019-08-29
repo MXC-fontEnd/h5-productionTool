@@ -809,7 +809,7 @@
       "__id__": 2
     },
     "_enabled": true,
-    "pageCount": 14,
+    "pageCount": 13,
     "currentPageSeq": 1,
     "localDebugging": false,
     "juniorCoursewareState": false,
@@ -826,7 +826,6 @@
       11,
       10,
       12,
-      13,
       14
     ],
     "seniorCoursewareState": true,
@@ -843,7 +842,6 @@
       11,
       17,
       18,
-      13,
       14
     ],
     "expandCoursewareState": false,

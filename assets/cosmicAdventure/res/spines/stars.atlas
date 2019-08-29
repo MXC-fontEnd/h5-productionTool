@@ -6,29 +6,22 @@ filter: Linear,Linear
 repeat: none
 roket @2x
   rotate: false
-  xy: 2, 52
+  xy: 2, 2
   size: 90, 64
   orig: 90, 64
   offset: 0, 0
   index: -1
 star2@2x
   rotate: false
-  xy: 2, 2
+  xy: 952, 360
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
-star@2x
-  rotate: false
-  xy: 804, 324
-  size: 70, 68
-  orig: 70, 68
-  offset: 0, 0
-  index: -1
 xingqiu@2x
   rotate: false
-  xy: 2, 118
-  size: 800, 274
-  orig: 800, 274
+  xy: 2, 68
+  size: 948, 340
+  orig: 948, 340
   offset: 0, 0
   index: -1

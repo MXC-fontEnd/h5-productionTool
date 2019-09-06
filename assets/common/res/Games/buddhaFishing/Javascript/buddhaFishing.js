@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-03-27 16:29:30
+ * @LastEditTime: 2019-09-05 17:02:51
+ * @LastEditors: Please set LastEditors
+ */
 
 const toolBox = require("toolBox");
 const DeviceDetect = require("DeviceDetect");

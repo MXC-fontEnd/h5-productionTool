@@ -1372,7 +1372,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "积木webview",
+    "_name": "scrathBlock",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -1611,7 +1611,7 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_url": "",
+    "_url": "https://res.miaocode.com/livePlatform/scrathBlock/oceanAdventure/low/01/index.html",
     "webviewEvents": [
       {
         "__id__": 37
@@ -1648,8 +1648,6 @@
       "__id__": 31
     },
     "_enabled": true,
-    "url": "https://res.miaocode.com/scrathBlock/oceanDdventure/low01/index02.html",
-    "eventName": "onBlockEvent",
     "_id": "67kbGrJktPxa33TaTvIW/x"
   },
   {

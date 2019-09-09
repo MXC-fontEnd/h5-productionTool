@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-09 14:02:14
+ * @LastEditTime: 2019-09-09 16:59:07
  * @LastEditors: Please set LastEditors
  */
 cc.Class({
@@ -69,19 +69,20 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
         this.arrowOriginPos = this.arrow.getPosition();
-        this.OMO.on(cc.Node.EventType.TOUCH_START, this._OMOArchery, this);
-        this.xCoo.on(cc.Node.EventType.TOUCH_START, this._xCooList, this);
-        this.yCoo.on(cc.Node.EventType.TOUCH_START, this._yCooList, this);
+        this.OMO.on(cc.Node.EventType.TOUCH_START, this.OMOArchery, this);
+        this.xCoo.on(cc.Node.EventType.TOUCH_START, this.xCooList, this);
+        this.yCoo.on(cc.Node.EventType.TOUCH_START, this.yCooList, this);
 
         for (let n = 0; n < this.xChoose.children.length; n++) {
             const element = this.xChoose.children[n];
-            element.on(cc.Node.EventType.TOUCH_START, this._xChoosed, this);
+            element.on(cc.Node.EventType.TOUCH_START, this.xChoosed, this);
         }
 
         for (let n = 0; n < this.yChoose.children.length; n++) {
             const element = this.yChoose.children[n];
-            element.on(cc.Node.EventType.TOUCH_START, this._yChoosed, this);
+            element.on(cc.Node.EventType.TOUCH_START, this.yChoosed, this);
         }
+        
         this.init();
 
         this.isMessageAction = false;
@@ -90,7 +91,7 @@ cc.Class({
             this.isMessageAction = true;
             switch (data.type) {
                 case "SHOOTBUBBLE":
-                    this[data.method](data.handleData);
+                    this[data.handleData.method](data.handleData);
                     break;
                 default:
                     break;
@@ -101,7 +102,9 @@ cc.Class({
 
     init() {
         if (!this.isMessageAction) {
-            this.sentMessage('SHOOTBUBBLE', 'init');
+            this.sentMessage('SHOOTBUBBLE',  {
+                method:"init"
+            });
         }
 
         this.winGame.setPosition(cc.v2(0, 540));
@@ -138,12 +141,14 @@ cc.Class({
     },
 
     // OMO射箭
-    _OMOArchery(event) {
+    OMOArchery(event) {
         if (!(this.fishX && this.fishY)) return;
         if (this.archeryState) return;
 
         if (!this.isMessageAction) {
-            this.sentMessage('SHOOTBUBBLE', '_OMOArchery');
+            this.sentMessage('SHOOTBUBBLE', {
+                method:"OMOArchery"
+            });
         }
 
         this.archeryState = true;
@@ -214,44 +219,53 @@ cc.Class({
         this.OMO.runAction(cc.rotateTo(.4, 45));
     },
 
-    _xChoosed(event) {
+    xChoosed(event) {
         if (!this.isMessageAction) {
             let curLabel = event.currentTarget.children[0].getComponent(cc.Label);
             this.fishX = parseInt(curLabel.string);
-            this.sentMessage('SHOOTBUBBLE', '_xChoosed', {
+            this.sentMessage('SHOOTBUBBLE', {
+                method:'xChoosed',
                 sub: this.fishX
             });
         } else {
             this.fishX = event.sub;
         }
+        
+        this.isMessageAction = true;
+        this.xCooList();
+        this.isMessageAction = false;
 
-        this._xCooList();
         this._labelStringChange(this.xCoo, this.fishX);
         this._omoRotate();
     },
 
-    _yChoosed(event) {
+    yChoosed(event) {
         if (!this.isMessageAction) {
             let curLabel = event.currentTarget.children[0].getComponent(cc.Label);
             this.fishY = parseInt(curLabel.string);
-            this.sentMessage('SHOOTBUBBLE', '_yChoosed', {
+            this.sentMessage('SHOOTBUBBLE', {
+                method:'yChoosed',
                 sub: this.fishY
             });
         } else {
             this.fishY = event.sub;
         }
 
-        this._yCooList();
+        this.isMessageAction = true;
+        this.yCooList();
+        this.isMessageAction = false;
+        
         this._labelStringChange(this.yCoo, this.fishY);
         this._omoRotate();
     },
 
 
-    _xCooList() {
+    xCooList() {
         if (!this.isMessageAction) {
-            this.sentMessage('SHOOTBUBBLE', '_xCooList');
+            this.sentMessage('SHOOTBUBBLE', {
+                method:'xCooList'
+            });
         }
-
         if (this.xCooActive) {
             this.xChoose.runAction(cc.hide());
         } else {
@@ -261,9 +275,11 @@ cc.Class({
         this.xCooActive = this.xCooActive ? false : true;
     },
 
-    _yCooList() {
+    yCooList() {
         if (!this.isMessageAction) {
-            this.sentMessage('SHOOTBUBBLE', '_yCooList');
+            this.sentMessage('SHOOTBUBBLE', {
+                method:'yCooList'
+            });
         }
 
         if (this.yCooActive) {
@@ -292,11 +308,10 @@ cc.Class({
     },
 
     // 发射messAge
-    sentMessage(type, method, handleData) {
+    sentMessage(type, handleData) {
         if (window !== window.parent) {
             window.parent.postMessage(JSON.stringify({
                 type,
-                method,
                 handleData
             }), '*');
         }

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-09 11:30:31
+ * @LastEditTime: 2019-09-09 17:49:31
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("messageUtils");
@@ -76,7 +76,7 @@ cc.Class({
     },
 
     restart() {
-        init();
+        this.init();
 
         this.isMessageAction ? this.isMessageAction = false : sendMessage("CW_MAGICBLOCK", {
             method: "restart",

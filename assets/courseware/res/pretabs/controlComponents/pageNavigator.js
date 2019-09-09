@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-27 14:24:41
- * @LastEditTime: 2019-09-05 09:36:03
+ * @LastEditTime: 2019-09-09 15:13:07
  * @LastEditors: Please set LastEditors
 //  */
 cc.Class({
@@ -133,11 +133,11 @@ cc.Class({
         if (curPageNum < 10) curPageNum = "0" + curPageNum;
         if (nextPageNum < 10) nextPageNum = "0" + nextPageNum;
         cc.director.loadScene('page' + curPageNum, () => {
-            if (nextPageNum) {
-                cc.director.preloadScene("page" + nextPageNum, () => {
-                    console.log(`page${this.courseware[page]}预加载完!`);
-                });
-            }
+            // if (nextPageNum) {
+            //     cc.director.preloadScene("page" + nextPageNum, () => {
+            //         console.log(`page${this.courseware[page]}预加载完!`);
+            //     });
+            // }
         });
     },
 });

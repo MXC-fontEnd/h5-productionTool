@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-09 11:37:13
+ * @LastEditTime: 2019-09-09 15:23:03
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("messageUtils");
@@ -14,8 +14,11 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
+        this.target = null;
         // 监听webview
         window.messageCallback = (data) => {
+            console.log("webview");
+            console.log(data);
             if (!this.target) return;
 
             switch (data.type) {

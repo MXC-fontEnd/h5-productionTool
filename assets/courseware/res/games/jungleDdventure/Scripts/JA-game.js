@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-08-27 18:42:58
+ * @LastEditTime: 2019-09-12 17:37:02
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require('JA-common');
@@ -40,8 +40,20 @@ cc.Class({
     },
 
     // LIFE-CYCLE CALLBACKS:
+    onLoad() {
+        const that = this;
+        this.node.on('gameOver', function (event) {
+            event.stopPropagation();
+            this.gameStop();
+        }.bind(this));
 
-    init(initMessage) {
+        this.node.on("informedInit", function(event){
+            event.stopPropagation();
+            that.init();
+        });
+    },
+
+    init(e,customEventData) {
         this.Cover = this.node.parent.getChildByName('Cover');
         this.CoverPos = this.Cover.getPosition();
         this.Cover.setPosition(this.CoverPos.x - 2000, this.CoverPos.y);
@@ -68,8 +80,10 @@ cc.Class({
         this.cloudRunnig = true;
         this.sunRunnig = true;
         this.backgroundRunning = true;
-        
-       if(initMessage !== "initMessage") sendMessage("JUNGLE_ADVENTURE_INIT");
+
+       if(customEventData == "initMessage"){
+         sendMessage("GAME_JUNGLE_ADVENTURE_INIT");
+       } 
     },
 
     gameStop() {
@@ -88,20 +102,6 @@ cc.Class({
             this.coverShow();
             cc.audioEngine.stopAll();
         }, 3);
-    },
-
-    onLoad() {
-
-        this.node.on('gameOver', function (event) {
-            event.stopPropagation();
-            this.gameStop();
-        }.bind(this));
-
-        this.node.on('init', function (event) {
-            event.stopPropagation();
-            this.init('initMessage');
-        }.bind(this));
-
     },
 
     update(dt) {

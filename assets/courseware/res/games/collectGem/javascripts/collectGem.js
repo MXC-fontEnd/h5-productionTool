@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-09 13:20:12
+ * @LastEditTime: 2019-09-12 11:51:02
  * @LastEditors: Please set LastEditors
  */
 cc.Class({
@@ -41,11 +41,11 @@ cc.Class({
         // 监听课件message
         window.messageCallback = (data) => {
             switch (data.type) {
-                case "COLLECTGEM_INIT":
+                case "GAME_COLLECTGEM_INIT":
                     this.init();
                     break;
 
-                case "COLLECTGEM_COLLECT":
+                case "GAME_COLLECTGEM_COLLECT":
                     let curGemNode = this.gemPool.children[parseInt(data.handleData.sub)];
                     this._countGem(false,curGemNode);
                     break;
@@ -62,7 +62,7 @@ cc.Class({
 
     init(target, customEventData) {
         if (Object.is("restart", customEventData)) {
-            this.sentMessage("COLLECTGEM_INIT");
+            this.sentMessage("GAME_COLLECTGEM_INIT");
         }
         this.winGame.setPosition(cc.v2(0, 540));
         this.count.string = 0;
@@ -100,7 +100,7 @@ cc.Class({
                     sub = index;
                 }
             }
-            this.sentMessage("COLLECTGEM_COLLECT", {
+            this.sentMessage("GAME_COLLECTGEM_COLLECT", {
                 sub
             });
         } else {

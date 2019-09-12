@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-27 14:24:41
- * @LastEditTime: 2019-09-09 15:13:07
+ * @LastEditTime: 2019-09-12 17:30:42
  * @LastEditors: Please set LastEditors
 //  */
 cc.Class({
@@ -66,7 +66,10 @@ cc.Class({
                         this.loadscene(data.handleData.page);
                         break;
                     default:
-                        if(window.messageCallback) window.messageCallback(data);
+                        if(window.messageCallback){
+                            window.messageCallback(data);
+                            window.messageCallback1(data);
+                        } 
                         break;
                 }
             }

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-05 09:40:29
+ * @LastEditTime: 2019-09-12 10:36:41
  * @LastEditors: Please set LastEditors
  */
 
@@ -40,7 +40,7 @@ cc.Class({
         }
 
         // 监听视频被点击发射事件
-        this.node.on('videoplayerClicked', this._videoClicked, this);
+        this.node.on('videoClicked', this._videoClicked, this);
         
         // 监听课件message
         window.messageCallback = (data) => {

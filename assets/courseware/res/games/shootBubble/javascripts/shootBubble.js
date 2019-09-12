@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-09 16:59:07
+ * @LastEditTime: 2019-09-12 14:26:44
  * @LastEditors: Please set LastEditors
  */
 cc.Class({
@@ -90,7 +90,7 @@ cc.Class({
         window.messageCallback = (data) => {
             this.isMessageAction = true;
             switch (data.type) {
-                case "SHOOTBUBBLE":
+                case "GAME_SHOOTBUBBLE":
                     this[data.handleData.method](data.handleData);
                     break;
                 default:
@@ -102,7 +102,7 @@ cc.Class({
 
     init() {
         if (!this.isMessageAction) {
-            this.sentMessage('SHOOTBUBBLE',  {
+            this.sentMessage('GAME_SHOOTBUBBLE',  {
                 method:"init"
             });
         }
@@ -146,7 +146,7 @@ cc.Class({
         if (this.archeryState) return;
 
         if (!this.isMessageAction) {
-            this.sentMessage('SHOOTBUBBLE', {
+            this.sentMessage('GAME_SHOOTBUBBLE', {
                 method:"OMOArchery"
             });
         }
@@ -223,7 +223,7 @@ cc.Class({
         if (!this.isMessageAction) {
             let curLabel = event.currentTarget.children[0].getComponent(cc.Label);
             this.fishX = parseInt(curLabel.string);
-            this.sentMessage('SHOOTBUBBLE', {
+            this.sentMessage('GAME_SHOOTBUBBLE', {
                 method:'xChoosed',
                 sub: this.fishX
             });
@@ -243,7 +243,7 @@ cc.Class({
         if (!this.isMessageAction) {
             let curLabel = event.currentTarget.children[0].getComponent(cc.Label);
             this.fishY = parseInt(curLabel.string);
-            this.sentMessage('SHOOTBUBBLE', {
+            this.sentMessage('GAME_SHOOTBUBBLE', {
                 method:'yChoosed',
                 sub: this.fishY
             });
@@ -262,7 +262,7 @@ cc.Class({
 
     xCooList() {
         if (!this.isMessageAction) {
-            this.sentMessage('SHOOTBUBBLE', {
+            this.sentMessage('GAME_SHOOTBUBBLE', {
                 method:'xCooList'
             });
         }
@@ -277,7 +277,7 @@ cc.Class({
 
     yCooList() {
         if (!this.isMessageAction) {
-            this.sentMessage('SHOOTBUBBLE', {
+            this.sentMessage('GAME_SHOOTBUBBLE', {
                 method:'yCooList'
             });
         }

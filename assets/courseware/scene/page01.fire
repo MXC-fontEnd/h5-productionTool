@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.728125,
+      "y": 0.728125,
       "z": 1
     },
     "_quat": {
@@ -3341,7 +3341,7 @@
     "component": "",
     "_componentId": "9011blRQrVGDZ3mNrpUevNG",
     "handler": "init",
-    "customEventData": ""
+    "customEventData": "initMessage"
   },
   {
     "__type__": "cc.PrefabInfo",

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-08-27 18:40:59
+ * @LastEditTime: 2019-09-12 17:37:20
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require('JA-common');
@@ -31,17 +31,18 @@ cc.Class({
     onLoad: function () {
         window.messageCallback = (data) => {
             switch (data.type) {
-                case "JUNGLE_ADVENTURE_JUMP":
-                    this.jump('jumpMessage');
+                case "GAME_JUNGLE_ADVENTURE_INIT":
+                    this.node.dispatchEvent(new cc.Event.EventCustom('informedInit', true));
                     break;
 
-                case "JUNGLE_ADVENTURE_INIT":
-                    this.node.dispatchEvent(new cc.Event.EventCustom('init', true));
+                case "GAME_JUNGLE_ADVENTURE_JUMP":
+                    this.jump('jumpMessage');
                     break;
                 default:
                     break;
             }
         }
+
         // 跳跃的状态
         this.jumping = false;
         // 前进方向 东西 南北
@@ -82,7 +83,7 @@ cc.Class({
             cc.audioEngine.play(this.jumpAudio, false, .1);
             this.jumping = true;
             this.speed.y = this.jumpSpeed;
-            if (jumpMessage !== 'jumpMessage') sendMessage("JUNGLE_ADVENTURE_JUMP");
+            if (jumpMessage !== 'jumpMessage') sendMessage("GAME_JUNGLE_ADVENTURE_JUMP");
         }
 
     },

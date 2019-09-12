@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-05 11:48:28
+ * @LastEditTime: 2019-09-12 17:49:20
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("messageUtils");
@@ -63,10 +63,6 @@ cc.Class({
         this.videoplayer = null;
     },
 
-    onDisable() {
-        console.log('onDisable');
-    },
-
     onDestroy() {
         console.log('onDestroy');
     },
@@ -105,6 +101,41 @@ cc.Class({
         this.videoHide();
         // message信息传输判断
         this.isMessageAction ? this.isMessageAction = false : sendMessage("CW_VIDEOTEMPLATE_STOP");
+    },
+
+    onVideoPlayerEvent(videoplayer, eventType, customEventData) {
+        switch (eventType) {
+            case cc.VideoPlayer.EventType.META_LOADED:
+                console.log('videoplayer加载完成');
+                break;
+            // videoplayer已准备好
+            case cc.VideoPlayer.EventType.READY_TO_PLAY:
+                console.log('videoplayer已准备好');
+                break;
+
+            case cc.VideoPlayer.EventType.PLAYING:
+                console.log('videoplayer正在播放');
+
+                break;
+
+            case cc.VideoPlayer.EventType.PAUSED:
+                console.log('videoplayer暂停');
+                break;
+
+            case cc.VideoPlayer.EventType.STOPPED:
+                console.log('videoplayer关闭');
+                break;
+
+            case cc.VideoPlayer.EventType.COMPLETED:
+                console.log('videoplayer播放完毕');
+                break;
+
+            case cc.VideoPlayer.EventType.CLICKED:
+                console.log('videoplayer被点击');
+                break;
+            default:
+                break;
+        }
     },
 
 });

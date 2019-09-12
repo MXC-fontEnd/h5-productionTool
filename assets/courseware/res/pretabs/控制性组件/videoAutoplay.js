@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-09 18:26:31
+ * @LastEditTime: 2019-09-12 13:59:44
+ * @LastEditors: Please set LastEditors
+ */
 
 cc.Class({
     extends: cc.Component,
@@ -8,22 +15,17 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
     // onLoad () {},
-
-    start () {
-
-    },
-
     onVideoPlayerEvent(videoplayer, eventType, customEventData) {
-
         // videoplayer元信息加载完毕
         if (eventType === cc.VideoPlayer.EventType.META_LOADED) {
             console.log('videoplayer元信息加载完毕');
-            videoplayer.play();
         }
 
         // videoplayer已准备好
         if (eventType === cc.VideoPlayer.EventType.READY_TO_PLAY) {
             console.log('videoplayer已准备好');
+            videoplayer.play();
+            videoplayer.stop();
         }
 
         // videoplayer正在播放

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:30
- * @LastEditTime: 2019-09-05 17:02:51
+ * @LastEditTime: 2019-09-12 17:31:20
  * @LastEditors: Please set LastEditors
  */
 
@@ -94,50 +94,45 @@ cc.Class({
         // 红：5秒；黄：3秒；
         this.node.on('addTime', this._addTime, this);
 
-        this.buddhaFishingBind = function (e) {
-            if (window === window.parent) return;
-            if (typeof e.data !== 'string') return;
-            let data = JSON.parse(e.data);
+        this.isMessageAction = false;
+        // 监听课件message
+        window.messageCallback1 = (data) => {
+            this.isMessageAction = true;
+            switch (data.type) {
+                // case "FISHING_INIT":
+                //     this.init();
+                //     break;
+                case "GAME_FISHING_GAME_START":
+                    this.gameStart();
+                    break;
 
-            if (data) {
-                switch (data.method) {
-                    case "onFileMessage":
-                        if (data.handleData && data.handleData.type == 'buddhaFishing') {
-                            let method = data.handleData.method;
-                            let pars;
-                            switch (method) {
-                                case 'gameStart':
-                                    this.gameStart('break');
-                                    break;
+                case "GAME_FISHING_POSITION_CHANGE":
+                    this.positionChange(data.handleData);
+                    break;
 
-                                case 'init':
-                                    this.init('break');
-                                    break;
-
-                                case '_positionChange':
-                                    pars = data.handleData.pars;
-                                    this._positionChange(false, 'break', pars);
-                                    break;
-
-                                case '_fishing':
-                                    pars = data.handleData.pars;
-                                    this._fishing(false, 'break', pars);
-                                    break;
-
-                                default:
-                                    break;
-                            }
-                        }
-                }
+                case "GAME_FISHING_FISHING":
+                    this.fishing(data.handleData);
+                    break;
+                default:
+                    break;
             }
-        }.bind(this);
-        window.addEventListener("message", this.buddhaFishingBind, false);
+            this.isMessageAction = false;
+        }
+    },
+
+    sentMessage(type, handleData) {
+        if (window !== window.parent) {
+            window.parent.postMessage(JSON.stringify({
+                type,
+                handleData
+            }), '*');
+        }
     },
 
     // 游戏开始
-    gameStart(messageState) {
-        if (messageState !== 'break') {
-            this.sentMessage('buddhaFishing', 'gameStart');
+    gameStart() {
+        if (!this.isMessageAction) {
+            this.sentMessage("GAME_FISHING_GAME_START");
         }
         this.coverDown = false;
         this.COVER.setPosition(-2000, 0);
@@ -146,22 +141,8 @@ cc.Class({
         }.bind(this), 10);
     },
 
-    sentMessage(type, method, pars) {
-        if (window !== window.parent) {
-            let data = JSON.stringify({
-                method: 'onFileMessage',
-                handleData: {
-                    type: type,
-                    method: method,
-                    pars: pars
-                },
-            });
-            window.parent.postMessage(data, '*');
-        }
-    },
-
     onDestroy() {
-        window.removeEventListener('message', this.buddhaFishingBind, false);
+        console.log("onDestroy");
     },
 
     init() {
@@ -258,7 +239,9 @@ cc.Class({
             this._updateProgressBar(this.timeProgress, dt);
         }
 
-        if (!this.FLAG) this._drawLine(this.SHIP, this.OMO);
+        if (!this.FLAG){
+            this._drawLine(this.SHIP, this.OMO);
+        } 
 
         // 是否发射OMO
         if (this.isLaunchOMO) {
@@ -274,6 +257,7 @@ cc.Class({
         if (this.isRetake) {
             // OMO老坐标
             let oldPos = this.OMO.position;
+            console.log(this.OMO);
             let direction = this.moveToPos.sub(oldPos).normalize();
             // OMO新坐标
             let newPos = oldPos.add(direction.mul(120 * dt));
@@ -323,53 +307,50 @@ cc.Class({
     flyShipBind(){
         if(DeviceDetect.isIpad){
             // 调整飞船位子
-            this.node.on(cc.Node.EventType.TOUCH_MOVE, this._positionChange, this);
+            this.node.on(cc.Node.EventType.TOUCH_MOVE, this.positionChange, this);
             // 监听鼠标位置,移动飞船位置并发射OMO
-            this.node.on(cc.Node.EventType.TOUCH_START, this._fishing, this);
+            this.node.on(cc.Node.EventType.TOUCH_START, this.fishing, this);
         } else {
             // 调整飞船位子
-            this.node.on(cc.Node.EventType.MOUSE_MOVE, this._positionChange, this);
+            this.node.on(cc.Node.EventType.MOUSE_MOVE, this.positionChange, this);
             // 监听鼠标位置,移动飞船位置并发射OMO
-            this.node.on(cc.Node.EventType.MOUSE_DOWN, this._fishing, this);
+            this.node.on(cc.Node.EventType.MOUSE_DOWN, this.fishing, this);
         }
     },
     // 根据鼠标移动，调整飞船x轴位置
-    _positionChange(event, messageState, pars) {
+    positionChange(event) {
         if (!this.coverDown) return;
-
         let nodeSpacePos;
-        if (event) {
+        if (!this.isMessageAction) {
             nodeSpacePos = curNodeCoordinate(event, this.node);
+            this.sentMessage("GAME_FISHING_POSITION_CHANGE", {
+                nodeSpacePos
+            });
         } else {
-            nodeSpacePos = pars;
-        }
-
-        if (messageState !== 'break') {
-            this.sentMessage('buddhaFishing', '_positionChange', nodeSpacePos);
+            nodeSpacePos = event.nodeSpacePos;
         }
 
         this.SHIP.setPosition(nodeSpacePos.x, -150);
-
         if (this.FLAG) this.OMO.setPosition(nodeSpacePos.x, -150);
         this.moveToPos = cc.v2(nodeSpacePos.x, -150);
     },
-
+    
     // 根据点击事件，调整飞船位置及发射OMO捕鱼
-    _fishing(event, messageState, pars) {
+    fishing(event) {
         if (!this.coverDown) return;
 
         let nodeSpacePos;
-        if (event) {
+        if (!this.isMessageAction) {
             nodeSpacePos = curNodeCoordinate(event, this.node);
+            this.sentMessage("GAME_FISHING_FISHING", {
+                nodeSpacePos
+            });
         } else {
-            nodeSpacePos = pars;
+            nodeSpacePos = event.nodeSpacePos;
         }
-
-        if (messageState !== 'break') {
-            this.sentMessage('buddhaFishing', '_fishing', nodeSpacePos);
-        }
-
+        
         this.SHIP.setPosition(nodeSpacePos.x, -150);
+        this.moveToPos = cc.v2(nodeSpacePos.x, -150);
         if (this.FLAG) {
             this.FLAG = false;
             this._harpoonAnimation(nodeSpacePos);
@@ -458,14 +439,14 @@ cc.Class({
 
         if(DeviceDetect.isIpad){
             // 调整飞船位子
-            this.node.off(cc.Node.EventType.TOUCH_MOVE, this._positionChange, this);
+            this.node.off(cc.Node.EventType.TOUCH_MOVE, this.positionChange, this);
             // 监听鼠标位置,移动飞船位置并发射OMO
-            this.node.off(cc.Node.EventType.TOUCH_START, this._fishing, this);
+            this.node.off(cc.Node.EventType.TOUCH_START, this.fishing, this);
         } else {
             // 调整飞船位子
-            this.node.off(cc.Node.EventType.MOUSE_MOVE, this._positionChange, this);
+            this.node.off(cc.Node.EventType.MOUSE_MOVE, this.positionChange, this);
             // 监听鼠标位置,移动飞船位置并发射OMO
-            this.node.off(cc.Node.EventType.MOUSE_DOWN, this._fishing, this);
+            this.node.off(cc.Node.EventType.MOUSE_DOWN, this.fishing, this);
         }
 
         let fishPool = this.node.getChildByName('fishPool');

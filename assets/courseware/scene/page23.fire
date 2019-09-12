@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.7462673611111111,
-      "y": 0.7462673611111111,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -2175,8 +2175,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -3,
-      "y": 1,
+      "x": 0,
+      "y": 0,
       "z": 0
     },
     "_scale": {
@@ -2209,7 +2209,9 @@
     "_enabled": true,
     "_resourceType": 1,
     "_remoteURL": "",
-    "_clip": null,
+    "_clip": {
+      "__uuid__": "2ea9e9aa-168b-4c14-9033-b1e378d33475"
+    },
     "_volume": 1,
     "_mute": false,
     "videoPlayerEvent": [

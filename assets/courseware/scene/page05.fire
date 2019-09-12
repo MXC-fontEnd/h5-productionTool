@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.9999837239583333,
-      "y": 0.9999837239583333,
+      "x": 0.9072916666666667,
+      "y": 0.9072916666666667,
       "z": 1
     },
     "_quat": {
@@ -1391,8 +1391,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 320,
-      "height": 180
+      "width": 740,
+      "height": 480
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1629,7 +1629,9 @@
     "_enabled": true,
     "_resourceType": 1,
     "_remoteURL": "",
-    "_clip": null,
+    "_clip": {
+      "__uuid__": "c5db6790-7880-4391-9849-b750eac72136"
+    },
     "_volume": 1,
     "_mute": false,
     "videoPlayerEvent": [
@@ -1718,8 +1720,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 0,
-      "height": 0
+      "width": 740,
+      "height": 480
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1956,7 +1958,9 @@
     "_enabled": true,
     "_resourceType": 1,
     "_remoteURL": "",
-    "_clip": null,
+    "_clip": {
+      "__uuid__": "6c91f033-bc2e-4164-b41e-d0f5de323a2c"
+    },
     "_volume": 1,
     "_mute": false,
     "videoPlayerEvent": [

@@ -9,6 +9,7 @@ cc.Class({
 	},
 
 	onLoad() {
+		console.log(cc.systemEvent)
 		createObserver()
 		this.initialData()
 		this.initialEvent()
@@ -23,8 +24,7 @@ cc.Class({
 		this.gameoverNode = this.node.getChildByName("gameover")
 		this.successNode = this.node.getChildByName("success")
 		this.node.children.forEach(node => {
-			// node._seq = this.node.getSiblingIndex()
-			node._seq = +this.complete
+			node._seq = this.node.getSiblingIndex()
 			node._complete = this.complete
 		})
 	},

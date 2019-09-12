@@ -16,6 +16,7 @@ cc.Class({
 			type: cc.AudioClip,
 			default: []
 		},
+		audioVolume: 0.5,
 		_isHost: false,
 		_bulletType: 1,
 		_bulletPool: [],
@@ -240,14 +241,14 @@ cc.Class({
 				bullet[0]._angle = 0
 				bullet[0].scale = initScale
 				bullet[0].color = cc.color(255, 255, 255)
-				cc.audioEngine.play(this.audios[0], false, 0.5)
+				cc.audioEngine.play(this.audios[0], false, this.audioVolume)
 			} else if (this._bulletType === 2) {
 				// R弹
 				bullet = createBullet(this.bullet, 1, this._bulletPool)
 				bullet[0]._angle = 0
 				bullet[0].scale = initScale * 1.5
 				bullet[0].color = cc.color(color)
-				cc.audioEngine.play(this.audios[2], false, 0.5)
+				cc.audioEngine.play(this.audios[2], false, this.audioVolume)
 			} else if (this._bulletType === 3) {
 				// S弹
 				bullet = createBullet(this.bullet, 3, this._bulletPool)
@@ -256,7 +257,7 @@ cc.Class({
 					bullet[i].scale = initScale * 1.5
 					bullet[i].color = cc.color(color)
 				}
-				cc.audioEngine.play(this.audios[1], false, 0.5)
+				cc.audioEngine.play(this.audios[1], false, this.audioVolume)
 			}
 
 			for (let bt of bullet) {

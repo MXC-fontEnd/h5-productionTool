@@ -1250,6 +1250,7 @@
         "__uuid__": "a0eb01f8-4847-440c-bde8-4bd223ae7246"
       }
     ],
+    "audioVolume": 0.5,
     "_isHost": false,
     "_bulletType": 1,
     "_bulletPool": [],
@@ -2144,7 +2145,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "complete": false,
+    "complete": true,
     "_zindex": 0,
     "_id": ""
   },

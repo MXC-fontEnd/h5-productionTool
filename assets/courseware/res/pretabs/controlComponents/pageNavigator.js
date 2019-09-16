@@ -2,9 +2,13 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-27 14:24:41
- * @LastEditTime: 2019-09-12 17:30:42
+ * @LastEditTime: 2019-09-16 18:28:26
  * @LastEditors: Please set LastEditors
 //  */
+
+// 接入fundebug
+var fundebug = require("fundebug-javascript");
+fundebug.apikey = "40b0e389ff4b57ad980a15e808305eba6971620aae0f61d7e0c309cb7b8ddd5c";
 cc.Class({
     extends: cc.Component,
 

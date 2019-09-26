@@ -2,13 +2,15 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-27 14:24:41
- * @LastEditTime: 2019-09-16 18:28:26
+ * @LastEditTime: 2019-09-26 14:07:14
  * @LastEditors: Please set LastEditors
 //  */
 
 // 接入fundebug
 var fundebug = require("fundebug-javascript");
 fundebug.apikey = "40b0e389ff4b57ad980a15e808305eba6971620aae0f61d7e0c309cb7b8ddd5c";
+
+const { monitorMessage } = require("messageUtils");
 cc.Class({
     extends: cc.Component,
 
@@ -59,23 +61,16 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
         // 端对端通信
-        window.addEventListener("message", (e) => {
-            if(!e || typeof e.data !== "string") return console.log("message有误！");
-            const data = JSON.parse(e.data);
-            if (data) {
-                switch (data.type) {
-                    case "SWITCHBOX_GO_PREVPAGE":
-                    case "SWITCHBOX_GO_NEXTPAGE":
-                    case "SWITCHBOX_GO_HANDLE_KEYDOWN":
-                        this.loadscene(data.handleData.page);
-                        break;
-                    default:
-                        if(window.messageCallback){
-                            window.messageCallback(data);
-                            window.messageCallback1(data);
-                        } 
-                        break;
-                }
+        monitorMessage((data)=>{
+            switch (data.type) {
+                case "SWITCHBOX_GO_PREVPAGE":
+                case "SWITCHBOX_GO_NEXTPAGE":
+                case "SWITCHBOX_GO_HANDLE_KEYDOWN":
+                    this.loadscene(data.handleData.page);
+                    break;
+                default:
+                    window.messageProxy.emit(data);
+                    break;
             }
         })
 

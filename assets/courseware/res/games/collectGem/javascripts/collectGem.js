@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-12 11:51:02
+ * @LastEditTime: 2019-09-26 13:31:34
  * @LastEditors: Please set LastEditors
  */
 cc.Class({
@@ -38,8 +38,10 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
-        // 监听课件message
-        window.messageCallback = (data) => {
+        this.fnName = Date.now();
+        this.isMessageAction = false;
+        window.messageProxy.on(this.fnName, (data) => {
+            this.isMessageAction = true;
             switch (data.type) {
                 case "GAME_COLLECTGEM_INIT":
                     this.init();
@@ -52,12 +54,14 @@ cc.Class({
                 default:
                     break;
             }
-        }
+            this.isMessageAction = false;
+        })
+
         this.init();
     },
 
     onDestroy() {
-        console.log("onDestroy");
+        window.messageProxy.off(this.fnName);
     },
 
     init(target, customEventData) {

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-05 16:28:44
+ * @LastEditTime: 2019-09-26 12:13:16
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("messageUtils");
@@ -25,9 +25,9 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
+        this.fnName = Date.now();
         this.isMessageAction = false;
-        // 监听课件message
-        window.messageCallback = (data) => {
+        window.messageProxy.on(this.fnName, (data) => {
             this.isMessageAction = true;
             switch (data.type) {
                 case "CW_FADEOUTLIST":
@@ -37,15 +37,11 @@ cc.Class({
                     this.isMessageAction = false;
                     break;
             }
-        }
+        })
 
         for (let i = 0; i < this.fadeList.length; i++) {
             this.fadeList[i].on(cc.Node.EventType.TOUCH_START, this.triggerClicked, this);
         }
-    },
-
-    onDestroy() {
-        console.log("onDestroy");
     },
 
     triggerClicked(e, customEventData) {
@@ -53,6 +49,10 @@ cc.Class({
         this.fadeList[seq - 1].runAction(cc.fadeOut(this.fadeTime));
 
         this.isMessageAction ? this.isMessageAction = false : sendMessage("CW_FADEOUTLIST", { method: "triggerClicked", customEventData: seq });
+    },
+
+    onDestroy() {
+        window.messageProxy.off(this.fnName);
     },
 
 });

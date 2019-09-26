@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:30
- * @LastEditTime: 2019-09-12 17:31:20
+ * @LastEditTime: 2019-09-26 16:01:43
  * @LastEditors: Please set LastEditors
  */
 
@@ -19,7 +19,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-
+        gameTag :"",
         fish: {
             default: [],
             type: [cc.Prefab]
@@ -65,6 +65,7 @@ cc.Class({
             displayName: '飞船渐大'
         },
 
+
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -94,9 +95,9 @@ cc.Class({
         // 红：5秒；黄：3秒；
         this.node.on('addTime', this._addTime, this);
 
+        this.fnName = Date.now();
         this.isMessageAction = false;
-        // 监听课件message
-        window.messageCallback1 = (data) => {
+        window.messageProxy.on(this.fnName + this.gameTag, (data) => {
             this.isMessageAction = true;
             switch (data.type) {
                 // case "FISHING_INIT":
@@ -114,10 +115,11 @@ cc.Class({
                     this.fishing(data.handleData);
                     break;
                 default:
+                    this.isMessageAction = false;
                     break;
             }
-            this.isMessageAction = false;
-        }
+            
+        })
     },
 
     sentMessage(type, handleData) {
@@ -131,9 +133,7 @@ cc.Class({
 
     // 游戏开始
     gameStart() {
-        if (!this.isMessageAction) {
-            this.sentMessage("GAME_FISHING_GAME_START");
-        }
+        this.isMessageAction ? this.isMessageAction = false : this.sentMessage("GAME_FISHING_GAME_START");
         this.coverDown = false;
         this.COVER.setPosition(-2000, 0);
         setTimeout(function () {
@@ -142,7 +142,7 @@ cc.Class({
     },
 
     onDestroy() {
-        console.log("onDestroy");
+        window.messageProxy.off(this.fnName + this.gameTag);
     },
 
     init() {
@@ -317,22 +317,25 @@ cc.Class({
             this.node.on(cc.Node.EventType.MOUSE_DOWN, this.fishing, this);
         }
     },
+
     // 根据鼠标移动，调整飞船x轴位置
     positionChange(event) {
-        if (!this.coverDown) return;
-        let nodeSpacePos;
-        if (!this.isMessageAction) {
-            nodeSpacePos = curNodeCoordinate(event, this.node);
-            this.sentMessage("GAME_FISHING_POSITION_CHANGE", {
-                nodeSpacePos
-            });
-        } else {
-            nodeSpacePos = event.nodeSpacePos;
-        }
+        if (this.coverDown){
+            let nodeSpacePos;
+            if (!this.isMessageAction) {
+                nodeSpacePos = curNodeCoordinate(event, this.node);
+                this.sentMessage("GAME_FISHING_POSITION_CHANGE", {
+                    nodeSpacePos:nodeSpacePos
+                });
+            } else {
+                this.isMessageAction = false;
+                nodeSpacePos = event.nodeSpacePos;
+            }
 
-        this.SHIP.setPosition(nodeSpacePos.x, -150);
-        if (this.FLAG) this.OMO.setPosition(nodeSpacePos.x, -150);
-        this.moveToPos = cc.v2(nodeSpacePos.x, -150);
+            this.SHIP.setPosition(nodeSpacePos.x, -150);
+            if (this.FLAG) this.OMO.setPosition(nodeSpacePos.x, -150);
+            this.moveToPos = cc.v2(nodeSpacePos.x, -150);
+        }
     },
     
     // 根据点击事件，调整飞船位置及发射OMO捕鱼
@@ -346,6 +349,7 @@ cc.Class({
                 nodeSpacePos
             });
         } else {
+            this.isMessageAction = false;
             nodeSpacePos = event.nodeSpacePos;
         }
         

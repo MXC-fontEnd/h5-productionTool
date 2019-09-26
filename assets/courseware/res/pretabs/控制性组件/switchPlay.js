@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-12 10:36:41
+ * @LastEditTime: 2019-09-26 12:19:59
  * @LastEditors: Please set LastEditors
  */
 
@@ -41,9 +41,11 @@ cc.Class({
 
         // 监听视频被点击发射事件
         this.node.on('videoClicked', this._videoClicked, this);
-        
-        // 监听课件message
-        window.messageCallback = (data) => {
+
+        this.fnName = Date.now();
+        this.isMessageAction = false;
+        window.messageProxy.on(this.fnName, (data) => {
+            this.isMessageAction = true;
             switch (data.type) {
                 case "SWITCH_VIDEO_PLAY":
                     let sub = parseInt(data.handleData.sub);
@@ -51,9 +53,11 @@ cc.Class({
                     this._switchAnimation(curVideoplayer, sub);
                     break;
                 default:
+                    this.isMessageAction = false;
                     break;
             }
-        }
+        })
+
     },
 
     _videoClicked(event) {
@@ -71,7 +75,7 @@ cc.Class({
         }
 
         // 发送message
-        sendMessage("SWITCH_VIDEO_PLAY", { sub: curVideoplayerSub });
+        this.isMessageAction ? this.isMessageAction = false : sendMessage("SWITCH_VIDEO_PLAY", { sub: curVideoplayerSub });
 
         // 切换动画
         this._switchAnimation(curVideoplayer, curVideoplayerSub);
@@ -107,5 +111,8 @@ cc.Class({
             videoplayer.play();
         }
     },
-
+    
+    onDestroy() {
+        window.messageProxy.off(this.fnName);
+    },
 });

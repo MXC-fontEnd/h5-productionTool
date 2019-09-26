@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-09 17:49:31
+ * @LastEditTime: 2019-09-26 12:14:44
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("messageUtils");
@@ -44,11 +44,9 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
+        this.fnName = Date.now();
         this.isMessageAction = false;
-        this.init();
-
-        // 监听课件message
-        window.messageCallback = (data) => {
+        window.messageProxy.on(this.fnName, (data) => {
             this.isMessageAction = true;
             switch (data.type) {
                 case "CW_MAGICBLOCK":
@@ -58,13 +56,13 @@ cc.Class({
                     this.isMessageAction = false;
                     break;
             }
-        }
+        })
+
+        this.init();
     },
 
-    // update (dt) {},
-
     onDestroy() {
-        console.log("onDestroy");
+        window.messageProxy.off(this.fnName);
     },
 
     init() {

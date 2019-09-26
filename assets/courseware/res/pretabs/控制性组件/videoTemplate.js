@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-12 17:49:20
+ * @LastEditTime: 2019-09-26 12:27:26
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("messageUtils");
@@ -25,17 +25,9 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
+        this.fnName = Date.now();
         this.isMessageAction = false;
-        this.init();
-
-        for (let i = 0; i < this.triggerList.length; i++) {
-            this.triggerList[i].on(cc.Node.EventType.TOUCH_START, function (e) {
-                this.videoShow(parseInt(e.currentTarget.name))
-            }, this);
-        }
-
-        // 监听课件message
-        window.messageCallback = (data) => {
+        window.messageProxy.on(this.fnName, (data) => {
             this.isMessageAction = true;
             switch (data.type) {
                 case "CW_VIDEOTEMPLATE_VIDEOSHOW":
@@ -54,6 +46,13 @@ cc.Class({
                     this.isMessageAction = false;
                     break;
             }
+        })
+        
+        this.init();
+        for (let i = 0; i < this.triggerList.length; i++) {
+            this.triggerList[i].on(cc.Node.EventType.TOUCH_START, function (e) {
+                this.videoShow(parseInt(e.currentTarget.name))
+            }, this);
         }
     },
 
@@ -62,12 +61,6 @@ cc.Class({
         this.curVideoPositonY = null;
         this.videoplayer = null;
     },
-
-    onDestroy() {
-        console.log('onDestroy');
-    },
-
-    // update (dt) {},
 
     videoShow(index) {
         this.videoNode = this.videoList[index - 1];
@@ -136,6 +129,10 @@ cc.Class({
             default:
                 break;
         }
+    },
+
+    onDestroy() {
+        window.messageProxy.off(this.fnName);
     },
 
 });

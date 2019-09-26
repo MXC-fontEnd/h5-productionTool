@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-13 14:33:27
- * @LastEditTime: 2019-09-05 15:47:47
+ * @LastEditTime: 2019-09-26 12:21:08
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("messageUtils");
@@ -24,14 +24,9 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
+        this.fnName = Date.now();
         this.isMessageAction = false;
-
-        for (let n = 0; n < this.triggers.length; n++) {
-            this.triggers[n].on(cc.Node.EventType.TOUCH_START, this.triggerClicked, this);
-        }
-
-        // 监听课件message
-        window.messageCallback = (data) => {
+        window.messageProxy.on(this.fnName, (data) => {
             this.isMessageAction = true;
             switch (data.type) {
                 case "CW_TABCONTENT":
@@ -41,6 +36,10 @@ cc.Class({
                     this.isMessageAction = false;
                     break;
             }
+        })
+
+        for (let n = 0; n < this.triggers.length; n++) {
+            this.triggers[n].on(cc.Node.EventType.TOUCH_START, this.triggerClicked, this);
         }
     },
 
@@ -54,6 +53,6 @@ cc.Class({
     },
 
     onDestroy() {
-        console.log('onDestroy');
+        window.messageProxy.off(this.fnName);
     },
 });

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-12 17:37:20
+ * @LastEditTime: 2019-09-26 13:33:05
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require('JA-common');
@@ -29,7 +29,10 @@ cc.Class({
     },
 
     onLoad: function () {
-        window.messageCallback = (data) => {
+        this.fnName = Date.now();
+        this.isMessageAction = false;
+        window.messageProxy.on(this.fnName, (data) => {
+            this.isMessageAction = true;
             switch (data.type) {
                 case "GAME_JUNGLE_ADVENTURE_INIT":
                     this.node.dispatchEvent(new cc.Event.EventCustom('informedInit', true));
@@ -41,7 +44,9 @@ cc.Class({
                 default:
                     break;
             }
-        }
+            this.isMessageAction = false;
+        })
+
 
         // 跳跃的状态
         this.jumping = false;
@@ -75,6 +80,10 @@ cc.Class({
     onDisable: function () {
         cc.director.getCollisionManager().enabled = false;
         // cc.director.getCollisionManager().enabledDebugDraw = false;
+    },
+    
+    onDestroy() {
+        window.messageProxy.off(this.fnName);
     },
 
     // 跳跃

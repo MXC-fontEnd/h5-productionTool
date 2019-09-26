@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-12 14:26:44
+ * @LastEditTime: 2019-09-26 13:35:14
  * @LastEditors: Please set LastEditors
  */
 cc.Class({
@@ -85,9 +85,9 @@ cc.Class({
         
         this.init();
 
+        this.fnName = Date.now();
         this.isMessageAction = false;
-        // 监听课件message
-        window.messageCallback = (data) => {
+        window.messageProxy.on(this.fnName, (data) => {
             this.isMessageAction = true;
             switch (data.type) {
                 case "GAME_SHOOTBUBBLE":
@@ -97,9 +97,14 @@ cc.Class({
                     break;
             }
             this.isMessageAction = false;
-        }
+        })
+
     },
 
+    onDestroy() {
+        window.messageProxy.off(this.fnName);
+    },
+    
     init() {
         if (!this.isMessageAction) {
             this.sentMessage('GAME_SHOOTBUBBLE',  {

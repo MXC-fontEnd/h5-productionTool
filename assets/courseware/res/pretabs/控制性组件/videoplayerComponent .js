@@ -2,21 +2,13 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-12 14:14:15
+ * @LastEditTime: 2019-09-26 12:22:57
  * @LastEditors: Please set LastEditors
  */
 cc.Class({
     extends: cc.Component,
     properties: {},
-    // LIFE-CYCLE CALLBACKS:
-    onLoad() {
-    },
-    onDestroy() {
-        console.log('onDestroy');
-    },
-
-    // update (dt) {},
-
+    onLoad() { },
     onVideoPlayerEvent(videoplayer, eventType, customEventData) {
         switch (eventType) {
             case cc.VideoPlayer.EventType.META_LOADED:
@@ -29,7 +21,7 @@ cc.Class({
                 // 加载玩，先播放，在停止，让其显示第一帧
                 videoplayer.play();
                 videoplayer.stop();
-            break;
+                break;
 
             case cc.VideoPlayer.EventType.PLAYING:
                 console.log('videoplayer正在播放');

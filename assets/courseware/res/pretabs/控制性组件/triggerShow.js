@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-05 16:46:08
+ * @LastEditTime: 2019-09-26 12:22:09
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("messageUtils");
@@ -32,9 +32,9 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
+        this.fnName = Date.now();
         this.isMessageAction = false;
-        // 监听课件message
-        window.messageCallback = (data) => {
+        window.messageProxy.on(this.fnName, (data) => {
             this.isMessageAction = true;
             switch (data.type) {
                 case "CW_TRIGGERSHOW":
@@ -44,7 +44,7 @@ cc.Class({
                     this.isMessageAction = false;
                     break;
             }
-        }
+        })
 
         for (let i = 0; i < this.triggerPoint.length; i++) {
             this.triggerPoint[i].on(cc.Node.EventType.TOUCH_START, this.triggerClicked, this);
@@ -53,11 +53,6 @@ cc.Class({
         for (let i = 0; i < this.triggerContent.length; i++) {
             this.triggerContent[i].runAction(cc.fadeOut());
         }
-
-    },
-
-    onDestroy() {
-        console.log("onDestroy");
     },
 
     // 触发点被点击
@@ -68,4 +63,7 @@ cc.Class({
         this.isMessageAction ? this.isMessageAction = false : sendMessage("CW_TRIGGERSHOW", { method: "triggerClicked", customEventData: seq });
     },
 
+    onDestroy() {
+        window.messageProxy.off(this.fnName);
+    },
 });

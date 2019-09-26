@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-26 11:56:20
+ * @LastEditTime: 2019-09-26 12:30:27
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("messageUtils");
@@ -14,10 +14,11 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
-        this.target = null;
-        // 监听webview
-        window.messageCallback = (data) => {
+        this.fnName = Date.now();
+        this.isMessageAction = false;
+        window.messageProxy.on(this.fnName, (data) => {
             if (!this.target) return;
+            this.isMessageAction = true;
             switch (data.type) {
                 case "SCRATH_BLOCK_MOVE":
                     sendMessage("SCRATH_BLOCK_MOVE_BOX", data);
@@ -31,13 +32,16 @@ cc.Class({
                     break;
 
                 default:
+                    this.isMessageAction = false;
                     break;
             }
-        }
+        })
+
+        this.target = null;
     },
 
     onDestroy() {
-        console.log('onDestroy');
+        window.messageProxy.off(this.fnName);
     },
 
     // webview 監聽事件

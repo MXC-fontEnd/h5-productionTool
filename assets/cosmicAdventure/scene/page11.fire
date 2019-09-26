@@ -1670,7 +1670,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "0"
   },
   {
@@ -2028,7 +2028,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "1"
   },
   {
@@ -2304,7 +2304,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "2"
   },
   {

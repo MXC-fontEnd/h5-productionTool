@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-26 16:46:08
+ * @LastEditTime: 2019-09-26 16:46:08
+ * @LastEditors: your name
+ */
 
 cc.Class({
     extends: cc.Component,
@@ -49,7 +56,6 @@ cc.Class({
         // videoplayer被点击
         if (eventType === cc.VideoPlayer.EventType.CLICKED) {
             console.log('videoplayer被点击');
-            videoplayer.play();
         }
 
     },

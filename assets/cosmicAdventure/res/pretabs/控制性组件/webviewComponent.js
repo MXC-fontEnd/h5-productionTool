@@ -1,44 +1,52 @@
-const postMessage = require('postMessage');
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-03-27 16:29:31
+ * @LastEditTime: 2019-09-26 17:13:17
+ * @LastEditors: Please set LastEditors
+ */
+const { sendMessage } = require("postMessage");
 
 cc.Class({
     extends: cc.Component,
 
-    properties: {
-        url: '',
-        eventName: ''
-    },
+    properties: {},
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
-        this.targetWidth = null;
+        this.fnName = Date.now();
+        this.isMessageAction = false;
+        window.messageProxy.on(this.fnName, (data) => {
+            if (!this.target) return;
+            this.isMessageAction = true;
+            switch (data.type) {
+                case "SCRATH_BLOCK_MOVE":
+                    sendMessage("SCRATH_BLOCK_MOVE_BOX", data);
+                    break;
 
-        if (this.url && this.url !== '') {
-            var webview = cc.find("webview", this.node).getComponent(cc.WebView);
-            webview.url = this.url;
-        }
-    },
+                case "SCRATH_BLOCK_MOVE_BOX":
+                    this.target._impl._iframe.contentWindow.postMessage(
+                        JSON.stringify(data.handleData),
+                        '*'
+                    )
+                    break;
 
-    onDisable() {
-        console.log('onDisable');
+                default:
+                    this.isMessageAction = false;
+                    break;
+            }
+        })
+
+        this.target = null;
     },
 
     onDestroy() {
-        console.log('onDestroy');
-        if (this.EN) {
-            window.removeEventListener('message', this.EN, false);
-        }
+        window.messageProxy.off(this.fnName);
     },
 
-    // update (dt) {},
-
     // webview 監聽事件
-    onWebFinishLoad: function (target, event, customEventData) {
-        if (!this.targetWidth && this.targetWidth !== 0) {
-            this.targetWidth = target.node.width;
-            target.node.width = 0;
-        }
-
-        switch (event) {
+    onWebFinishLoad: function (target, eventType) {
+        switch (eventType) {
             case cc.WebView.EventType.ERROR:
                 console.log('ERROR');
 
@@ -49,12 +57,7 @@ cc.Class({
                 break;
             case cc.WebView.EventType.LOADED:
                 console.log('LOADED');
-                target.node.width = this.targetWidth;
-                if (this.eventName !== '') {
-                    var EN = this.eventName;
-                    this.EN = postMessage[EN].bind({ 'target': target });
-                    window.addEventListener("message", this.EN, false);
-                }
+                this.target = target;
                 break;
             default:
                 break;

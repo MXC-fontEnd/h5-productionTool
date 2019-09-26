@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-26 16:45:43
+ * @LastEditTime: 2019-09-26 16:45:43
+ * @LastEditors: your name
+ */
 module.exports = {
 	init: function(context) {
 		if (!context) return
@@ -51,11 +58,13 @@ module.exports = {
 							//触发事件
 							triggerEle.dispatchEvent(ev)
 						}
+
 						if (res && res.isCustom) {
 							const { type, data } = res
 							console.log("接收到事件：", type, "传递参数：", data)
 							observer.emit(type, data)
 						}
+
 						break
 				}
 			}
@@ -67,6 +76,7 @@ module.exports = {
 			"*"
 		)
 	},
+	
 	customEvent(type, data) {
 		window.parent.postMessage(
 			JSON.stringify({

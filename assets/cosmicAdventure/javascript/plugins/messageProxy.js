@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-23 16:58:22
- * @LastEditTime: 2019-09-25 18:20:02
+ * @LastEditTime: 2019-09-26 17:49:23
  * @LastEditors: Please set LastEditors
  */
 
@@ -18,12 +18,12 @@ window.messageProxy = {
     // 发布
     emit() {
         Object.values(this.list).forEach(fn => {
-           if(fn) fn.apply(this, arguments);
+            if (fn) fn.apply(this, arguments);
         });
     },
 
     // 取消订阅
     off(name) {
-        if (this.list[name]) this.list[name] = null;
+        if (this.list[name]) this.list.splice(this.list.findIndex(element => element == name) + 1, 1);
     },
 };

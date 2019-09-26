@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-26 16:45:43
+ * @LastEditTime: 2019-09-26 16:45:43
+ * @LastEditors: your name
+ */
 // 派送自定义事件
 function trigger(node, name, data, bubbles = true) {
 	if (node) {
@@ -53,6 +60,7 @@ function createUUID() {
 }
 // 发送自定义事件
 function customEvent(type, data) {
+	
 	window.parent.postMessage(
 		JSON.stringify({
 			method: "onFileMessage",
@@ -64,6 +72,7 @@ function customEvent(type, data) {
 		}),
 		"*"
 	)
+	
 	// onFileMessage事件第三方不会分发到本地，所以主动做本地分发
 	observer.emit(type, data)
 }

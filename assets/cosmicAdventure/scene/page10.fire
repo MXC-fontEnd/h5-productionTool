@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.7541558583577473,
-      "y": 0.7541558583577473,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -768,8 +768,6 @@
       "__id__": 11
     },
     "_enabled": true,
-    "url": "https://res.miaocode.com/scrathBlock/cosmicAdventure/low/01/index.html",
-    "eventName": "onBlockEvent",
     "_id": "7f/K+dnO1L14BcapZZc2ST"
   },
   {
@@ -1864,7 +1862,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 6.67,
+      "width": 7,
       "height": 40
     },
     "_anchorPoint": {

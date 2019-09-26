@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.9907407407407407,
+      "y": 0.9907407407407407,
       "z": 1
     },
     "_quat": {
@@ -986,7 +986,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "2"
   },
   {
@@ -1332,7 +1332,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "0"
   },
   {
@@ -1540,7 +1540,7 @@
     "_resourceType": 1,
     "_remoteURL": "",
     "_clip": {
-      "__uuid__": "511efd3a-e3a7-4769-ba8f-895bfc87f065"
+      "__uuid__": "c8a6d241-78ef-442b-a1a8-5799af39d2e7"
     },
     "_volume": 1,
     "_mute": false,
@@ -1868,7 +1868,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "0"
   },
   {
@@ -2283,7 +2283,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "2"
   },
   {
@@ -2629,7 +2629,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "0"
   },
   {
@@ -3147,7 +3147,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "0"
   },
   {
@@ -3474,7 +3474,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "2"
   },
   {
@@ -3820,7 +3820,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "0"
   },
   {
@@ -4028,7 +4028,7 @@
     "_resourceType": 1,
     "_remoteURL": "",
     "_clip": {
-      "__uuid__": "67b9bdfc-06e8-491b-889f-ab746bbc0421"
+      "__uuid__": "90127d00-0dab-4183-ab9a-b9dcb02bb634"
     },
     "_volume": 1,
     "_mute": false,
@@ -4356,7 +4356,7 @@
     },
     "component": "",
     "_componentId": "57b63a570RKg526Tu3BWkmX",
-    "handler": "trigger",
+    "handler": "actived",
     "customEventData": "0"
   },
   {

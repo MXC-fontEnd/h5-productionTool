@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-26 11:32:20
+ * @LastEditTime: 2019-09-26 11:56:20
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("messageUtils");
@@ -18,7 +18,6 @@ cc.Class({
         // 监听webview
         window.messageCallback = (data) => {
             if (!this.target) return;
-
             switch (data.type) {
                 case "SCRATH_BLOCK_MOVE":
                     sendMessage("SCRATH_BLOCK_MOVE_BOX", data);

@@ -2,8 +2,8 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-26 16:45:43
- * @LastEditTime: 2019-09-26 16:45:43
- * @LastEditors: your name
+ * @LastEditTime: 2019-09-27 20:17:38
+ * @LastEditors: Please set LastEditors
  */
 // 派送自定义事件
 function trigger(node, name, data, bubbles = true) {
@@ -14,7 +14,7 @@ function trigger(node, name, data, bubbles = true) {
 	}
 }
 // 添加观察者
-function createObserver() {
+function createObserver(gameTag) {
 	if (window && !window.observer) {
 		window.observer = {
 			on(type, cb, self) {
@@ -60,10 +60,9 @@ function createUUID() {
 }
 // 发送自定义事件
 function customEvent(type, data) {
-	
 	window.parent.postMessage(
 		JSON.stringify({
-			method: "onFileMessage",
+			type: "GAME_COSMIC_ADVENTURE",
 			handleData: {
 				isCustom: true,
 				type,

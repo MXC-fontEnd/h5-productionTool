@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.9907407407407407,
-      "y": 0.9907407407407407,
+      "x": 0.8604166666666667,
+      "y": 0.8604166666666667,
       "z": 1
     },
     "_quat": {
@@ -2751,6 +2751,7 @@
     "_enabled": true,
     "complete": false,
     "_zindex": 0,
+    "eventTag": "game-04-01",
     "_id": "7dIHBqD6VMAYwBTwe7/kGN"
   },
   {
@@ -5159,6 +5160,7 @@
     "_enabled": true,
     "complete": true,
     "_zindex": 0,
+    "eventTag": "game-04-02",
     "_id": "0aP8EnazNHNbkF9g1cRlBb"
   },
   {

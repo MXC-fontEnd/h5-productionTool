@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-03-27 16:29:31
- * @LastEditTime: 2019-09-26 17:13:17
+ * @LastEditTime: 2019-09-27 20:13:20
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("postMessage");
@@ -10,14 +10,14 @@ const { sendMessage } = require("postMessage");
 cc.Class({
     extends: cc.Component,
 
-    properties: {},
+    properties: {
+        eventTag:""
+    },
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
-        this.fnName = Date.now();
         this.isMessageAction = false;
-        window.messageProxy.on(this.fnName, (data) => {
-            if (!this.target) return;
+        window.messageProxy.on(this.eventTag, (data) => {
             this.isMessageAction = true;
             switch (data.type) {
                 case "SCRATH_BLOCK_MOVE":
@@ -25,6 +25,10 @@ cc.Class({
                     break;
 
                 case "SCRATH_BLOCK_MOVE_BOX":
+                    if (!this.target){
+                        this.isMessageAction = false;
+                        return;
+                    } 
                     this.target._impl._iframe.contentWindow.postMessage(
                         JSON.stringify(data.handleData),
                         '*'
@@ -41,7 +45,7 @@ cc.Class({
     },
 
     onDestroy() {
-        window.messageProxy.off(this.fnName);
+        window.messageProxy.off(this.eventTag);
     },
 
     // webview 監聽事件

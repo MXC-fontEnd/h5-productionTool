@@ -12,7 +12,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "积木webview",
+    "_name": "webview",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -24,7 +24,7 @@
       }
     ],
     "_active": true,
-    "_level": 2,
+    "_level": 1,
     "_components": [
       {
         "__id__": 9
@@ -74,7 +74,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -137,7 +136,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -208,7 +206,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 562,
+      "width": 520,
       "height": 412
     },
     "_anchorPoint": {
@@ -218,14 +216,14 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
+      "x": -22,
+      "y": -3,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 1.18,
+      "y": 1.1,
       "z": 1
     },
     "_rotationX": 0,
@@ -239,7 +237,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -252,7 +249,7 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_url": "",
+    "_url": "http://res.miaocode.com/livePlatform/courseware/cosmicAdenture/high1.0/index.html",
     "webviewEvents": [
       {
         "__id__": 7
@@ -289,8 +286,6 @@
       "__id__": 1
     },
     "_enabled": true,
-    "url": "https://res.miaocode.com/scrathBlock/oceanDdventure/low01/index02.html",
-    "eventName": "onBlockEvent",
     "_id": ""
   },
   {

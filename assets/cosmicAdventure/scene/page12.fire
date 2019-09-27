@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.9907407407407407,
-      "y": 0.9907407407407407,
+      "x": 0.8604166666666667,
+      "y": 0.8604166666666667,
       "z": 1
     },
     "_quat": {
@@ -1057,8 +1057,9 @@
       "__id__": 21
     },
     "_enabled": true,
+    "eventTag": "tabContent-12-01",
     "seq": 1,
-    "contents": [
+    "contentNodes": [
       {
         "__id__": 15
       },
@@ -2354,8 +2355,9 @@
       "__id__": 52
     },
     "_enabled": true,
+    "eventTag": "tabContent-12-02",
     "seq": 2,
-    "contents": [
+    "contentNodes": [
       {
         "__id__": 46
       },
@@ -3545,8 +3547,9 @@
       "__id__": 78
     },
     "_enabled": true,
+    "eventTag": "tabContent-12-03",
     "seq": 3,
-    "contents": [
+    "contentNodes": [
       {
         "__id__": 72
       },

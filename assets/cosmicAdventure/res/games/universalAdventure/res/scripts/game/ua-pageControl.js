@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-26 16:45:43
+ * @LastEditTime: 2019-09-27 20:17:06
+ * @LastEditors: Please set LastEditors
+ */
 const { createObserver } = require("ua-utils")
 
 cc.Class({
@@ -5,16 +12,37 @@ cc.Class({
 
 	properties: {
 		complete: false,
-		_zindex: 0
+		_zindex: 0,
+		eventTag:""
 	},
 
 	onLoad() {
+		if(window.messageProxy){
+			window.messageProxy.on( this.eventTag, (data) => {
+				switch (data.type) {
+					case "GAME_COSMIC_ADVENTURE":
+						const res = data.handleData
+						if (res && res.isCustom) {
+							const { type, data } = res
+							observer.emit(type, data)
+						}
+						break;
+					default:
+						break;
+				}
+			})
+		}
+
 		createObserver()
 		this.initialData()
 		this.initialEvent()
 		this.initialFrame()
 	},
-
+	
+    onDestroy() {
+        window.messageProxy.off(this.eventTag);
+	},
+	
 	start() {},
 	// 数据初始化
 	initialData() {

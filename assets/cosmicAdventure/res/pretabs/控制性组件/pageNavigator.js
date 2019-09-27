@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-25 14:17:01
- * @LastEditTime: 2019-09-25 18:08:39
+ * @LastEditTime: 2019-09-27 20:12:10
  * @LastEditors: Please set LastEditors
  */
 
@@ -96,17 +96,7 @@ cc.Class({
     },
 
     start() {
-        let initPage = 1;
-        if (this.initPage < 10) initPage = "0" + this.initPage;
-        cc.director.preloadScene("page" + initPage, () => {
-            console.log(`${"page" + initPage}预加载完!`);
-            this.loadscene(this.initPage);
-            // 页面数
-            window.parent.postMessage(
-                JSON.stringify({ type: 'COURSEWARE_ONLOAD' }),
-                '*'
-            );
-        });
+        this.loadscene(1);
     },
 
     prev() {
@@ -134,11 +124,13 @@ cc.Class({
         if (curPageNum < 10) curPageNum = "0" + curPageNum;
         if (nextPageNum < 10) nextPageNum = "0" + nextPageNum;
         cc.director.loadScene('page' + curPageNum, () => {
-            // if (nextPageNum) {
-            //     cc.director.preloadScene("page" + nextPageNum, () => {
-            //         console.log(`page${this.courseware[page]}预加载完!`);
-            //     });
-            // }
+            if (curPageNum == 1) {
+                // 页面数
+                window.parent.postMessage(
+                    JSON.stringify({ type: 'COURSEWARE_ONLOAD' }),
+                    '*'
+                );
+            }
         });
     },
 });

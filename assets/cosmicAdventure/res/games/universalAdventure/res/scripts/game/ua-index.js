@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-26 16:45:43
+ * @LastEditTime: 2019-09-27 15:47:58
+ * @LastEditors: Please set LastEditors
+ */
 // 派送自定义事件
 function trigger(node, name, data, bubbles = true) {
 	if (node) {
@@ -55,7 +62,7 @@ function createUUID() {
 function customEvent(type, data) {
 	window.parent.postMessage(
 		JSON.stringify({
-			method: "onFileMessage",
+			type: "GAME_COSMIC_ADVENTURE",
 			handleData: {
 				isCustom: true,
 				type,

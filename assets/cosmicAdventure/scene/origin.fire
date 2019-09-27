@@ -20,7 +20,7 @@
         "__id__": 23
       }
     ],
-    "_active": true,
+    "_active": false,
     "_level": 0,
     "_components": [],
     "_prefab": null,
@@ -44,8 +44,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.8604166666666667,
+      "y": 0.8604166666666667,
       "z": 1
     },
     "_quat": {
@@ -101,8 +101,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 479,
-      "y": 205,
+      "x": 480,
+      "y": 270,
       "z": 0
     },
     "_scale": {
@@ -809,13 +809,25 @@
       "__id__": 2
     },
     "_enabled": true,
-    "pageCount": 2,
+    "pageCount": 14,
     "initPage": 1,
     "localDebugging": false,
     "juniorCoursewareState": true,
     "juniorCoursewarePage": [
       1,
-      2
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
     ],
     "seniorCoursewareState": false,
     "seniorCoursewarePage": [

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-13 14:33:27
- * @LastEditTime: 2019-09-25 18:20:12
+ * @LastEditTime: 2019-09-27 20:14:21
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("postMessage");
@@ -11,21 +11,23 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        eventTag:"",
         seq: 1,
-        contents: {
+        contentNodes: {
             default: [],
             type: [cc.Node]
         },
     },
 
     onLoad() {
-        this.fnName = Date.now();
         this.isMessageAction = false;
-        window.messageProxy.on(this.fnName, (data) => {
+        window.messageProxy.on(this.eventTag, (data) => {
             this.isMessageAction = true;
             switch (data.type) {
                 case "CW_TABCONTENT_ACTIVED":
-                    this[data.handleData.method](null, data.handleData.customEventData);
+                    if(this.seq == data.handleData.seq){
+                        this[data.handleData.method](null, data.handleData.customEventData);
+                    }
                     break;
                 default:
                     this.isMessageAction = false;
@@ -35,15 +37,16 @@ cc.Class({
     },
 
     actived(e, customEventData) {
-        for (let i = 0; i < this.contents.length; i++) {
-            this.contents[i].active = customEventData == i ? true : false;
+        if(!this.contentNodes) return;
+        for (let i = 0; i < this.contentNodes.length; i++) {
+            this.contentNodes[i].active = customEventData == i ? true : false;
         }
 
-        this.isMessageAction ? this.isMessageAction = false : sendMessage("CW_TABCONTENT_ACTIVED", { method: "actived", customEventData });
+        this.isMessageAction ? this.isMessageAction = false : sendMessage("CW_TABCONTENT_ACTIVED", { method: "actived", customEventData,seq:this.seq });
     },
 
     onDestroy() {
-        window.messageProxy.off(this.fnName);
+        window.messageProxy.off(this.eventTag);
     },
 });
 

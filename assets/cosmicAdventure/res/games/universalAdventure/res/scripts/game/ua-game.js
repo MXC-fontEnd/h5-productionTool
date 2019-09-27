@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-26 16:45:43
+ * @LastEditTime: 2019-09-27 20:22:43
+ * @LastEditors: Please set LastEditors
+ */
 const { trigger, createUUID, customEvent } = require("ua-utils")
 
 cc.Class({
@@ -49,15 +56,15 @@ cc.Class({
 		this.node.on("gameover", this.gameover, this)
 		this._root.on("restart", this.restart, this)
 
-		observer.on(
+		window.observer.on(
 			"calibration-host-" + this.node._seq,
 			this.calibrationHost,
 			this
 		)
-		observer.on("hero-move-" + this.node._seq, this.heroMove, this)
-		observer.on("hero-attack-" + this.node._seq, this.heroAttack, this)
-		observer.on("create-monster-" + this.node._seq, this.monsterInvade, this)
-		observer.on("create-items-" + this.node._seq, this.createItems, this)
+		window.observer.on("hero-move-" + this.node._seq, this.heroMove, this)
+		window.observer.on("hero-attack-" + this.node._seq, this.heroAttack, this)
+		window.observer.on("create-monster-" + this.node._seq, this.monsterInvade, this)
+		window.observer.on("create-items-" + this.node._seq, this.createItems, this)
 	},
 	// 数据初始化
 	initialData() {
@@ -83,9 +90,9 @@ cc.Class({
 		if (!this.node._complete) return
 		switch (e.type) {
 			case "mousemove":
-				customEvent("hero-move-" + this.node._seq, {
-					pos: this.node.convertToNodeSpace(e.getLocation())
-				})
+				// customEvent("hero-move-" + this.node._seq, {
+				// 	pos: this.node.convertToNodeSpace(e.getLocation())
+				// })
 				break
 			case "touchstart":
 				customEvent("hero-attack-" + this.node._seq, {

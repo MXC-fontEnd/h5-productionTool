@@ -44,8 +44,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.8604166666666667,
-      "y": 0.8604166666666667,
+      "x": 0.9907407407407407,
+      "y": 0.9907407407407407,
       "z": 1
     },
     "_quat": {
@@ -812,7 +812,7 @@
     "pageCount": 14,
     "initPage": 1,
     "localDebugging": false,
-    "juniorCoursewareState": true,
+    "juniorCoursewareState": false,
     "juniorCoursewarePage": [
       1,
       2,
@@ -823,13 +823,13 @@
       7,
       8,
       9,
-      10,
       11,
+      10,
       12,
       13,
       14
     ],
-    "seniorCoursewareState": false,
+    "seniorCoursewareState": true,
     "seniorCoursewarePage": [
       1,
       2,

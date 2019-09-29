@@ -1,0 +1,134 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-25 14:17:01
+ * @LastEditTime: 2019-09-29 17:19:44
+ * @LastEditors: Please set LastEditors
+ */
+
+// 接入fundebug
+// var fundebug = require("fundebug-javascript");
+// fundebug.apikey = "04722b46808513df1807dc6f87450c69fbbe07be6a8f78eebce59d09aa26384c";
+
+const { monitorMessage, sendMessage } = require("postMessage");
+
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        pageCount: {
+            default: 1,
+            tooltip: "总页数"
+        },
+
+        initPage: {
+            default: 1,
+            tooltip: "初始页"
+        },
+
+        localDebugging: {
+            default: false,
+            displayName: '本地课件预览',
+            tooltip: "本地课件预览"
+        },
+
+        // 低龄课件选中状态
+        juniorCoursewareState: {
+            default: true,
+            displayName: '低龄课件'
+        },
+
+        // 低龄课件页面配置
+        juniorCoursewarePage: {
+            default: [],
+            type: [cc.Integer],
+            displayName: '低龄课件页面'
+        },
+
+        // 高龄课件选中状态
+        seniorCoursewareState: {
+            default: false,
+            displayName: '高龄课件'
+        },
+
+        // 高龄课件页面配置
+        seniorCoursewarePage: {
+            default: [],
+            type: [cc.Integer],
+            displayName: '高龄课件页面'
+        },
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+    onLoad() {
+        this.sceneName = "origin";
+
+        // 端对端通信 监听
+        monitorMessage((data) => {
+            switch (data.type) {
+                case "SWITCHBOX_GO_PREVPAGE":
+                case "SWITCHBOX_GO_NEXTPAGE":
+                case "SWITCHBOX_GO_HANDLE_KEYDOWN":
+                    cc.director.loadScene(this.getSceneName(data.handleData.page));
+                    break;
+                default:
+                    window.messageProxy.emit(data);
+                    break;
+            }
+        })
+
+        // 课件总页数
+        window.parent.postMessage(
+            JSON.stringify({ type: 'SWITCHBOX_SET_TOTAL_PAGE', totalPage: this.pageCount }),
+            '*'
+        );
+
+        // 课件已加载
+        sendMessage('COURSEWARE_ONLOAD');
+
+        // 1.是否为常驻节点，2.不是则设置节点常驻
+        cc.game.isPersistRootNode(this.node) ? console.log("我是常驻节点") : cc.game.addPersistRootNode(this.node);
+
+        switch (true) {
+            case this.juniorCoursewareState == true:
+                this.courseware = this.juniorCoursewarePage;
+                break;
+            case this.seniorCoursewareState == true:
+                this.courseware = this.seniorCoursewarePage;
+                break;
+        }
+
+        cc.director.on(cc.Director.EVENT_BEFORE_SCENE_LOADING, () => {
+            console.log("加载新场景之前所触发的事件");
+        });
+
+        cc.director.on(cc.Director.EVENT_BEFORE_SCENE_LAUNCH, () => {
+            console.log("运行新场景之前所触发的事件");
+        });
+
+        cc.director.on(cc.Director.EVENT_AFTER_SCENE_LAUNCH, () => {
+            console.log("运行新场景之后所触发的事件")
+            sendMessage("CW_SCENE_LOADED", {
+                name: this.sceneName
+            });
+        });
+    },
+
+    start() {
+        cc.director.loadScene(1);
+    },
+
+    // 
+    // 根据传参加载对应的场景
+    //
+    getSceneName(page) {
+        let curPageNum = this.courseware[page - 1];
+        if (!curPageNum) {
+            return console.log("请先配置课件");
+        }
+        // 为了打包时的页码排序
+        this.sceneName = curPageNum < 10 ? "page0" + curPageNum : "page" + curPageNum;
+        return this.sceneName;
+    },
+
+});

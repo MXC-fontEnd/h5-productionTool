@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-13 14:33:27
- * @LastEditTime: 2019-09-29 18:54:57
+ * @LastEditTime: 2019-09-30 10:35:15
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("postMessage");
@@ -42,7 +42,7 @@ cc.Class({
     },
 
     onDestroy() {
-        window.messageProxy.off(this.eventTag);
+        window.messageProxy.off(this.curUuid);
     },
 });
 

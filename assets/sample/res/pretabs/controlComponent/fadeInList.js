@@ -10,6 +10,10 @@ const { sendMessage } = require("postMessage");
 cc.Class({
     extends: cc.Component,
     properties: {
+        fadeoutTime: {
+            default: 1,
+            displayName: "渐显时间"
+        },
         contentNodes: {
             default: [],
             type: [cc.Node],
@@ -21,23 +25,29 @@ cc.Class({
         this.curUuid = this.node.uuid;
 
         window.messageProxy.on(this.curUuid, (data) => {
+            if (data.method && data.method == "onFileMessage") {
+                data = data.handleData;
+            }
             switch (data.type) {
-                case "CW_RADIOSWITCH_ACTIVED":
-                    this[data.handleData.method](null, data.handleData.CustomEventData);
+                case "CW_FADEINLIST_FADEIN":
+                    this[data.handleData.method](null, data.handleData.customEventData);
                     break;
                 default:
                     break;
             }
-        })
+        });
+
+        for (let i = 0; i < this.contentNodes.length; i++) {
+            console.log(this.contentNodes);
+            this.contentNodes[i].opacity = 0;
+        }
     },
 
-    actived(e, CustomEventData) {
-        for (let i = 0; i < this.contentNodes.length; i++) {
-            this.contentNodes[i].active = i == CustomEventData ? true : false;
-        }
+    fadeIn(e, customEventData) {
+        this.contentNodes[customEventData].runAction(cc.fadeIn(this.fadeoutTime));
 
         if (e) {
-            sendMessage("CW_RADIOSWITCH_ACTIVED", { method: "actived", CustomEventData });
+            sendMessage("CW_FADEINLIST_FADEIN", { method: "fadeIn", customEventData });
         }
     },
 

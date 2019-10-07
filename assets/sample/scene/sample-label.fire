@@ -47,8 +47,8 @@
     },
     "_is3DNode": true,
     "groupIndex": 0,
-    "autoReleaseAssets": true,
-    "_id": "a3747ee2-8981-40e8-9f31-f395d7fa3f88"
+    "autoReleaseAssets": false,
+    "_id": "f362c91e-9907-4e32-91df-f0183cc45431"
   },
   {
     "__type__": "cc.Node",
@@ -69,13 +69,16 @@
       },
       {
         "__id__": 9
+      },
+      {
+        "__id__": 12
       }
     ],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 14
+        "__id__": 15
       }
     ],
     "_prefab": null,
@@ -330,8 +333,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 272.07,
-      "height": 67.8
+      "width": 238.11,
+      "height": 97.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -341,7 +344,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 220,
+      "y": 202,
       "z": 0
     },
     "_scale": {
@@ -376,8 +379,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "积木webview组件：webviewBlock\n                             1.积木拖拽",
-    "_N$string": "积木webview组件：webviewBlock\n                             1.积木拖拽",
+    "_string": "label渲染：\n                        1.labelOutline\n                        2.labelShadow",
+    "_N$string": "label渲染：\n                        1.labelOutline\n                        2.labelShadow",
     "_fontSize": 18,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -394,7 +397,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "webviewBlock",
+    "_name": "labelOutline",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -410,9 +413,7 @@
         "__id__": 11
       }
     ],
-    "_prefab": {
-      "__id__": 13
-    },
+    "_prefab": null,
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
@@ -423,8 +424,117 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 640,
-      "height": 360
+      "width": 282,
+      "height": 52.4
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_position": {
+      "__type__": "cc.Vec3",
+      "x": -2.026,
+      "y": 88.143,
+      "z": 0
+    },
+    "_scale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "groupIndex": 0,
+    "_id": "8f9x/SCs5ChKykmDuZNFhi"
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 9
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "月明云淡露华浓",
+    "_N$string": "月明云淡露华浓",
+    "_fontSize": 40,
+    "_lineHeight": 40,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 0,
+    "_N$cacheMode": 0,
+    "_id": "02cLlBIi1K1rBDrchrE6em"
+  },
+  {
+    "__type__": "cc.LabelOutline",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 9
+    },
+    "_enabled": true,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 148,
+      "g": 132,
+      "b": 14,
+      "a": 255
+    },
+    "_width": 1,
+    "_id": "79xtUuqZtFYqyo6Pf16S8E"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "labelShadoww",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_level": 1,
+    "_components": [
+      {
+        "__id__": 13
+      },
+      {
+        "__id__": 14
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 280,
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -453,55 +563,60 @@
     "_skewY": 0,
     "_is3DNode": false,
     "groupIndex": 0,
-    "_id": "6cdLoo3p5H/7kqHL7O19Zu"
+    "_id": "1cW8D/bmxAVLilX+YRmNbH"
   },
   {
-    "__type__": "0a861sc3fhKApG5oCXn4OBL",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 9
+      "__id__": 12
     },
     "_enabled": true,
-    "_id": "c8kRsbYipJR7P0EkyGuLkl"
-  },
-  {
-    "__type__": "cc.WebView",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 9
-    },
-    "_enabled": true,
-    "_useOriginalSize": false,
-    "_url": "https://www.kunqu.tech/sp/index.html",
-    "webviewEvents": [
+    "_materials": [
       {
-        "__id__": 12
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_id": "92GQ2dgodOwpVpJCP5Sr3A"
+    "_useOriginalSize": false,
+    "_string": "粉墙花影自重重",
+    "_N$string": "粉墙花影自重重",
+    "_fontSize": 40,
+    "_lineHeight": 40,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 0,
+    "_N$cacheMode": 0,
+    "_id": "23eb/7zsxMmI2abLOli1OA"
   },
   {
-    "__type__": "cc.ClickEvent",
-    "target": {
-      "__id__": 9
+    "__type__": "cc.LabelShadow",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 12
     },
-    "component": "",
-    "_componentId": "0a861sc3fhKApG5oCXn4OBL",
-    "handler": "onWebFinishLoad",
-    "customEventData": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 9
+    "_enabled": true,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 134,
+      "g": 0,
+      "b": 197,
+      "a": 255
     },
-    "asset": {
-      "__uuid__": "791fbad7-ee5e-46b6-96fb-becab6ede08c"
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 4,
+      "y": 4
     },
-    "fileId": "faTa8v+GlMaJvSmH44Vn44",
-    "sync": false
+    "_blur": 10,
+    "_id": "3c5JUeJm5LloTneNyoMSI5"
   },
   {
     "__type__": "cc.Canvas",

@@ -21,10 +21,20 @@ module.exports = {
 
     sendMessage: (type, handleData) => {
         if (window !== window.parent) {
-            window.parent.postMessage(JSON.stringify({
-                type,
-                handleData,
-            }), '*');
+            if (window.MXC_TKY) {
+                window.parent.postMessage(JSON.stringify({
+                    method:"onFileMessage",
+                    handleData:{
+                        type,
+                        handleData,
+                    }
+                }), '*'); 
+            } else if (window.MXC_AGORA) {
+                window.parent.postMessage(JSON.stringify({
+                    type,
+                    handleData,
+                }), '*');
+            }
         }
     },
 };

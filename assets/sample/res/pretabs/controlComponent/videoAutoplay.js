@@ -5,19 +5,10 @@
  * @LastEditTime: 2019-09-30 17:43:58
  * @LastEditors: Please set LastEditors
  */
-const { sendMessage } = require("postMessage");
-
 cc.Class({
     extends: cc.Component,
     properties: {},
-    onLoad() {
-
-    },
-
-    onDestroy() {
-
-    },
-
+    onLoad() {},
     onVideoPlayerEvent: function (videoplayer, eventType, customEventData) {
         switch (eventType) {
             case cc.VideoPlayer.EventType.META_LOADED:

@@ -13,6 +13,9 @@ cc.Class({
     onLoad() {
         this.curUuid = this.node.uuid;
         window.messageProxy.on(this.curUuid, (data) => {
+            if(data.method && data.method == "onFileMessage"){
+                data = data.handleData;
+            }
             switch (data.type) {
                 case "SCRATH_BLOCK_MOVE":
                     sendMessage("SCRATH_BLOCK_MOVE_BOX", data);

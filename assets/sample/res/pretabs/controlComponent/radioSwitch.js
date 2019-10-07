@@ -21,6 +21,9 @@ cc.Class({
         this.curUuid = this.node.uuid;
 
         window.messageProxy.on(this.curUuid, (data) => {
+            if (data.method && data.method == "onFileMessage") {
+                data = data.handleData;
+            }
             switch (data.type) {
                 case "CW_RADIOSWITCH_ACTIVED":
                     this[data.handleData.method](null, data.handleData.CustomEventData);

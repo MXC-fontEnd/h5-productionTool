@@ -159,16 +159,13 @@
       },
       {
         "__id__": 8
-      },
-      {
-        "__id__": 10
       }
     ],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 12
+        "__id__": 10
       }
     ],
     "_prefab": null,
@@ -252,7 +249,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 524.8304059253066
+      "z": 593.8331689299175
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -326,9 +323,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 61,
-      "g": 145,
-      "b": 98,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -396,94 +393,6 @@
     "_isTrimmedMode": true,
     "_atlas": null,
     "_id": "daLBzFqDRA7YvCJtiskLHx"
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "explain",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 5
-    },
-    "_children": [],
-    "_active": true,
-    "_level": 1,
-    "_components": [
-      {
-        "__id__": 11
-      }
-    ],
-    "_prefab": null,
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 244.03,
-      "height": 97.8
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "groupIndex": 0,
-    "_id": "171TGa7hBHxK2RytCOOAYK"
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 10
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_useOriginalSize": false,
-    "_string": "导航组件：pageNavigator\n                 1.页面打包配置\n                 2.全局页面导航函数",
-    "_N$string": "导航组件：pageNavigator\n                 1.页面打包配置\n                 2.全局页面导航函数",
-    "_fontSize": 18,
-    "_lineHeight": 30,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_N$horizontalAlign": 0,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
-    "_N$overflow": 0,
-    "_N$cacheMode": 0,
-    "_id": "47SIDWE2RIE4ZKr8KKL87c"
   },
   {
     "__type__": "cc.Canvas",

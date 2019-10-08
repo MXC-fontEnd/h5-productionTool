@@ -50,8 +50,8 @@
     },
     "_is3DNode": true,
     "groupIndex": 0,
-    "autoReleaseAssets": true,
-    "_id": "a9b23e38-6387-46dd-ac55-eed44a56ac4e"
+    "autoReleaseAssets": false,
+    "_id": "989c1005-1e50-45de-a818-fee71255da28"
   },
   {
     "__type__": "cc.Node",
@@ -121,12 +121,16 @@
       "__id__": 2
     },
     "_enabled": true,
-    "tky": false,
+    "tky": true,
     "agora": false,
-    "pageCount": 1,
+    "pageCount": 3,
     "initPage": 1,
     "juniorCoursewareState": true,
-    "juniorCoursewarePage": [],
+    "juniorCoursewarePage": [
+      1,
+      2,
+      3
+    ],
     "seniorCoursewareState": false,
     "seniorCoursewarePage": [],
     "_id": "10Q4sQ5o5K7Y5wj6pHkvpm"
@@ -248,7 +252,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 524.7155982209156
+      "z": 535.2036995387831
     },
     "_scale": {
       "__type__": "cc.Vec3",

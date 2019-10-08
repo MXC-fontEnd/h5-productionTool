@@ -15,7 +15,16 @@
     "subContext": ""
   },
   "encryptJs": true,
-  "excludeScenes": [],
+  "excludeScenes": [
+    "1b704ce4-0d2f-44dd-a1b1-b414748deca1",
+    "13880af6-9449-4a59-9877-f11f4db69038",
+    "f362c91e-9907-4e32-91df-f0183cc45431",
+    "a9b23e38-6387-46dd-ac55-eed44a56ac4e",
+    "83202024-761a-4a7f-bf3a-bdfda21c8128",
+    "4ab4ae45-74fe-44c2-b513-a188821b7709",
+    "8844b44e-5f65-4114-9039-294844d4beba",
+    "a3747ee2-8981-40e8-9f31-f395d7fa3f88"
+  ],
   "fb-instant-games": {},
   "includeSDKBox": false,
   "inlineSpriteFrames": true,

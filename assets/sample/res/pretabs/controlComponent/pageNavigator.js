@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-25 14:17:01
- * @LastEditTime: 2019-09-29 17:19:44
+ * @LastEditTime: 2019-10-08 10:11:52
  * @LastEditors: Please set LastEditors
  */
 
@@ -104,6 +104,11 @@ cc.Class({
         window.MXC_TKY = true;
         // 端对端通信 监听
         monitorMessage((data) => {
+            // 积木通信
+            if (data.type) {
+                window.messageProxy.emit(data);
+            };
+
             switch (data.method) {
                 case "onJumpPage":
                     cc.director.loadScene(this.getSceneName(parseInt(data.toPage)));

@@ -121,9 +121,10 @@
       "__id__": 2
     },
     "_enabled": true,
+    "tky": false,
+    "agora": false,
     "pageCount": 1,
     "initPage": 1,
-    "localDebugging": false,
     "juniorCoursewareState": true,
     "juniorCoursewarePage": [],
     "seniorCoursewareState": false,
@@ -247,7 +248,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 525.6774200971543
+      "z": 535.2036995387831
     },
     "_scale": {
       "__type__": "cc.Vec3",

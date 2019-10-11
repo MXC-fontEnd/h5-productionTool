@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "44089537-8b7b-43fa-9776-3d2557a40662",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "彩色冰块正常版0006": {
+      "ver": "1.0.4",
+      "uuid": "127f708d-0772-4138-99d2-9f171aa0ad8a",
+      "rawTextureUuid": "44089537-8b7b-43fa-9776-3d2557a40662",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0.5,
+      "trimX": 3,
+      "trimY": 2,
+      "width": 173,
+      "height": 85,
+      "rawWidth": 180,
+      "rawHeight": 90,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

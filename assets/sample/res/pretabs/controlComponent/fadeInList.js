@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-13 14:33:27
- * @LastEditTime: 2019-09-30 10:35:15
+ * @LastEditTime: 2019-10-11 12:04:28
  * @LastEditors: Please set LastEditors
  */
 const { sendMessage } = require("postMessage");
@@ -38,7 +38,6 @@ cc.Class({
         });
 
         for (let i = 0; i < this.contentNodes.length; i++) {
-            console.log(this.contentNodes);
             this.contentNodes[i].opacity = 0;
         }
     },

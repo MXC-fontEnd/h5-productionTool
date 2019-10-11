@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "9bb6b394-5ae7-424e-93b5-a77ec0377f50",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "彩色冰块发光0006": {
+      "ver": "1.0.4",
+      "uuid": "82d828a5-6c50-4822-9934-ff13108340b3",
+      "rawTextureUuid": "9bb6b394-5ae7-424e-93b5-a77ec0377f50",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 2.5,
+      "trimX": 1,
+      "trimY": 6,
+      "width": 208,
+      "height": 123,
+      "rawWidth": 210,
+      "rawHeight": 140,
+      "borderTop": 16,
+      "borderBottom": 16,
+      "borderLeft": 16,
+      "borderRight": 16,
+      "subMetas": {}
+    }
+  }
+}

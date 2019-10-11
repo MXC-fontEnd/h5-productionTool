@@ -16,6 +16,17 @@
   },
   "encryptJs": true,
   "excludeScenes": [
+    "478669c7-dbe0-4acb-b901-745118ffb470",
+    "33e2ec05-b915-4da7-94b1-f4e4749c7591",
+    "ebd98d79-7f9f-4c20-bd39-e457deca94d6",
+    "0ce22c9a-3ec2-4d9f-aded-12199d59c09f",
+    "a3eca506-415e-4230-bce3-7686bfa6d696",
+    "6fda69f4-833d-4f7c-8e4c-9835727c5ee6",
+    "05a2cbde-bbd2-401f-b3ce-3685de9a84bc",
+    "5af55205-b88e-416a-b2f6-9a891e0926f8",
+    "ef0e018b-0540-4c4f-9e6c-d9e1632f7f44",
+    "111d113d-f317-4b5f-8bbd-37f35e15b281",
+    "9742dc28-5d5c-4ae4-a3ed-2632d9aa493c",
     "1b704ce4-0d2f-44dd-a1b1-b414748deca1",
     "13880af6-9449-4a59-9877-f11f4db69038",
     "f362c91e-9907-4e32-91df-f0183cc45431",
@@ -44,7 +55,7 @@
     "orientation": "portrait",
     "zip": false
   },
-  "startScene": "05eda11f-937b-4f76-8826-42a43d407910",
+  "startScene": "989c1005-1e50-45de-a818-fee71255da28",
   "title": "h5-productionTool",
   "webOrientation": "auto",
   "wechatgame": {

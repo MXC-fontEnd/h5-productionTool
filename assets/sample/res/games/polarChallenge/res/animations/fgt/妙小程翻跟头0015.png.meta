@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "06bfae23-8f18-44e5-9cf5-1d12bef8d2ff",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "妙小程翻跟头0015": {
+      "ver": "1.0.4",
+      "uuid": "90037e86-0da2-4f4a-bbae-537ccdc91fc6",
+      "rawTextureUuid": "06bfae23-8f18-44e5-9cf5-1d12bef8d2ff",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": 2.5,
+      "trimX": 50,
+      "trimY": 38,
+      "width": 98,
+      "height": 119,
+      "rawWidth": 200,
+      "rawHeight": 200,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -47,7 +47,7 @@
     },
     "_is3DNode": true,
     "groupIndex": 0,
-    "autoReleaseAssets": false,
+    "autoReleaseAssets": true,
     "_id": "a2f462f6-2422-4e1d-8e53-2a077d00ce11"
   },
   {
@@ -159,7 +159,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 575.5259128248056
+      "z": 448.0238441298135
     },
     "_scale": {
       "__type__": "cc.Vec3",

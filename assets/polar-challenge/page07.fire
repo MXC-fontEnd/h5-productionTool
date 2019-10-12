@@ -47,7 +47,7 @@
     },
     "_is3DNode": true,
     "groupIndex": 0,
-    "autoReleaseAssets": false,
+    "autoReleaseAssets": true,
     "_id": "6fda69f4-833d-4f7c-8e4c-9835727c5ee6"
   },
   {
@@ -159,7 +159,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 593.8331689299175
+      "z": 448.0238441298135
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -340,7 +340,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 0,
+      "x": 35,
       "y": 0,
       "z": 0
     },
@@ -430,8 +430,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -20.903,
-      "y": -23.103,
+      "x": 20,
+      "y": -25.103,
       "z": 0
     },
     "_scale": {
